@@ -1,0 +1,5 @@
+# ebfactory-site
+
+![CI none](https://img.shields.io/badge/ci-none-orange.svg)
+[![Dashboard ebfactory-site](https://img.shields.io/badge/dashboard-ebfactory_site-yellow.svg)](https://dashboard.pantheon.io/sites/99fd66a2-dae9-4525-b2e9-b28281d4b04a#dev/code)
+[![Dev Site ebfactory-site](https://img.shields.io/badge/site-ebfactory_site-blue.svg)](http://dev-ebfactory-site.pantheonsite.io/)
