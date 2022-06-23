@@ -100,3 +100,12 @@
 
 # Ignore .env files as they are personal
 #/.env
+
+.DS_Store
+/.DS_Store
+.idea/
+web/sites/default/db/
+**/node_modules/**
+web/themes/package-lock.json
+web/themes/custom/iadb/package-lock.json
+.docksal/docksal-local.env
