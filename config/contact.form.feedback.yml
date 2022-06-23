@@ -1,4 +1,4 @@
-uuid: 30e649e5-6468-48c3-a5f5-c62a7666557e
+uuid: 2691b963-c150-4269-86f0-45646de97d16
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - jpablom@iadb.org
+  - youremail@gmail.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

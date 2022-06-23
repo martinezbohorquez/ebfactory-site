@@ -1,0 +1,35 @@
+uuid: b5e847e0-0d29-4773-a46d-7c7139860968
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:76c2a6c0-9cc3-4d4e-b6ca-c9d1ea59ce70'
+  module:
+    - block_content
+    - block_visibility_groups
+    - gaviasthemer
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_enzio_socialscopyright
+theme: gavias_enzio
+region: copyright
+weight: -13
+provider: null
+plugin: 'block_content:76c2a6c0-9cc3-4d4e-b6ca-c9d1ea59ce70'
+settings:
+  id: 'block_content:76c2a6c0-9cc3-4d4e-b6ca-c9d1ea59ce70'
+  label: 'Socials Copyright'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''

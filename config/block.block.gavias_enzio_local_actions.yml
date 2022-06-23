@@ -1,0 +1,20 @@
+uuid: d09e8b17-76b2-4d7f-b2af-0fcf638f16db
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gavias_enzio
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: gavias_enzio_local_actions
+theme: gavias_enzio
+region: help
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

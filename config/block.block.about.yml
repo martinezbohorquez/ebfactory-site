@@ -1,0 +1,35 @@
+uuid: e22c3193-5937-47e3-9d84-053a13e77334
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6d5ade86-9d5b-4f7d-8df0-eab5c3d27e0c'
+  module:
+    - block_content
+    - block_visibility_groups
+    - gaviasthemer
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: about
+theme: gavias_enzio
+region: quick_side
+weight: -14
+provider: null
+plugin: 'block_content:6d5ade86-9d5b-4f7d-8df0-eab5c3d27e0c'
+settings:
+  id: 'block_content:6d5ade86-9d5b-4f7d-8df0-eab5c3d27e0c'
+  label: About
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''

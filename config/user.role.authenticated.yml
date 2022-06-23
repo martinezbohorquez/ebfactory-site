@@ -1,4 +1,4 @@
-uuid: 1378b070-b504-45f8-93cb-179f1be688d3
+uuid: 6b2db863-3e30-469c-b468-ae286f9f1e62
 langcode: en
 status: true
 dependencies:
@@ -10,9 +10,10 @@ dependencies:
     - filter
     - search
     - shortcut
+    - simplenews
     - system
 _core:
-  default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
 label: 'Authenticated user'
 weight: 1
@@ -25,4 +26,5 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'subscribe to newsletters'
   - 'use text format basic_html'

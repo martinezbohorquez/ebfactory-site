@@ -1,0 +1,22 @@
+uuid: 387b97a0-f55e-4df0-a408-4a1beff8d56c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gavias_enzio
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: gavias_enzio_local_tasks
+theme: gavias_enzio
+region: help
+weight: -9
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

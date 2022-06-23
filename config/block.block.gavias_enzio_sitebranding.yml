@@ -1,0 +1,27 @@
+uuid: c7cb4332-13f1-4a7f-8430-3baf52ab1981
+langcode: en
+status: true
+dependencies:
+  module:
+    - gaviasthemer
+    - system
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_enzio_sitebranding
+theme: gavias_enzio
+region: branding
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

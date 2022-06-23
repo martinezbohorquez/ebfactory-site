@@ -1,0 +1,19 @@
+uuid: 20f11810-3c64-438a-8ce5-b346ef93e29c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_skills
+    - node.type.team
+id: node.team.field_team_skills
+field_name: field_team_skills
+entity_type: node
+bundle: team
+label: 'Team Skills'
+description: 'Format: Title Skills -- Value (Example: Design--50) '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

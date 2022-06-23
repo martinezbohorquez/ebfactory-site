@@ -1,0 +1,34 @@
+uuid: 2f259226-b455-4a52-94f1-70ad2c1e2bf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.contact
+  module:
+    - block_visibility_groups
+    - gaviasthemer
+    - webform
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_enzio_webform
+theme: gavias_enzio
+region: other
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Webform - Contact'
+  label_display: '0'
+  provider: webform
+  webform_id: contact
+  default_data: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''

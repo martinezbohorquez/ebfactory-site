@@ -1,4 +1,4 @@
-uuid: 6ccd26b2-5945-4a18-bd85-13f3d6c73e21
+uuid: 232f6c59-7cdd-452a-856d-a7a5192c386d
 langcode: en
 status: true
 dependencies:
@@ -9,13 +9,15 @@ dependencies:
     - image
     - user
 _core:
-  default_config_hash: E1qmUI2SlozLlJ308jfMMFKT67l1p6PywE2LTRbeYS4
+  default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
 id: user.user.default
 targetEntityType: user
 bundle: user
 mode: default
 content:
   member_for:
+    settings: {  }
+    third_party_settings: {  }
     weight: 5
     region: content
   user_picture:
@@ -27,4 +29,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  simplenews: true

@@ -1,0 +1,35 @@
+uuid: 1f338df7-3085-4910-b19b-5d579b2d407d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+  module:
+    - block_content
+    - gaviasthemer
+    - system
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_enzio_howcanwehelpyou
+theme: gavias_enzio
+region: sidebar_right
+weight: -4
+provider: null
+plugin: 'block_content:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+settings:
+  id: 'block_content:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+  label: 'How can we help you ?'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/services\r\n/services-page\r\n/blogs-masonry\r\n/blogs-grid\r\n/portfolio\r\n/portfolio-1\r\n/portfolio-2\r\n/portfolio-3"

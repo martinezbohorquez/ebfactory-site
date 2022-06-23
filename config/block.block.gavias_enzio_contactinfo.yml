@@ -1,0 +1,29 @@
+uuid: ff229af8-e17d-4ff2-845d-f33e34759d4b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7da38301-272f-4979-8de1-06b564010f17'
+  module:
+    - block_content
+    - gaviasthemer
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_enzio_contactinfo
+theme: gavias_enzio
+region: footer_first
+weight: 0
+provider: null
+plugin: 'block_content:7da38301-272f-4979-8de1-06b564010f17'
+settings:
+  id: 'block_content:7da38301-272f-4979-8de1-06b564010f17'
+  label: 'Contact info'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

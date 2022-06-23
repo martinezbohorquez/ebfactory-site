@@ -1,11 +1,11 @@
-uuid: 1e5e1b3e-8c4a-4b0e-ab33-bbf9a2a11482
+uuid: 161da222-c9d6-44b1-94e0-2f5d8cb8b7b7
 langcode: en
 status: true
 dependencies:
   module:
     - user
 _core:
-  default_config_hash: zji0_13MyVGK7Bn1lUMDeZyyOIZedWvqpYUeM_SioPI
+  default_config_hash: o_8fSWHZOVIbydZACGsSX09DtuJhqkRmNOzcVj-4bQI
 id: who_s_new
 label: 'Who''s new'
 module: user
@@ -16,7 +16,7 @@ base_field: uid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
@@ -143,6 +143,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''

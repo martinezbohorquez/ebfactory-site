@@ -1,4 +1,4 @@
-uuid: 19daa949-4f1c-4512-9e40-1aa15abc5b2f
+uuid: 74885623-97f5-4693-a675-b18e4f87de70
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: vBKWYGGDoAX-tFd1JErB8tZLSxx3lJ0foouVsgpcbB4
+  default_config_hash: fUDNcSYKNw6cTMPsX3G9VhsUGov5yUe6_TBHbcnZHyo
 id: content
 label: Content
 module: node
@@ -17,7 +17,7 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
@@ -273,91 +273,18 @@ display:
       sorts: {  }
       arguments: {  }
       filters:
-        title:
-          id: title
+        status_extra:
+          id: status_extra
           table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
+          field: status_extra
           entity_type: node
-          entity_field: title
-          plugin_id: string
-          operator: contains
-          value: ''
+          plugin_id: node_status
+          operator: '='
+          value: false
           group: 1
-          exposed: true
           expose:
-            operator_id: title_op
-            label: Title
-            description: ''
-            use_operator: false
-            operator: title_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: title
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: type_op
-            label: 'Content type'
-            description: ''
-            use_operator: false
-            operator: type_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: type
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
         status:
           id: status
           table: node_field_data
@@ -406,6 +333,92 @@ display:
                 title: Unpublished
                 operator: '='
                 value: '0'
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: 'Content type'
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         langcode:
           id: langcode
           table: node_field_data
@@ -449,18 +462,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        status_extra:
-          id: status_extra
-          table: node_field_data
-          field: status_extra
-          entity_type: node
-          plugin_id: node_status
-          operator: '='
-          value: false
-          group: 1
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
       filter_groups:
         operator: AND
         groups:

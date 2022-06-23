@@ -1,14 +1,14 @@
 _core:
-  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
 langcode: en
-uuid: ea57c28b-724b-407d-8983-febbe5104a59
-name: ebfactory-site
-mail: jpablom@iadb.org
+uuid: e652c8c3-1b8e-40bc-bced-de3282f72a01
+name: 'Enzio - Responsive Multipurpose Business Drupal 9 Theme'
+mail: youremail@gmail.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

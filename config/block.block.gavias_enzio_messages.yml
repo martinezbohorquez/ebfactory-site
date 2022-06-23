@@ -1,0 +1,24 @@
+uuid: e6be92b1-2c2b-45b1-8119-702f5e91c390
+langcode: en
+status: true
+dependencies:
+  module:
+    - gaviasthemer
+    - system
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_enzio_messages
+theme: gavias_enzio
+region: help
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

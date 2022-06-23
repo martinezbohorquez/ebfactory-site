@@ -1,0 +1,29 @@
+uuid: 60f2d41c-b625-442f-8a57-6aa925d6176c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - gaviasthemer
+    - system
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_enzio_mainnavigation
+theme: gavias_enzio
+region: main_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

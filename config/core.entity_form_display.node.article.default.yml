@@ -1,4 +1,4 @@
-uuid: dd43d1c9-8284-46ad-b906-75373d09b156
+uuid: 00cc25d2-04b3-4f33-bdb6-73d21c9882d9
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,11 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_image
+    - field.field.node.article.field_post_category
+    - field.field.node.article.field_post_embed
+    - field.field.node.article.field_post_format
+    - field.field.node.article.field_post_gallery
+    - field.field.node.article.field_post_type
     - field.field.node.article.field_tags
     - image.style.thumbnail
     - node.type.article
@@ -15,7 +20,7 @@ dependencies:
     - path
     - text
 _core:
-  default_config_hash: Pzq9mzrsfoPf775qgEU_SUbHSro9pv1ga-Euh1Ykd_k
+  default_config_hash: vPb_yvhA-xuNoV_yOmOwYxGuHNRIH1CoMK2qi7BSga0
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -60,6 +65,38 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  gva_box_layout:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  gva_breadcrumb:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  gva_header:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  gva_node_class:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  gva_node_layout:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -106,4 +143,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_post_category: true
+  field_post_embed: true
+  field_post_format: true
+  field_post_gallery: true
+  field_post_type: true

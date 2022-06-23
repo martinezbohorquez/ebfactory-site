@@ -1,0 +1,22 @@
+uuid: a861360c-8a66-4e02-b343-1f40edc0536c
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - gavias_enzio
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: gavias_enzio_help
+theme: gavias_enzio
+region: help
+weight: -11
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

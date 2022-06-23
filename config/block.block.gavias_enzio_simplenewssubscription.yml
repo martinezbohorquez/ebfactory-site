@@ -1,0 +1,30 @@
+uuid: b519c18b-6f7c-49dc-b183-debd53568add
+langcode: en
+status: true
+dependencies:
+  module:
+    - gaviasthemer
+    - simplenews
+  theme:
+    - gavias_enzio
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: gavias_enzio_simplenewssubscription
+theme: gavias_enzio
+region: footer_third
+weight: -13
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Subscribe our newsletter'
+  label_display: visible
+  provider: simplenews
+  newsletters: {  }
+  default_newsletters:
+    default: default
+  message: ' Subscribe to update news from us'
+  show_manage: true
+  unique_id: 763feca6-91c6-48be-a713-93d5261f5aa3
+visibility: {  }

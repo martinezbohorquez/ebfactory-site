@@ -1,0 +1,22 @@
+uuid: 8abc73b7-8509-4d3b-a066-46e98f7919ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gavias_enzio
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: gavias_enzio_breadcrumbs
+theme: gavias_enzio
+region: breadcrumbs
+weight: -8
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

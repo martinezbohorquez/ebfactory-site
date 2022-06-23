@@ -1,4 +1,4 @@
-uuid: 2556135c-c002-46ee-80ba-a8476b380465
+uuid: d3a051c8-b4ba-4626-b4ad-4d6d7625e51b
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ dependencies:
     - image
     - user
 _core:
-  default_config_hash: kD2TjItfNDKFw2CFJQfuv4Ys6qg3uYa4hCJYN2jreec
+  default_config_hash: C3k_McOy8bL8rTnIjspy5OfFdgqV1z6OdGZaI-tO5eM
 id: user.user.compact
 targetEntityType: user
 bundle: user
@@ -27,3 +27,4 @@ content:
     region: content
 hidden:
   member_for: true
+  simplenews: true

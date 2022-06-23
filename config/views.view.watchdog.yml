@@ -1,12 +1,10 @@
-uuid: acae0733-1ed5-4fb8-b137-c1cc23a5b92e
+uuid: decefbe0-a0e4-4609-b173-5b614a0ff237
 langcode: en
 status: true
 dependencies:
   module:
     - dblog
     - user
-_core:
-  default_config_hash: j0txIxY4nkJT_dscmXckM-1vanygDkJAeHPawZKfyH0
 id: watchdog
 label: Watchdog
 module: views
@@ -17,7 +15,7 @@ base_field: wid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Master
     display_plugin: default
     position: 0
     display_options:
@@ -603,6 +601,8 @@ display:
           default: wid
           info:
             nothing:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
