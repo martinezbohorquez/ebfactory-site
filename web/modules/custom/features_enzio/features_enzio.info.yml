@@ -1,0 +1,34 @@
+name: 'Features Enzio'
+description: 'Features Enzio - Import content type, field, view ... for Enzio theme.'
+type: module
+core_version_requirement: ^8.8 || ^9
+dependencies:
+  - block
+  - block_visibility_groups
+  - comment
+  - ctools
+  - datetime
+  - field
+  - file
+  - gavias_content_builder
+  - gavias_view
+  - gaviasthemer
+  - image
+  - imce
+  - menu_ui
+  - node
+  - options
+  - path
+  - pathauto
+  - rdf
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+  - views_infinite_scroll
+  - webform
+  - admin_toolbar
+  - config_update
+  - features
+version: 9.x

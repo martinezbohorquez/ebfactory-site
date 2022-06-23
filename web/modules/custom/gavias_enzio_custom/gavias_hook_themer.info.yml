@@ -1,0 +1,6 @@
+type: module
+name : Gavias Enzio Themer
+description : Gavias Enzio Themer
+package: gavias
+core_version_requirement: ^8.8 || ^9
+project: 'gavias_hook_themer'
