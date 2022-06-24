@@ -728,7 +728,7 @@ function gavias_enzio_typography_enqueue_google_font($font) {
 
 function gavias_enzio_links_typography_font($json){
     $links_fonts = '';
-    $customize = (array)json_decode($json, true);
+    $customize = (array)json_decode($json ?? '[]', true);
     if(isset($customize['font_family_primary']) && $customize['font_family_primary']){
         $links_fonts .= gavias_enzio_typography_enqueue_google_font($customize['font_family_primary']);
     }
