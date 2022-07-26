@@ -1,14 +1,11 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\gavias_view\Plugin\views\style\gvaportfolio.
- */
-
 namespace Drupal\gavias_view\Plugin\views\style;
 
+use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\style\StylePluginBase;
+
 /**
  *
  * @ingroup views_style_plugins
@@ -38,14 +35,14 @@ class gvaportfolio extends StylePluginBase {
   protected $usesRowClass = TRUE;
 
   /**
-   * Set default options
+   * Set default options.
    */
   protected function defineOptions() {
     $options = parent::defineOptions();
 
     $settings = gavias_view_owl_default_settings();
     foreach ($settings as $k => $v) {
-      $options[$k] = array('default' => $v);
+      $options[$k] = ['default' => $v];
     }
     return $options;
   }
@@ -55,69 +52,68 @@ class gvaportfolio extends StylePluginBase {
    */
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     parent::buildOptionsForm($form, $form_state);
-    
-    $options_tid = array('' => $this->t('- None -'));
+
+    $options_tid = ['' => $this->t('- None -')];
     $field_labels = $this->displayHandler->getFieldLabels(TRUE);
     $options_tid += $field_labels;
 
-    $options_taxonomy = array();
-    $vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
-    foreach($vocabularies as $taxonomy){
+    $options_taxonomy = [];
+    $vocabularies = Vocabulary::loadMultiple();
+    foreach ($vocabularies as $taxonomy) {
       $options_taxonomy[$taxonomy->get('vid')] = $taxonomy->get('name');
     }
 
-    $form['taxonomy'] = array(
+    $form['taxonomy'] = [
       '#type' => 'select',
       '#title' => $this->t('Taxonomy Filter'),
       '#default_value' => $this->options['taxonomy'],
       '#options' => $options_taxonomy,
-    );
+    ];
 
-    $form['field_tid'] = array(
+    $form['field_tid'] = [
       '#type' => 'select',
       '#title' => $this->t('Field Term ID for content'),
       '#default_value' => $this->options['field_tid'],
       '#options' => $options_tid,
-    );
+    ];
 
-    $form['columns'] = array(
+    $form['columns'] = [
       '#type' => 'select',
       '#title' => $this->t('Columns for items'),
       '#default_value' => $this->options['columns'],
-      '#options' => array('6'=>6, '4'=> 4, '3' => 3, '2'=>2, '1'=> 1)
-    );
+      '#options' => ['6' => 6, '4' => 4, '3' => 3, '2' => 2, '1' => 1],
+    ];
 
-    $form['show_all'] = array(
+    $form['show_all'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Display Button "All"'),
       '#default_value' => $this->options['show_all'],
-    );
+    ];
 
-     $form['tids'] = array(
+    $form['tids'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Custom taxonomy term tabs filter'),
       '#default_value' => $this->options['tids'],
-      '#description' => t('List id for term show in tabs filter, eg: 1, 2, 3, 4, 5. Show all term if empty')
-    );
+      '#description' => t('List id for term show in tabs filter, eg: 1, 2, 3, 4, 5. Show all term if empty'),
+    ];
 
-    $form['el_class'] = array(
+    $form['el_class'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Extra class name'),
       '#default_value' => $this->options['el_class'],
-    );
+    ];
 
-    $form['slideset'] = array(
+    $form['slideset'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Use Slideset'),
       '#default_value' => $this->options['slideset'],
-    );
+    ];
 
-    $form['bootstrap_4'] = array(
+    $form['bootstrap_4'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Theme use Bootstrap 4'),
       '#default_value' => $this->options['bootstrap_4'],
-    );
+    ];
   }
+
 }
-
-

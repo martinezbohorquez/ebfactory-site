@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\gavias_content_builder\Form;
 
 use Drupal\Core\Form\FormBuilderInterface;
@@ -7,7 +8,10 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\HttpFoundation;
 use Drupal\file\Entity\File;
 use Drupal\Core\Url;
-
+/**
+ *
+ *
+ */
 class ImportForm implements FormInterface {
    /**
    * Implements \Drupal\Core\Form\FormInterface::getFormID().
@@ -30,37 +34,37 @@ class ImportForm implements FormInterface {
            ->execute()
            ->fetchAssoc();
       } else {
-        $bblock = array('id' => 0, 'title' => '');
+        $bblock = ['id' => 0, 'title' => ''];
       }
       if($bblock['id']==0){
         \Drupal::messenger()->addMessage('Not found gavias block builder !');
         return false;
       }
-      $form = array();
-      $form['id'] = array(
+      $form = [];
+      $form['id'] = [
           '#type' => 'hidden',
           '#default_value' => $bblock['id']
-      );
-      $form['title'] = array(
+      ];
+      $form['title'] = [
           '#type' => 'hidden',
           '#default_value' => $bblock['title']
-      );
-      $form['file'] = array(
+      ];
+      $form['file'] = [
         '#type' => 'managed_file',
         '#title' => t('Upload File Content'),
         '#description' => t('Upload your builder that exported before. Allowed extensions: .txt'),
         '#upload_location' => 'public://',
-        '#upload_validators' => array(
-            'file_validate_extensions' => array('txt'),
+        '#upload_validators' => [
+            'file_validate_extensions' => ['txt'],
             // Pass the maximum file size in bytes
-            'file_validate_size' => array(1024 * 1280 * 800),
-        ),
+            'file_validate_size' => [1024 * 1280 * 800],
+        ],
         '#required' => TRUE,
-      );
-      $form['submit'] = array(
+      ];
+      $form['submit'] = [
           '#type' => 'submit',
           '#value' => 'Save'
-      );
+      ];
     return $form;
    }
 
@@ -90,14 +94,16 @@ class ImportForm implements FormInterface {
 
       $id = $form['id']['#value'];
       $builder = \Drupal::database()->update("gavias_content_builder")
-      ->fields(array(
+      ->fields([
         'params' => $params,
-      ))
+      ])
       ->condition('id', $id)
       ->execute();
       \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
       \Drupal::messenger()->addMessage("Block Builder '{$form['title']['#value']}' has been updated");
-      $response = new \Symfony\Component\HttpFoundation\RedirectResponse(Url::fromRoute('gavias_content_builder.admin.edit', array('bid'=>$id))->toString());
+      $response = new \Symfony\Component\HttpFoundation\RedirectResponse(Url::fromRoute(
+        'gavias_content_builder.admin.edit',
+        ['bid'=>$id])->toString());
       $response->send();
     }  
   }

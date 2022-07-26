@@ -1,14 +1,10 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\gavias_view\Plugin\views\style\GvaOwl.
- */
-
 namespace Drupal\gavias_view\Plugin\views\style;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\style\StylePluginBase;
+
 /**
  *
  * @ingroup views_style_plugins
@@ -38,14 +34,14 @@ class gvaonefour extends StylePluginBase {
   protected $usesRowClass = TRUE;
 
   /**
-   * Set default options
+   * Set default options.
    */
   protected function defineOptions() {
     $options = parent::defineOptions();
 
     $settings = gavias_view_owl_default_settings();
     foreach ($settings as $k => $v) {
-      $options[$k] = array('default' => $v);
+      $options[$k] = ['default' => $v];
     }
     return $options;
   }
@@ -55,15 +51,16 @@ class gvaonefour extends StylePluginBase {
    */
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     parent::buildOptionsForm($form, $form_state);
-    $form['el_class'] = array(
+    $form['el_class'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Extra class name'),
       '#default_value' => $this->options['el_class'],
-    );
-    $form['el_id'] = array(
+    ];
+    $form['el_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Extra id name'),
       '#default_value' => $this->options['el_id'],
-    );
+    ];
   }
+
 }
