@@ -1,55 +1,62 @@
 <?php
+
 namespace Drupal\gavias_content_builder\Form;
+
 use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-class DelForm extends ConfirmFormBase  {
-   /**
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ *
+ */
+class DelForm extends ConfirmFormBase {
+  /**
    * The ID of the item to delete.
    *
    * @var string
    */
-    protected $bid;
+  protected $bid;
 
-   /**
+  /**
    * Implements \Drupal\Core\Form\FormInterface::getFormID().
    */
-   public function getFormID() {
-      return 'del_form';
-   }
-  
+  public function getFormID() {
+    return 'del_form';
+  }
+
   /**
    * {@inheritdoc}
    */
   public function getQuestion() {
-    return t('Do you want to delete %bid?', array('%bid' => $this->bid));
+    return t('Do you want to delete %bid?', ['%bid' => $this->bid]);
   }
 
   /**
    * {@inheritdoc}
    */
-    public function getCancelUrl() {
-      return new Url('gavias_content_builder.admin');
+  public function getCancelUrl() {
+    return new Url('gavias_content_builder.admin');
   }
 
   /**
    * {@inheritdoc}
    */
-    public function getDescription() {
+  public function getDescription() {
     return t('Only do this if you are sure!');
   }
 
   /**
    * {@inheritdoc}
    */
-    public function getConfirmText() {
+  public function getConfirmText() {
     return t('Delete it!');
   }
 
   /**
    * {@inheritdoc}
    */
-    public function getCancelText() {
+  public function getCancelText() {
     return t('Cancel');
   }
 
@@ -68,14 +75,16 @@ class DelForm extends ConfirmFormBase  {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-     $bid = $this->bid;
-    if(!$bid && \Drupal::request()->attributes->get('bid')) $bid = \Drupal::request()->attributes->get('bid');
+    $bid = $this->bid;
+    if (!$bid && \Drupal::request()->attributes->get('bid')) {
+      $bid = \Drupal::request()->attributes->get('bid');
+    }
     \Drupal::database()->delete('gavias_content_builder')
-            ->condition('id', $bid)
-            ->execute();
+      ->condition('id', $bid)
+      ->execute();
     \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
     \Drupal::messenger()->addMessage("blockbuilder '#{$bid}' has been delete");
-    $response = new \Symfony\Component\HttpFoundation\RedirectResponse(Url::fromRoute('gavias_content_builder.admin')->toString());
+    $response = new RedirectResponse(Url::fromRoute('gavias_content_builder.admin')->toString());
     $response->send();
   }
 
