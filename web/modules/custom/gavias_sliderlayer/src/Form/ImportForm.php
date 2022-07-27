@@ -119,7 +119,7 @@ class ImportForm implements FormInterface {
       $gid = $form['gid']['#value'];
       $json = base64_decode($data);
       $slideshow = json_decode($json);
-      $builder = \Drupal::database()
+      \Drupal::database()
         ->update('gavias_sliderlayergroups')
         ->fields([
           'params' =>
@@ -138,7 +138,7 @@ class ImportForm implements FormInterface {
           ->execute();
         foreach ($slideshow->sliders as $key => $slider) {
           $i++;
-          $builder = \Drupal::database()
+          \Drupal::database()
             ->insert('gavias_sliderlayers')
             ->fields([
               'sort_index' =>

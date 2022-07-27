@@ -54,7 +54,7 @@ class SliderController extends ControllerBase {
     $page['#attached']['library'][] = 'gavias_sliderlayer/gavias_sliderlayer.assets.admin';
     $theme_name = \Drupal::config('system.theme')->get('default');
    
-    $group = getSliderGroup($gid);
+    $group = get_slider_group($gid);
     $group_settings = (isset($group->params) && $group->params) ? base64_decode($group->params):'null';
     $group_settings_decode = (isset($group->params) && $group->params) ? json_decode(base64_decode($group->params)):'null';
     

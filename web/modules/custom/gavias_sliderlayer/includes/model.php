@@ -2,10 +2,11 @@
 
 /**
  * @file
+ * This is model.
  */
 
 /**
- *
+ * Gavias sliderlayer load!
  */
 function gavias_sliderlayer_load($sid) {
   $result = \Drupal::database()->select('{gavias_sliderlayers}', 'd')
@@ -28,7 +29,7 @@ function gavias_sliderlayer_load($sid) {
 }
 
 /**
- *
+ * Gavias sliders by group!
  */
 function gavias_sliders_by_group($gid = 0) {
   $result = \Drupal::database()->select('{gavias_sliderlayers}', 'd')
@@ -40,7 +41,7 @@ function gavias_sliders_by_group($gid = 0) {
 }
 
 /**
- *
+ * Gavias slider load frontend!
  */
 function gavias_slider_load_frontend($sid = 0) {
   $group = \Drupal::database()->select('{gavias_sliderlayergroups}', 'd')
@@ -95,9 +96,9 @@ function gavias_slider_load_frontend($sid = 0) {
 }
 
 /**
- *
+ * Get list slider groups!
  */
-function getListSliderGroups() {
+function get_list_slider_groups() {
   $result = \Drupal::database()->select('{gavias_sliderlayergroups}', 'd')
     ->fields('d')
     ->execute()
@@ -106,9 +107,9 @@ function getListSliderGroups() {
 }
 
 /**
- *
+ * Get slider group!
  */
-function getSliderGroup($gid) {
+function get_slider_group($gid) {
   $result = \Drupal::database()->select('{gavias_sliderlayergroups}', 'd')
     ->fields('d')
     ->condition('id', $gid, '=')
@@ -118,11 +119,11 @@ function getSliderGroup($gid) {
 }
 
 /**
- *
+ * Gavias sliderlayer export!
  */
 function gavias_sliderlayer_export($gid) {
   $result = new stdClass();
-  $result->group = getSliderGroup($gid);
+  $result->group = get_slider_group($gid);
   $result->sliders = [];
   $sliders = gavias_sliders_by_group($gid);
 

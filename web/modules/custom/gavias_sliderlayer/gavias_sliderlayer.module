@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * This is module sliderlayer.
  */
 
 define('gavias_sliderlayer_VERSION', '1.0');
@@ -12,7 +13,7 @@ module_load_include('php', 'gavias_sliderlayer', '/includes/utilities');
 module_load_include('php', 'gavias_sliderlayer', '/includes/frontend');
 
 /**
- *
+ * Gavias sliderlayer theme.
  */
 function gavias_sliderlayer_theme($existing, $type, $theme, $path) {
   $items['admin-form'] = [
@@ -39,14 +40,14 @@ function gavias_sliderlayer_theme($existing, $type, $theme, $path) {
 }
 
 /**
- *
+ * Gavias sliderlayer preprocess page.
  */
 function gavias_sliderlayer_preprocess_page(&$variables) {
   $variables['#attached']['library'][] = 'gavias_sliderlayer/gavias_sliderlayer.assets.frontend';
 }
 
 /**
- *
+ * Gavias sliderlayer styles
  */
 function gavias_sliderlayer_styles() {
   $variables = [
@@ -58,7 +59,7 @@ function gavias_sliderlayer_styles() {
 }
 
 /**
- *
+ * Gavias sliderlayer update projects alter.
  */
 function gavias_sliderlayer_update_projects_alter(&$projects) {
   unset($projects['gavias_sliderlayer']);

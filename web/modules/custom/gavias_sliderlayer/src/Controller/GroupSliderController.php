@@ -56,7 +56,7 @@ class GroupSliderController extends ControllerBase {
   public function gavias_sl_group_config($gid) {
     global $base_url;
     $page['#attached']['library'][] = 'gavias_sliderlayer/gavias_sliderlayer.assets.config_global';
-    $slideshow = getSliderGroup($gid);
+    $slideshow = get_slider_group($gid);
     $settings = ((isset($slideshow->params) && $slideshow->params) ? json_decode(base64_decode($slideshow->params)) : '{}');
 
     $save_url = Url::fromRoute('gavias_sl_group.admin.config_save', [], ['absolute' => FALSE])->toString();
