@@ -122,7 +122,7 @@ class SliderDuplicate implements FormInterface {
  */
 public function submit_form(array &$form, FormStateInterface $form_state) {
   if (is_numeric($form['id']['#value']) && $form['id']['#value'] > 0) {
-    $builder = \Drupal::database()->insert(
+      \Drupal::database()->insert(
       "gavias_sliderlayers")->fields([
         'title' => $form['title']['#value'],
         'group_id' => $form['group_id']['#value'],

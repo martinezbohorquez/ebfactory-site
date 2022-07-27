@@ -1,14 +1,20 @@
-<?php 
-  global $base_url;
-  $width = '1170px'; $height = '600px';
-  if( isset($group_settings_decode->gridwidth) && $group_settings_decode->gridwidth ){
-    $width = $group_settings_decode->gridwidth . 'px';
-  }
-  if(isset($group_settings_decode->gridheight) && $group_settings_decode->gridheight){
-    $height = ($group_settings_decode->gridheight) . 'px';
-  }
-  
-  $_id = gavias_sliderlayer_makeid(10);
+<?php
+
+/**
+ * @file
+ * This is layers.
+ */
+
+$width = '1170px';
+$height = '600px';
+if (isset($group_settings_decode->gridwidth) && $group_settings_decode->gridwidth) {
+  $width = $group_settings_decode->gridwidth . 'px';
+}
+if (isset($group_settings_decode->gridheight) && $group_settings_decode->gridheight) {
+  $height = ($group_settings_decode->gridheight) . 'px';
+}
+
+gavias_sliderlayer_makeid(10);
 
 ?>
 <div id="gavias_slider_single" style="background-size: cover; margin:0 auto;width:<?php print $width ?>; height: <?php print $height ?>; border: 1px solid #ccc; list-style: none;position: relative;">
@@ -45,13 +51,19 @@
           <td width="25%"><label>Incoming Effect</label>
             <select name="incomingclasses" class="layer-option">
               <?php foreach (gavias_get_arr_animations() as $key => $value) { ?>
-                <option value="<?php print $key ?>" <?php if(isset($value['disable']) && ($value['disable']==true)) print 'disabled' ?>><?php print $value['handle']; ?></option>
+                <option value="<?php print $key ?>" 
+                <?php if (isset($value['disable']) && ($value['disable'] == TRUE)) {
+                  print 'disabled';
+                }
+                ?>>
+                               <?php print $value['handle']; ?>
+             </option>
               <?php } ?>
             </select>
           </td>  
           <td>
             <label>Easing</label>
-            <?php print gavias_defined_select('data_easing', gavias_sliderlayer_dataeasing(),'layer-option'); ?></td>
+            <?php print gavias_defined_select('data_easing', gavias_sliderlayer_dataeasing(), 'layer-option'); ?></td>
           </td>
           <td  width="25%">
             <label>Speed Start</label>
@@ -63,13 +75,19 @@
           <td><label>Outgoing Effect</label>
             <select name="outgoingclasses" class="layer-option">
                 <?php foreach (gavias_get_arr_end_animations() as $key => $value) { ?>
-                    <option value="<?php print $key ?>" <?php if(isset($value['disable']) && ($value['disable']==true)) print 'disabled' ?>><?php print $value['handle']; ?></option>
-               <?php } ?>
+                    <option value="<?php print $key ?>" 
+                    <?php if (isset($value['disable']) && ($value['disable'] == TRUE)) {
+                      print 'disabled';
+                    }
+                    ?>>
+                                   <?php print $value['handle']; ?>
+                                   </option>
+                <?php } ?>
             </select>
           </td>
           <td>
             <label>End Easing</label>
-            <?php print gavias_defined_select('data_endeasing', gavias_sliderlayer_dataendeasing(),'layer-option'); ?>
+            <?php print gavias_defined_select('data_endeasing', gavias_sliderlayer_dataendeasing(), 'layer-option'); ?>
           </td>
           <td width="25%">
               <div class="margin-top-30">
@@ -83,7 +101,7 @@
 
   <fieldset class="fieldset-wrapper g-wrapper">
       <div class="gavias-heading">Layer Style Setting</div>
-  		
+          
       <table>
           <tr>
             <td width="50%">
@@ -108,7 +126,7 @@
                       <tr>
                         <td width="50%">
                           <div class="g-label">Text style</div> 
-                          <?php print gavias_defined_select('text_style', gavias_sliderlayer_captionclasses(),'layer-option'); ?>
+                          <?php print gavias_defined_select('text_style', gavias_sliderlayer_captionclasses(), 'layer-option'); ?>
                         </td>
                         <td width="50%">
                           <textarea class="layer-option form-textarea" name="text" id="layer-text"></textarea>
@@ -138,15 +156,15 @@
             <div class="g-label">Custom class</div> 
             <input type="text" name="custom_class" class="form-text layer-option" style="width:400px;"/>
           </td> 
-          <?php if(gavias_sliderlayer_styles()){ 
-            $styles = gavias_sliderlayer_styles(); 
-          ?>
+          <?php if (gavias_sliderlayer_styles()) {
+            $styles = gavias_sliderlayer_styles();
+            ?>
             <td>
               <div class="g-label">Styles available </div> 
               <select name="custom_style" class="layer-option">
                   <?php foreach ($styles as $key => $value) { ?>
                     <option value="<?php print $key ?>"><?php print $value; ?></option>
-                 <?php } ?>
+                  <?php } ?>
               </select>
             </td>
           <?php } ?>

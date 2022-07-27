@@ -1,6 +1,11 @@
-<?php 
-    global $theme_root, $base_url; 
-    $_id = gavias_sliderlayer_makeid(10);
+<?php
+
+/**
+ * @file
+ * This is Slider.
+ */
+
+gavias_sliderlayer_makeid(10);
 
 ?>
 <link rel="stylesheet" type="text/css" href="<?php print $base_url . '/' . $style_fontend ?>">
@@ -141,15 +146,15 @@
           <tr>
             <td>
               <label>Slide transition</label>
-              <?php print gavias_defined_select('data_transition', gavias_sliderlayer_datatransition(),'slide-option'); ?>
+              <?php print gavias_defined_select('data_transition', gavias_sliderlayer_datatransition(), 'slide-option'); ?>
             </td>
             <td>
               <label>Slide Easing In</label>
-              <?php print gavias_defined_select('slide_easing_in', gavias_sliderlayer_dataeasing_slide(),'slide-option'); ?>
+              <?php print gavias_defined_select('slide_easing_in', gavias_sliderlayer_dataeasing_slide(), 'slide-option'); ?>
             </td>
             <td>
               <label>Slide Easing Out</label>
-              <?php print gavias_defined_select('slide_easing_out', gavias_sliderlayer_dataeasing_slide(),'slide-option'); ?>
+              <?php print gavias_defined_select('slide_easing_out', gavias_sliderlayer_dataeasing_slide(), 'slide-option'); ?>
             </td>
           </tr>
 

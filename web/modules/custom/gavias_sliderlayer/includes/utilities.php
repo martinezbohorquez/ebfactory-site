@@ -286,7 +286,6 @@ function gavias_sliderlayer_dataendeasing() {
   ];
 }
 
-
 /**
  * ¡Gavias sliderlayer IncomingClasse!
  */

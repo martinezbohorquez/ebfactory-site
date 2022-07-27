@@ -110,7 +110,7 @@ gavias_sliderlayer.admin.upload:
   path: '/admin/structure/gavias_sliderlayer/upload'
   defaults:
     _title: 'Upload image of Gavias Slider'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\FileController::gavias_sliderlayer_upload_file'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\FileController::gaviasSliderlayerUploadFile'
   requirements:
     _permission: 'administer gaviassliderlayer'
 

@@ -2,17 +2,18 @@
 
 /**
  * @file
+ * This is form.
  */
 
 /**
- *
+ * Gavias sliderlayer delete.
  */
 function gavias_sliderlayer_delete($gid) {
   return drupal_get_form('gavias_sliderlayer_delete_confirm_form');
 }
 
 /**
- *
+ * Gavias sliderlayer delete confirm form.
  */
 function gavias_sliderlayer_delete_confirm_form($form_state) {
   $form = [];
@@ -24,7 +25,7 @@ function gavias_sliderlayer_delete_confirm_form($form_state) {
 }
 
 /**
- *
+ * Gavias sliderlayer delete confirm form submit.
  */
 function gavias_sliderlayer_delete_confirm_form_submit($form, &$form_state) {
   $gid = $form['id']['#value'];
@@ -36,7 +37,7 @@ function gavias_sliderlayer_delete_confirm_form_submit($form, &$form_state) {
 }
 
 /**
- *
+ * Gavias sliderlayer export.
  */
 function gavias_sliderlayer_export($gid) {
   $pbd_single = gavias_sliderlayer_load($gid);
@@ -48,7 +49,7 @@ function gavias_sliderlayer_export($gid) {
 }
 
 /**
- *
+ * Gavias sliderlayer import.
  */
 function gavias_sliderlayer_import($bid) {
   $bid = arg(2);
@@ -86,12 +87,12 @@ function gavias_sliderlayer_import($bid) {
 }
 
 /**
- *
+ * Gavias sliderlayer import submit.
  */
 function gavias_sliderlayer_import_submit($form, $form_state) {
   if ($form['id']['#value']) {
     $id = $form['id']['#value'];
-    $builder = \Drupal::database()->update("gavias_sliderlayer")
+    \Drupal::database()->update("gavias_sliderlayer")
       ->fields([
         'params' => $form['params']['#value'],
       ])

@@ -4,14 +4,17 @@ namespace Drupal\gavias_sliderlayer\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
+use Drupal\Core\StringTranslation\StringTranslationTrait
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
- *
+ * Group Slider Controller.
  */
 class GroupSliderController extends ControllerBase {
+  use StringTranslationTrait;
 
   /**
-   *
+   * Gavias sl group list.
    */
   public function gavias_sl_group_list() {
 
@@ -31,14 +34,42 @@ class GroupSliderController extends ControllerBase {
       $tmp = [];
       $tmp[] = $row->id;
       $tmp[] = $row->title;
-      $tmp[] = t('<a href="@link_1">Edit Name</a> | <a href="@link_2">List Silders</a> | <a href="@link_3">Config General</a> | <a href="@link_5">Clone</a> | <a href="@link_6">Export</a> | <a href="@link_7">Import</a> | <a href="@link_4">Delete</a>', [
-        '@link_1' => Url::fromRoute('gavias_sl_group.admin.add', ['sid' => $row->id])->toString(),
-        '@link_2' => Url::fromRoute('gavias_sl_sliders.admin.list', ['gid' => $row->id])->toString(),
-        '@link_3' => Url::fromRoute('gavias_sl_group.admin.config', ['gid' => $row->id])->toString(),
-        '@link_5' => Url::fromRoute('gavias_sl_group.admin.clone', ['sid' => $row->id])->toString(),
-        '@link_6' => Url::fromRoute('gavias_sl_group.admin.export', ['gid' => $row->id])->toString(),
-        '@link_7' => Url::fromRoute('gavias_sl_group.admin.import', ['gid' => $row->id])->toString(),
-        '@link_4' => Url::fromRoute('gavias_sl_group.admin.delete', ['gid' => $row->id, 'sid' => '0', 'action' => 'group'])->toString(),
+      $tmp[] = $this->t('<a href="@link_1">Edit Name</a> | <a href="@link_2">List Silders</a> | <a href="@link_3">Config General</a> | <a href="@link_5">Clone</a> | <a href="@link_6">Export</a> | <a href="@link_7">Import</a> | <a href="@link_4">Delete</a>', [
+        '@link_1' => Url::fromRoute(
+          'gavias_sl_group.admin.add', ['sid' => $row->id]
+        )->toString(),
+        '@link_2' => Url::fromRoute(
+          'gavias_sl_sliders.admin.list', [
+            'gid' => $row->id,
+          ]
+        )->toString(),
+        '@link_3' => Url::fromRoute(
+          'gavias_sl_group.admin.config', [
+            'gid' => $row->id,
+          ]
+        )->toString(),
+        '@link_5' => Url::fromRoute(
+          'gavias_sl_group.admin.clone', [
+            'sid' => $row->id,
+          ]
+        )->toString(),
+        '@link_6' => Url::fromRoute(
+          'gavias_sl_group.admin.export', [
+            'gid' => $row->id,
+          ]
+        )->toString(),
+        '@link_7' => Url::fromRoute(
+          'gavias_sl_group.admin.import', [
+            'gid' => $row->id,
+          ]
+        )->toString(),
+        '@link_4' => Url::fromRoute(
+          'gavias_sl_group.admin.delete', [
+            'gid' => $row->id,
+            'sid' => '0',
+            'action' => 'group',
+          ],
+        )->toString(),
       ]);
       $rows[] = $tmp;
     }
@@ -46,12 +77,12 @@ class GroupSliderController extends ControllerBase {
       '#theme' => 'table',
       '#header' => $header,
       '#rows' => $rows,
-      '#empty' => t('No Slider available. <a href="@link">Add Slider</a>.', ['@link' => Url::fromRoute('gavias_sl_group.admin.add', ['sid' => 0])->toString()]),
+      '#empty' => $this->t('No Slider available. <a href="@link">Add Slider</a>.', ['@link' => Url::fromRoute('gavias_sl_group.admin.add', ['sid' => 0])->toString()]),
     ];
   }
 
   /**
-   *
+   * Gavias sl group config.
    */
   public function gavias_sl_group_config($gid) {
     global $base_url;
@@ -75,14 +106,14 @@ class GroupSliderController extends ControllerBase {
   }
 
   /**
-   *
+   * Gavias sl group config save.
    */
   public function gavias_sl_group_config_save() {
     header('Content-type: application/json');
-    $gid = $_REQUEST['gid'];
-    $settings = $_REQUEST['settings'];
+    $gid = requestStack->getCurrentRequest()->query->get('gid');
+    $settings = requestStack->getCurrentRequest()->request->get('settings')];
 
-    $builder = \Drupal::database()->update("gavias_sliderlayergroups")->fields([
+    \Drupal::database()->update("gavias_sliderlayergroups")->fields([
       'params'  => $settings,
     ])->condition('id', $gid, '=')->execute();
     $result = [
@@ -100,7 +131,7 @@ class GroupSliderController extends ControllerBase {
   }
 
   /**
-   *
+   * Gavias sl group export.
    */
   public function gavias_sl_group_export($gid) {
     $data = gavias_sliderlayer_export($gid);
