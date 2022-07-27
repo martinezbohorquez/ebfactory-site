@@ -8,9 +8,9 @@ use Drupal\Core\Url;
 
 class CloneForm implements FormInterface {
    /**
-   * Implements \Drupal\Core\Form\FormInterface::getFormID().
+   * Implements \Drupal\Core\Form\FormInterface::getFormId().
    */
-   public function getFormID() {
+   public function getFormId() {
       return 'import_form';
    }
 

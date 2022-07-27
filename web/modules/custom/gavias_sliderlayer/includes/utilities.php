@@ -2,13 +2,14 @@
 
 /**
  * @file
+ * This is utilities.
  */
 
 /**
- *
+ * ¡DataTransition!
  */
 function gavias_sliderlayer_datatransition() {
-  return $datatransition = [
+  return [
     'random' => 'Random Flat and Premium',
     'random-static' => 'Random Flat',
     'random-premium' => 'Random Premium',
@@ -62,10 +63,10 @@ function gavias_sliderlayer_datatransition() {
 }
 
 /**
- *
+ * ¡Gavias SliderLayer Dataeasing Slide!
  */
 function gavias_sliderlayer_dataeasing_slide() {
-  return $dataeasing_slide = [
+  return [
     'default' => 'Default',
     'Linear.easeNone' => 'Linear.easeNone',
     'Power0.easeIn' => 'Power0.easeIn (linear)',
@@ -106,7 +107,7 @@ function gavias_sliderlayer_dataeasing_slide() {
 }
 
 /**
- *
+ * ¡Gavias SliderLayer Dataeasing!
  */
 function gavias_sliderlayer_dataeasing() {
   return [
@@ -195,10 +196,10 @@ function gavias_sliderlayer_dataeasing() {
 }
 
 /**
- *
+ * ¡Gavis sliderLayer Dataendeasing!
  */
 function gavias_sliderlayer_dataendeasing() {
-  return $dataendeasing = [
+  return [
     '' => '-None-',
     'Linear.easeNone' => 'Linear.easeNone',
 
@@ -285,13 +286,12 @@ function gavias_sliderlayer_dataendeasing() {
   ];
 }
 
-$linktaget = ['_self' => '_self', '_blank' => '_blank'];
 
 /**
- *
+ * ¡Gavias sliderlayer IncomingClasse!
  */
 function gavias_sliderlayer_incomingclasse() {
-  return $incomingclasse = [
+  return [
     'sft' => 'Short from Top',
     'sfb' => 'Short from Bottom',
     'sfr' => 'Short from Right',
@@ -311,10 +311,10 @@ function gavias_sliderlayer_incomingclasse() {
 }
 
 /**
- *
+ * ¡Gavias sliderlayer outgoingclasses!
  */
 function gavias_sliderlayer_outgoingclasses() {
-  return $outgoingclasses = [
+  return [
     '' => '-None-',
     'stt' => 'Short to Top',
     'stb' => 'Short to Bottom',
@@ -335,10 +335,10 @@ function gavias_sliderlayer_outgoingclasses() {
 }
 
 /**
- *
+ * ¡Gavias sliderlayer captionclasses!
  */
 function gavias_sliderlayer_captionclasses() {
-  return $captionclasses = [
+  return [
     'whitedivider3px' => 'whitedivider3px',
     'finewide_large_white' => 'finewide_large_white',
     'whitedivider3px' => 'whitedivider3px',
@@ -420,9 +420,9 @@ function gavias_sliderlayer_captionclasses() {
 }
 
 /**
- *
+ * ¡Parse CustomAnimationByArray!
  */
-function parseCustomAnimationByArray($animArray) {
+function parse_custom_animation_by_array($animArray) {
   $retString = '';
   if (isset($animArray['movex']) && $animArray['movex'] !== '') {
     $retString .= 'x:' . $animArray['movex'] . ';';
@@ -480,53 +480,1216 @@ function parseCustomAnimationByArray($animArray) {
 }
 
 /**
- *
+ * Gavias_get_arr_animations!
  */
-function gaviasGetArrAnimations() {
+function gavias_get_arr_animations() {
   $arrAnimations = [];
-  $arrAnimations['disable-1'] = ['handle' => '-----------------------------------', 'disable' => TRUE];
-  $arrAnimations['disable-2'] = ['handle' => '- VERSION 5.0 ANIMATIONS -', 'disable' => TRUE];
-  $arrAnimations['disable-3'] = ['handle' => '-----------------------------------', 'disable' => TRUE];
-  $arrAnimations['LettersFlyInFromBottom'] = ['handle' => 'LettersFlyInFromBottom', 'params' => '{"movex":"inherit","movey":"[100%]","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"-35deg","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"inherit","mask":"true","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"chars","splitdelay":"5"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['LettersFlyInFromLeft'] = ['handle' => 'LettersFlyInFromLeft', 'params' => '{"movex":"[-105%]","movey":"inherit","movez":"0","rotationx":"0deg","rotationy":"0deg","rotationz":"-90deg","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"inherit","mask":"true","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"chars","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['LettersFlyInFromRight'] = ['handle' => 'LettersFlyInFromRight', 'params' => '{"movex":"[105%]","movey":"inherit","movez":"0","rotationx":"45deg","rotationy":"0deg","rotationz":"90deg","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"inherit","mask":"true","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"chars","splitdelay":"5"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['LettersFlyInFromTop'] = ['handle' => 'LettersFlyInFromTop', 'params' => '{"movex":"inherit","movey":"[-100%]","movez":"0","rotationx":"inherit","rotationy":"inherit","rotationz":"35deg","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"inherit","mask":"true","mask_x":"0px","mask_y":"0px","easing":"Power4.easeInOut","speed":"2000","split":"chars","splitdelay":"5"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['MaskedZoomOut'] = ['handle' => 'MaskedZoomOut', 'params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"0deg","rotationy":"0","rotationz":"0","scalex":"2","scaley":"2","skewx":"0","skewy":"0","captionopacity":"0","mask":"true","mask_x":"0px","mask_y":"0px","easing":"Power2.easeOut","speed":"1000","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['PopUpSmooth'] = ['handle' => 'PopUpSmooth', 'params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"0","rotationy":"0","rotationz":"0","scalex":"0.9","scaley":"0.9","skewx":"0","skewy":"0","captionopacity":"0","mask":"false","mask_x":"0px","mask_y":"top","easing":"Power3.easeInOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['RotateInFromBottom'] = ['handle' => 'RotateInFromBottom', 'params' => '{"movex":"inherit","movey":"bottom","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"90deg","scalex":"2","scaley":"2","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","easing":"Power3.easeInOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['RotateInFormZero'] = ['handle' => 'RotateInFormZero', 'params' => '{"movex":"inherit","movey":"bottom","movez":"inherit","rotationx":"-20deg","rotationy":"-20deg","rotationz":"0deg","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","easing":"Power3.easeOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlideMaskFromBottom'] = ['handle' => 'SlideMaskFromBottom', 'params' => '{"movex":"inherit","movey":"[100%]","movez":"0","rotationx":"0deg","rotationy":"0","rotationz":"0","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"0","mask":"true","mask_x":"0px","mask_y":"[100%]","easing":"Power2.easeInOut","speed":"2000","split":"none","splitdelay":"5"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlideMaskFromLeft'] = ['handle' => 'SlideMaskFromLeft', 'params' => '{"movex":"[-100%]","movey":"inherit","movez":"0","rotationx":"0deg","rotationy":"0","rotationz":"0","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"inherit","mask":"true","mask_x":"0px","mask_y":"0px","easing":"Power3.easeInOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlideMaskFromRight'] = ['handle' => 'SlideMaskFromRight', 'params' => '{"movex":"[100%]","movey":"inherit","movez":"0","rotationx":"0deg","rotationy":"0","rotationz":"0","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"inherit","mask":"true","mask_x":"0px","mask_y":"0px","easing":"Power3.easeInOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlideMaskFromTop'] = ['handle' => 'SlideMaskFromTop', 'params' => '{"movex":"inherit","movey":"[-100%]","movez":"0","rotationx":"0deg","rotationy":"0","rotationz":"0","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"inherit","mask":"true","mask_x":"0px","mask_y":"0px","easing":"Power3.easeInOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SmoothPopUp_One'] = ['handle' => 'SmoothPopUp_One', 'params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"0","rotationy":"0","rotationz":"0","scalex":"0.8","scaley":"0.8","skewx":"0","skewy":"0","captionopacity":"0","mask":"false","mask_x":"0px","mask_y":"top","easing":"Power4.easeOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SmoothPopUp_Two'] = ['handle' => 'SmoothPopUp_Two', 'params' => '{"movex":"inherit","movey":"inherit","movez":"0","rotationx":"0","rotationy":"0","rotationz":"0","scalex":"0.9","scaley":"0.9","skewx":"0","skewy":"0","captionopacity":"0","mask":"false","mask_x":"0px","mask_y":"top","easing":"Power2.easeOut","speed":"1000","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SmoothMaskFromRight'] = ['handle' => 'SmoothMaskFromRight', 'params' => '{"movex":"[-175%]","movey":"0px","movez":"0","rotationx":"0","rotationy":"0","rotationz":"0","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"1","mask":"true","mask_x":"[100%]","mask_y":"0","easing":"Power3.easeOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SmoothMaskFromLeft'] = ['handle' => 'SmoothMaskFromLeft', 'params' => '{"movex":"[175%]","movey":"0px","movez":"0","rotationx":"0","rotationy":"0","rotationz":"0","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"1","mask":"true","mask_x":"[-100%]","mask_y":"0","easing":"Power3.easeOut","speed":"1500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SmoothSlideFromBottom'] = ['handle' => 'SmoothSlideFromBottom', 'params' => '{"movex":"inherit","movey":"[100%]","movez":"0","rotationx":"0deg","rotationy":"0","rotationz":"0","scalex":"1","scaley":"1","skewx":"0","skewy":"0","captionopacity":"0","mask":"false","mask_x":"0px","mask_y":"[100%]","easing":"Power4.easeInOut","speed":"2000","split":"none","splitdelay":"5"}', 'settings' => ['version' => '5.0']];
+  $arrAnimations['disable-1'] = [
+    'handle' => '-----------------------------------',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['disable-2'] = [
+    'handle' => '- VERSION 5.0 ANIMATIONS -',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['disable-3'] = [
+    'handle' => '-----------------------------------',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['LettersFlyInFromBottom'] = [
+    'handle' => 'LettersFlyInFromBottom',
+    'params' => '{
+      "movex":"inherit",
+      "movey":"[100%]",
+      "movez":"0",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"-35deg",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"0px",
+      "mask_y":"0px",
+      "easing":"Power4.easeInOut",
+      "speed":"2000",
+      "split":"chars",
+      "splitdelay":"5",
+    }',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['LettersFlyInFromLeft'] = [
+    'handle' => 'LettersFlyInFromLeft',
+    'params' => '{
+        "movex":"[-105%]",
+        "movey":"inherit",
+        "movez":"0",
+        "rotationx":"0deg",
+        "rotationy":"0deg",
+        "rotationz":"-90deg",
+        "scalex":"1",
+        "scaley":"1",
+        "skewx":"0",
+        "skewy":"0",
+        "captionopacity":"inherit",
+        "mask":"true",
+        "mask_x":"0px",
+        "mask_y":"0px",
+        "easing":"Power4.easeInOut",
+        "speed":"2000",
+        "split":"chars",
+        "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['LettersFlyInFromRight'] = [
+    'handle' => 'LettersFlyInFromRight',
+    'params' => '{"movex":"[105%]",
+        "movey":"inherit",
+        "movez":"0",
+        "rotationx":"45deg",
+        "rotationy":"0deg",
+        "rotationz":"90deg",
+        "scalex":"1",
+        "scaley":"1",
+        "skewx":"0",
+        "skewy":"0",
+        "captionopacity":"inherit",
+        "mask":"true",
+        "mask_x":"0px",
+        "mask_y":"0px",
+        "easing":"Power4.easeInOut",
+        "speed":"2000",
+        "split":"chars",
+        "splitdelay":"5"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['LettersFlyInFromTop'] = [
+    'handle' => 'LettersFlyInFromTop',
+    'params' => '{"movex":"inherit",
+      "movey":"[-100%]",
+      "movez":"0",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"35deg",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"0px",
+      "mask_y":"0px",
+      "easing":"Power4.easeInOut",
+      "speed":"2000",
+      "split":"chars",
+      "splitdelay":"5"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['MaskedZoomOut'] = [
+    'handle' => 'MaskedZoomOut',
+    'params' => '{
+      "movex":"inherit",
+      "movey":"inherit",
+      "movez":"0",
+      "rotationx":"0deg",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"2",
+      "scaley":"2",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"0",
+      "mask":"true",
+      "mask_x":"0px",
+      "mask_y":"0px",
+      "easing":"Power2.easeOut",
+      "speed":"1000",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['PopUpSmooth'] = [
+    'handle' => 'PopUpSmooth',
+    'params' => '{
+      "movex":"inherit",
+      "movey":"inherit",
+      "movez":"0",
+      "rotationx":"0",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"0.9",
+      "scaley":"0.9",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0px",
+      "mask_y":"top",
+      "easing":"Power3.easeInOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['RotateInFromBottom'] = [
+    'handle' => 'RotateInFromBottom',
+    'params' => '{
+      "movex":"inherit",
+      "movey":"bottom",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"90deg",
+      "scalex":"2",
+      "scaley":"2",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "easing":"Power3.easeInOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['RotateInFormZero'] = [
+    'handle' => 'RotateInFormZero',
+    'params' => '{
+      "movex":"inherit",
+      "movey":"bottom",
+      "movez":"inherit",
+      "rotationx":"-20deg",
+      "rotationy":"-20deg",
+      "rotationz":"0deg",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "easing":"Power3.easeOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlideMaskFromBottom'] = [
+    'handle' => 'SlideMaskFromBottom',
+    'params' => '{"movex":"inherit",
+      "movey":"[100%]",
+      "movez":"0",
+      "rotationx":"0deg",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"0",
+      "mask":"true",
+      "mask_x":"0px",
+      "mask_y":"[100%]",
+      "easing":"Power2.easeInOut",
+      "speed":"2000",
+      "split":"none",
+      "splitdelay":"5"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlideMaskFromLeft'] = [
+    'handle' => 'SlideMaskFromLeft',
+    'params' => '{"movex":"[-100%]",
+      "movey":"inherit",
+      "movez":"0",
+      "rotationx":"0deg",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"0px",
+      "mask_y":"0px",
+      "easing":"Power3.easeInOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlideMaskFromRight'] = [
+    'handle' => 'SlideMaskFromRight',
+    'params' => '{"movex":"[100%]",
+      "movey":"inherit",
+      "movez":"0",
+      "rotationx":"0deg",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"0px",
+      "mask_y":"0px",
+      "easing":"Power3.easeInOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlideMaskFromTop'] = [
+    'handle' => 'SlideMaskFromTop',
+    'params' => '{"movex":"inherit",
+      "movey":"[-100%]",
+      "movez":"0",
+      "rotationx":"0deg",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"0px",
+      "mask_y":"0px",
+      "easing":"Power3.easeInOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SmoothPopUp_One'] = [
+    'handle' => 'SmoothPopUp_One',
+    'params' => '{"movex":"inherit",
+      "movey":"inherit",
+      "movez":"0",
+      "rotationx":"0",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"0.8",
+      "scaley":"0.8",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0px",
+      "mask_y":"top",
+      "easing":"Power4.easeOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SmoothPopUp_Two'] = [
+    'handle' => 'SmoothPopUp_Two',
+    'params' => '{"movex":"inherit",
+      "movey":"inherit",
+      "movez":"0",
+      "rotationx":"0",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"0.9",
+      "scaley":"0.9",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0px",
+      "mask_y":"top",
+      "easing":"Power2.easeOut",
+      "speed":"1000",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SmoothMaskFromRight'] = [
+    'handle' => 'SmoothMaskFromRight',
+    'params' => '{"movex":"[-175%]",
+      "movey":"0px",
+      "movez":"0",
+      "rotationx":"0",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"1",
+      "mask":"true",
+      "mask_x":"[100%]",
+      "mask_y":"0",
+      "easing":"Power3.easeOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SmoothMaskFromLeft'] = [
+    'handle' => 'SmoothMaskFromLeft',
+    'params' => '{"movex":"[175%]",
+      "movey":"0px",
+      "movez":"0",
+      "rotationx":"0",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"1",
+      "mask":"true",
+      "mask_x":"[-100%]",
+      "mask_y":"0",
+      "easing":"Power3.easeOut",
+      "speed":"1500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SmoothSlideFromBottom'] = [
+    'handle' => 'SmoothSlideFromBottom',
+    'params' => '{"movex":"inherit",
+      "movey":"[100%]",
+      "movez":"0",
+      "rotationx":"0deg",
+      "rotationy":"0",
+      "rotationz":"0",
+      "scalex":"1",
+      "scaley":"1",
+      "skewx":"0",
+      "skewy":"0",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0px",
+      "mask_y":"[100%]",
+      "easing":"Power4.easeInOut",
+      "speed":"2000",
+      "split":"none",
+      "splitdelay":"5"}',
+    'settings' => ['version' => '5.0'],
+  ];
 
-  $arrAnimations['disable-4'] = ['handle' => '-----------------------------------', 'disable' => TRUE];
-  $arrAnimations['disable-5'] = ['handle' => '- VERSION 4.0 ANIMATIONS -', 'disable' => TRUE];
-  $arrAnimations['disable-6'] = ['handle' => '-----------------------------------', 'disable' => TRUE];
-  $arrAnimations['noanim'] = ['handle' => 'No-Animation', 'params' => '{"movex":"inherit","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['tp-fade'] = ['handle' => 'Fade-In', 'params' => '{"movex":"inherit","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"0"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['sft'] = ['handle' => 'Short-from-Top', 'params' => '{"movex":"inherit","movey":"-50px","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['sfb'] = ['handle' => 'Short-from-Bottom', 'params' => '{"movex":"inherit","movey":"50px","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['sfl'] = ['handle' => 'Short-From-Left', 'params' => '{"movex":"-50px","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['sfr'] = ['handle' => 'Short-From-Right', 'params' => '{"movex":"50px","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['lfr'] = ['handle' => 'Long-From-Right', 'params' => '{"movex":"right","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['lfl'] = ['handle' => 'Long-From-Left', 'params' => '{"movex":"left","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['lft'] = ['handle' => 'Long-From-Top', 'params' => '{"movex":"inherit","movey":"top","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['lfb'] = ['handle' => 'Long-From-Bottom', 'params' => '{"movex":"inherit","movey":"bottom","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['skewfromleft'] = ['handle' => 'Skew-From-Long-Left', 'params' => '{"movex":"left","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"45px","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['skewfromright'] = ['handle' => 'Skew-From-Long-Right', 'params' => '{"movex":"right","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"-85px","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['skewfromleftshort'] = ['handle' => 'Skew-From-Short-Left', 'params' => '{"movex":"-200px","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"85px","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['skewfromrightshort'] = ['handle' => 'Skew-From-Short-Right', 'params' => '{"movex":"200px","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"-85px","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['randomrotate'] = ['handle' => 'Random-Rotate-and-Scale', 'params' => '{"movex":"{-250,250}","movey":"{-150,150}","movez":"inherit","rotationx":"{-90,90}","rotationy":"{-90,90}","rotationz":"{-360,360}","scalex":"{0,1}","scaley":"{0,1}","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
+  $arrAnimations['disable-4'] = [
+    'handle' => '-----------------------------------',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['disable-5'] = [
+    'handle' => '- VERSION 4.0 ANIMATIONS -',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['disable-6'] = [
+    'handle' => '-----------------------------------',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['noanim'] = [
+    'handle' => 'No-Animation',
+    'params' => '{"movex":"inherit",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['tp-fade'] = [
+    'handle' => 'Fade-In',
+    'params' => '{"movex":"inherit",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"0"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['sft'] = [
+    'handle' => 'Short-from-Top',
+    'params' => '{"movex":"inherit",
+      "movey":"-50px",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['sfb'] = [
+    'handle' => 'Short-from-Bottom',
+    'params' => '{"movex":"inherit",
+    "movey":"50px",
+    "movez":"inherit",
+    "rotationx":"inherit",
+    "rotationy":"inherit",
+    "rotationz":"inherit",
+    "scalex":"inherit",
+    "scaley":"inherit",
+    "skewx":"inherit",
+    "skewy":"inherit",
+    "captionopacity":"0",
+    "mask":"false",
+    "mask_x":"0",
+    "mask_y":"0",
+    "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['sfl'] = [
+    'handle' => 'Short-From-Left',
+    'params' => '{"movex":"-50px",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['sfr'] = [
+    'handle' => 'Short-From-Right',
+    'params' => '{"movex":"50px",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['lfr'] = [
+    'handle' => 'Long-From-Right',
+    'params' => '{"movex":"right",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['lfl'] = [
+    'handle' => 'Long-From-Left',
+    'params' => '{"movex":"left",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['lft'] = [
+    'handle' => 'Long-From-Top',
+    'params' => '{"movex":"inherit",
+      "movey":"top",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['lfb'] = [
+    'handle' => 'Long-From-Bottom',
+    'params' => '{"movex":"inherit",
+      "movey":"bottom",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['skewfromleft'] = [
+    'handle' => 'Skew-From-Long-Left',
+    'params' => '{"movex":"left",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"45px",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['skewfromright'] = [
+    'handle' => 'Skew-From-Long-Right',
+    'params' => '{"movex":"right",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"-85px",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['skewfromleftshort'] = [
+    'handle' => 'Skew-From-Short-Left',
+    'params' => '{"movex":"-200px",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"85px",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['skewfromrightshort'] = [
+    'handle' => 'Skew-From-Short-Right',
+    'params' => '{"movex":"200px",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"-85px",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['randomrotate'] = [
+    'handle' => 'Random-Rotate-and-Scale',
+    'params' => '{"movex":"{-250,250}",
+      "movey":"{-150,150}",
+      "movez":"inherit",
+      "rotationx":"{-90,90}",
+      "rotationy":"{-90,90}",
+      "rotationz":"{-360,360}",
+      "scalex":"{0,1}",
+      "scaley":"{0,1}",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
   foreach ($arrAnimations as $key => $value) {
     if (!isset($value['params'])) {
       continue;
     }
+    $t = json_decode(str_replace("'",
+     '"', $value['params']), TRUE);
+    if (!empty($t)) {
+      $arrAnimations[$key]['params'] = $t;
+    }
+  }
+  return $arrAnimations;
+}
+
+/**
+ * GaviasGetArrEndAnimations!
+ */
+function gavias_get_arr_end_animations() {
+  $arrAnimations = [];
+  $arrAnimations['disable-1'] = [
+    'handle' => '-----------------------------------',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['disable-2'] = [
+    'handle' => '- VERSION 5.0 ANIMATIONS -',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['disable-3'] = [
+    'handle' => '-----------------------------------',
+    'disable' => TRUE,
+  ];
+
+  $arrAnimations['BounceOut'] = [
+    'handle' => 'BounceOut',
+    'params' => '{"movex":"inherit",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"0deg",
+      "scalex":"0.7",
+      "scaley":"0.7",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"true",
+      "mask_x":"0",
+      "mask_y":"0",
+      "easing":"Back.easeIn",
+      "speed":"500",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['Fade-Out-Long'] = [
+    'handle' => 'Fade-Out-Long',
+    'params' => '{"movex":"inherit",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "easing":"Power2.easeIn",
+      "speed":"1000",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlideMaskToBottom'] = [
+    'handle' => 'SlideMaskToBottom',
+    'params' => '{"movex":"inherit",
+      "movey":"[100%]",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"inherit",
+      "mask_y":"inherit",
+      "easing":"nothing",
+      "speed":"300",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlideMaskToLeft'] = [
+    'handle' => 'SlideMaskToLeft',
+    'params' => '{"movex":"[-100%]",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"inherit",
+      "mask_y":"inherit",
+      "easing":"Power3.easeInOut",
+      "speed":"1000",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlideMaskToRight'] = [
+    'handle' => 'SlideMaskToRight',
+    'params' => '{"movex":"[100%]",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"inherit",
+      "mask_y":"inherit",
+      "easing":"Power3.easeInOut",
+      "speed":"1000",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlideMaskToTop'] = [
+    'handle' => 'SlideMaskToTop',
+    'params' => '{"movex":"inherit",
+      "movey":"[-100%]",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"inherit",
+      "mask_y":"inherit",
+      "easing":"nothing",
+      "speed":"300",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SlurpOut'] = [
+    'handle' => 'SlurpOut',
+    'params' => '{"movex":"inherit",
+      "movey":"[100%]",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"0deg",
+      "scalex":"0.7",
+      "scaley":"0.7",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"0",
+      "mask_y":"0",
+      "easing":"Power3.easeInOut",
+      "speed":"1000",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['SmoothCropToBottom'] = [
+    'handle' => 'SmoothCropToBottom',
+    'params' => '{"movex":"inherit",
+      "movey":"[175%]",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"true",
+      "mask_x":"inherit",
+      "mask_y":"inherit",
+      "easing":"Power2.easeInOut",
+      "speed":"1000",
+      "split":"none",
+      "splitdelay":"10"}',
+    'settings' => ['version' => '5.0'],
+  ];
+
+  $arrAnimations['disable-4'] = [
+    'handle' => '-----------------------------------',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['disable-5'] = [
+    'handle' => '- VERSION 4.0 ANIMATIONS -',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['disable-6'] = [
+    'handle' => '-----------------------------------',
+    'disable' => TRUE,
+  ];
+  $arrAnimations['noanimout'] = [
+    'handle' => 'No-Out-Animation',
+    'params' => '{"movex":"inherit",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['fadeout'] = [
+    'handle' => 'Fade-Out',
+    'params' => '{"movex":"inherit",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"0"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['stt'] = [
+    'handle' => 'Short-To-Top',
+    'params' => '{"movex":"inherit",
+      "movey":"-50px",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['stb'] = [
+    'handle' => 'Short-To-Bottom',
+    'params' => '{"movex":"inherit",
+      "movey":"50px",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['stl'] = [
+    'handle' => 'Short-To-Left',
+    'params' => '{"movex":"-50px",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['str'] = [
+    'handle' => 'Short-To-Right',
+    'params' => '{"movex":"50px",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['ltr'] = [
+    'handle' => 'Long-To-Right',
+    'params' => '{"movex":"right",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['ltl'] = [
+    'handle' => 'Long-To-Left',
+    'params' => '{"movex":"left",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['ltt'] = [
+    'handle' => 'Long-To-Top',
+    'params' => '{"movex":"inherit",
+      "movey":"top",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['ltb'] = [
+    'handle' => 'Long-To-Bottom',
+    'params' => '{"movex":"inherit",
+      "movey":"bottom",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['skewtoleft'] = [
+    'handle' => 'Skew-To-Long-Left',
+    'params' => '{
+      "movex":"left",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"45px",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['skewtoright'] = [
+    'handle' => 'Skew-To-Long-Right',
+    'params' => '{
+      "movex":"right",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"-85px",
+      "skewy":"inherit",
+      "captionopacity":"inherit",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['skewtorightshort'] = [
+    'handle' => 'Skew-To-Short-Right',
+    'params' => '{
+      "movex":"200px",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"-85px",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['skewtoleftshort'] = [
+    'handle' => 'Skew-To-Short-Left',
+    'params' => '{
+      "movex":"-200px",
+      "movey":"inherit",
+      "movez":"inherit",
+      "rotationx":"inherit",
+      "rotationy":"inherit",
+      "rotationz":"inherit",
+      "scalex":"inherit",
+      "scaley":"inherit",
+      "skewx":"85px",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  $arrAnimations['randomrotateout'] = [
+    'handle' => 'Random-Rotate-Out',
+    'params' => '{
+      "movex":"{-250,250}",
+      "movey":"{-150,150}",
+      "movez":"inherit",
+      "rotationx":"{-90,90}",
+      "rotationy":"{-90,90}",
+      "rotationz":"{-360,360}",
+      "scalex":"{0,1}",
+      "scaley":"{0,1}",
+      "skewx":"inherit",
+      "skewy":"inherit",
+      "captionopacity":"0",
+      "mask":"false",
+      "mask_x":"0",
+      "mask_y":"0",
+      "mask_speed":"500"}',
+    'settings' => ['version' => '5.0'],
+  ];
+  foreach ($arrAnimations as $key => $value) {
+    if (!isset($value['params'])) {
+      continue;
+    }
+
     $t = json_decode(str_replace("'", '"', $value['params']), TRUE);
     if (!empty($t)) {
       $arrAnimations[$key]['params'] = $t;
@@ -536,56 +1699,7 @@ function gaviasGetArrAnimations() {
 }
 
 /**
- *
- */
-function gaviasGetArrEndAnimations() {
-  $arrAnimations = [];
-  $arrAnimations['disable-1'] = ['handle' => '-----------------------------------', 'disable' => TRUE];
-  $arrAnimations['disable-2'] = ['handle' => '- VERSION 5.0 ANIMATIONS -', 'disable' => TRUE];
-  $arrAnimations['disable-3'] = ['handle' => '-----------------------------------', 'disable' => TRUE];
-
-  $arrAnimations['BounceOut'] = ['handle' => 'BounceOut', 'params' => '{"movex":"inherit","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"0deg","scalex":"0.7","scaley":"0.7","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"true","mask_x":"0","mask_y":"0","easing":"Back.easeIn","speed":"500","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['Fade-Out-Long'] = ['handle' => 'Fade-Out-Long', 'params' => '{"movex":"inherit","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","easing":"Power2.easeIn","speed":"1000","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlideMaskToBottom'] = ['handle' => 'SlideMaskToBottom', 'params' => '{"movex":"inherit","movey":"[100%]","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"true","mask_x":"inherit","mask_y":"inherit","easing":"nothing","speed":"300","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlideMaskToLeft'] = ['handle' => 'SlideMaskToLeft', 'params' => '{"movex":"[-100%]","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"true","mask_x":"inherit","mask_y":"inherit","easing":"Power3.easeInOut","speed":"1000","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlideMaskToRight'] = ['handle' => 'SlideMaskToRight', 'params' => '{"movex":"[100%]","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"true","mask_x":"inherit","mask_y":"inherit","easing":"Power3.easeInOut","speed":"1000","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlideMaskToTop'] = ['handle' => 'SlideMaskToTop', 'params' => '{"movex":"inherit","movey":"[-100%]","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"true","mask_x":"inherit","mask_y":"inherit","easing":"nothing","speed":"300","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SlurpOut'] = ['handle' => 'SlurpOut', 'params' => '{"movex":"inherit","movey":"[100%]","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"0deg","scalex":"0.7","scaley":"0.7","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"true","mask_x":"0","mask_y":"0","easing":"Power3.easeInOut","speed":"1000","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['SmoothCropToBottom'] = ['handle' => 'SmoothCropToBottom', 'params' => '{"movex":"inherit","movey":"[175%]","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"true","mask_x":"inherit","mask_y":"inherit","easing":"Power2.easeInOut","speed":"1000","split":"none","splitdelay":"10"}', 'settings' => ['version' => '5.0']];
-
-  $arrAnimations['disable-4'] = ['handle' => '-----------------------------------', 'disable' => TRUE];
-  $arrAnimations['disable-5'] = ['handle' => '- VERSION 4.0 ANIMATIONS -', 'disable' => TRUE];
-  $arrAnimations['disable-6'] = ['handle' => '-----------------------------------', 'disable' => TRUE];
-  $arrAnimations['noanimout'] = ['handle' => 'No-Out-Animation', 'params' => '{"movex":"inherit","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['fadeout'] = ['handle' => 'Fade-Out', 'params' => '{"movex":"inherit","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"0"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['stt'] = ['handle' => 'Short-To-Top', 'params' => '{"movex":"inherit","movey":"-50px","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['stb'] = ['handle' => 'Short-To-Bottom', 'params' => '{"movex":"inherit","movey":"50px","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['stl'] = ['handle' => 'Short-To-Left', 'params' => '{"movex":"-50px","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['str'] = ['handle' => 'Short-To-Right', 'params' => '{"movex":"50px","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['ltr'] = ['handle' => 'Long-To-Right', 'params' => '{"movex":"right","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['ltl'] = ['handle' => 'Long-To-Left', 'params' => '{"movex":"left","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['ltt'] = ['handle' => 'Long-To-Top', 'params' => '{"movex":"inherit","movey":"top","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['ltb'] = ['handle' => 'Long-To-Bottom', 'params' => '{"movex":"inherit","movey":"bottom","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"inherit","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['skewtoleft'] = ['handle' => 'Skew-To-Long-Left', 'params' => '{"movex":"left","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"45px","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['skewtoright'] = ['handle' => 'Skew-To-Long-Right', 'params' => '{"movex":"right","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"-85px","skewy":"inherit","captionopacity":"inherit","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['skewtorightshort'] = ['handle' => 'Skew-To-Short-Right', 'params' => '{"movex":"200px","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"-85px","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['skewtoleftshort'] = ['handle' => 'Skew-To-Short-Left', 'params' => '{"movex":"-200px","movey":"inherit","movez":"inherit","rotationx":"inherit","rotationy":"inherit","rotationz":"inherit","scalex":"inherit","scaley":"inherit","skewx":"85px","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  $arrAnimations['randomrotateout'] = ['handle' => 'Random-Rotate-Out', 'params' => '{"movex":"{-250,250}","movey":"{-150,150}","movez":"inherit","rotationx":"{-90,90}","rotationy":"{-90,90}","rotationz":"{-360,360}","scalex":"{0,1}","scaley":"{0,1}","skewx":"inherit","skewy":"inherit","captionopacity":"0","mask":"false","mask_x":"0","mask_y":"0","mask_speed":"500"}', 'settings' => ['version' => '5.0']];
-  foreach ($arrAnimations as $key => $value) {
-    if (!isset($value['params'])) {
-      continue;
-    }
-
-    $t = json_decode(str_replace("'", '"', $value['params']), TRUE);
-    if (!empty($t)) {
-      $arrAnimations[$key]['params'] = $t;
-    }
-  }
-  return $arrAnimations;
-}
-
-/**
- *
+ * Gavias defined select!
  */
 function gavias_defined_select($name, $options, $class = NULL) {
   $html = '<select name="' . $name . '" class="form-select ' . $class . '">';
@@ -597,33 +1711,32 @@ function gavias_defined_select($name, $options, $class = NULL) {
 }
 
 /**
- *
+ * Gavias sliderlayer field upload slider!
  */
 function gavias_sliderlayer_field_upload_slider() {
-  global $base_url;
   $_id = gavias_sliderlayer_makeid(10);
   ob_start();
-  ?> 
+  ?>
     <div class="gva-upload-input field-upload-background-slider" data-id="<?php print $_id; ?>">
         <input data-id="<?php print $_id; ?>" id="gva-upload-<?php print $_id; ?>" type="text" name="background_image_uri" class="imce-url-input slide-option" data-imce-type="link"/>
         <img class="gavias-image-demo" id="gva-upload-<?php print $_id; ?>-demo" src="" />
         <a class="gavias-field-upload-remove btn-delete" data-src="">Remove</a>
         <div class="clearfix"></div>
-    </div>  
-        
+    </div>
+
     <?php
     $content = ob_get_clean();
     return $content;
 }
 
 /**
- *
+ * Gavias sliderlayer field upload layer!
  */
 function gavias_sliderlayer_field_upload_layer() {
   global $base_url;
   $_id = gavias_sliderlayer_makeid(10);
   ob_start();
-  ?> 
+  ?>
     <div class="gva-upload-image gva-upload-image-layer" id="gva-upload-<?php print $_id; ?>">
         <form class="upload-image-layer" id="upload-<?php print $_id; ?>" method="post" action="<?php print ($base_url . '/admin/structure/gavias_sliderlayer/upload') ?>" enctype="multipart/form-data">
             <div class="drop">
@@ -647,8 +1760,8 @@ function gavias_sliderlayer_field_upload_layer() {
                 </div>
             </div>
         </div>
-    </div>  
-        
+    </div>
+
     <?php
     $content = ob_get_clean();
     return $content;

@@ -44,7 +44,7 @@
         <tr>
           <td width="25%"><label>Incoming Effect</label>
             <select name="incomingclasses" class="layer-option">
-              <?php foreach (gaviasGetArrAnimations() as $key => $value) { ?>
+              <?php foreach (gavias_get_arr_animations() as $key => $value) { ?>
                 <option value="<?php print $key ?>" <?php if(isset($value['disable']) && ($value['disable']==true)) print 'disabled' ?>><?php print $value['handle']; ?></option>
               <?php } ?>
             </select>
@@ -62,7 +62,7 @@
         <tr>
           <td><label>Outgoing Effect</label>
             <select name="outgoingclasses" class="layer-option">
-                <?php foreach (gaviasGetArrEndAnimations() as $key => $value) { ?>
+                <?php foreach (gavias_get_arr_end_animations() as $key => $value) { ?>
                     <option value="<?php print $key ?>" <?php if(isset($value['disable']) && ($value['disable']==true)) print 'disabled' ?>><?php print $value['handle']; ?></option>
                <?php } ?>
             </select>

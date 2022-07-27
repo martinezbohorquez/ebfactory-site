@@ -15,7 +15,7 @@ class GroupClone implements FormInterface {
   use StringTranslationTrait;
 
   /**
-   * Implements \Drupal\Core\Form\FormInterface::getFormID().
+   * Implements \Drupal\Core\Form\FormInterface::getFormId().
    */
   public function getFormId() {
     return 'clone_form';

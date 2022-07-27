@@ -19,9 +19,9 @@ class DelForm extends ConfirmFormBase {
   protected $bid;
 
   /**
-   * Implements \Drupal\Core\Form\FormInterface::getFormID().
+   * Implements \Drupal\Core\Form\FormInterface::getFormId().
    */
-  public function getFormID() {
+  public function getFormId() {
     return 'del_form';
   }
 

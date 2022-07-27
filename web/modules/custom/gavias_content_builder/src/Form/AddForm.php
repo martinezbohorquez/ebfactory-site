@@ -13,9 +13,9 @@ use Drupal\Core\Url;
 class AddForm implements FormInterface {
 
   /**
-   * Implements \Drupal\Core\Form\FormInterface::getFormID().
+   * Implements \Drupal\Core\Form\FormInterface::getFormId().
    */
-  public function getFormID() {
+  public function getFormId() {
     return 'add_form';
   }
 

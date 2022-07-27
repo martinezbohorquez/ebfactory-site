@@ -274,7 +274,7 @@ function gavias_sliderlayer_layer($vars){
   
   $transform_in = '';
   if($layer->incomingclasses){
-    $tmp = gaviasGetArrAnimations()[$layer->incomingclasses];
+    $tmp = gavias_get_arr_animations()[$layer->incomingclasses];
     if($tmp){
       $params = (array)$tmp['params'];
       if(isset($params['split']) && $params['split'] && $params['split'] == 'chars') {
@@ -282,7 +282,7 @@ function gavias_sliderlayer_layer($vars){
         $vars['attributes_array']['data-elementdelay'] = 0.1;
        $vars['attributes_array']['class'] .='tp-resizeme splitted ';
       }
-      $transform_in = parseCustomAnimationByArray($params);
+      $transform_in = parse_custom_animation_by_array($params);
       $search = array('opacity', 'scaleX', 'scaleY', 'skewX','skewY','rotationX', 'rotationY','rotationZ','pers');
       $replace = array('opacity', 'sX', 'sY', 'skX', 'skY', 'rX', 'rY', 'rZ', 'tP');
       $transform_in = str_replace($search, $replace, $transform_in);
@@ -293,11 +293,11 @@ function gavias_sliderlayer_layer($vars){
 
   $transform_out = '';
   if($layer->outgoingclasses){
-    $tmp_out = gaviasGetArrEndAnimations()[$layer->outgoingclasses];
+    $tmp_out = gavias_get_arr_end_animations()[$layer->outgoingclasses];
 
     if($tmp_out){
       $params_out = (array)$tmp_out['params'];
-      $transform_out = parseCustomAnimationByArray($params_out);
+      $transform_out = parse_custom_animation_by_array($params_out);
       $search = array('opacity', 'scaleX', 'scaleY', 'skewX','skewY','rotationX', 'rotationY','rotationZ','pers');
       $replace = array('opacity', 'sX', 'sY', 'skX', 'skY', 'rX', 'rY', 'rZ', 'tP');
       $transform_out = str_replace($search, $replace, $transform_out);
