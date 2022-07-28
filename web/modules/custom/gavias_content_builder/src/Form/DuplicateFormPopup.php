@@ -11,22 +11,22 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
- *
+ * Duplicate Form Popup.
  */
 class DuplicateFormPopup extends FormBase {
 
   /**
-   * {@inheritdoc}.
+   * Get Form Id.
    */
   public function getFormId() {
     return 'duplicate_form_popup';
   }
 
   /**
-   * {@inheritdoc}.
+   * Build Form.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $args = $this->getFormArgs($form_state);
+    // $args = $this->getFormArgs($form_state);
 
     $bid = 0;
     $random = '';
@@ -82,7 +82,7 @@ class DuplicateFormPopup extends FormBase {
       '#default_value' => 1,
     ];
     $form['actions']['submit'] = [
-      '#value' => t('Submit'),
+      '#value' => $this->t('Submit'),
       '#type' => 'submit',
       '#ajax' => [
         'callback' => '::modal',
@@ -102,8 +102,7 @@ class DuplicateFormPopup extends FormBase {
   }
 
   /**
-   * {@inheritdoc}
-   * Submit handle for adding Element
+   * Submit handle for adding Element.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $errors = [];
@@ -127,7 +126,13 @@ class DuplicateFormPopup extends FormBase {
           ->fetchAssoc();
       }
       else {
-        $buider = ['id' => 0, 'title' => '', 'machine_name' => '', 'params' => '', 'use_field' => 1];
+        $buider = [
+          'id' => 0,
+          'title' => '',
+          'machine_name' => '',
+          'params' => '',
+          'use_field' => 1,
+        ];
       }
 
       $pid = $builder = \Drupal::database()->insert("gavias_content_builder")
@@ -148,11 +153,10 @@ class DuplicateFormPopup extends FormBase {
   }
 
   /**
-   * @param $form_state
-   * @return array|mixed|null
+   * Get Form Args.
    */
   public function getFormArgs($form_state) {
-    $args = [];
+    // $args = [];
     $build_info = $form_state->getBuildInfo();
     if (!empty($build_info['args'])) {
       $args = array_shift($build_info['args']);
@@ -192,8 +196,7 @@ class DuplicateFormPopup extends FormBase {
   }
 
   /**
-   * @param $values
-   * @return \Drupal\Core\Ajax\AjaxResponse
+   * Dialog.
    */
   protected function dialog($values = []) {
 

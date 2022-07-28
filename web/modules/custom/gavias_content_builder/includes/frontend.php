@@ -8,8 +8,7 @@
 /**
  * Gavias content builder frontend.
  */
-gavias_content_builder_frontend($params) {
-$output = '';
+function gavias_content_builder_frontend($params) {
 [
   '1' => 'col-lg-1 col-md-1 col-sm-2 col-xs-12',
   '2' => 'col-lg-2 col-md-2 col-sm-4 col-xs-12',
@@ -39,7 +38,7 @@ return $output;
  * Gavias content builder render el.
  */
 function gavias_content_builder_render_el($data = [], $content = '') {
-  // $settings = !empty($data['settings']) ? $data['settings'] : [];
+  $settings = !empty($data['settings']) ? $data['settings'] : [];
   $data['settings']['first_level'] = TRUE;
   $content_columns = '';
   // Print "<pre>"; print_r($data);
@@ -107,7 +106,7 @@ function gavias_content_builder_render_row($row = []) {
 /**
  * Gavias content builder render element.
  */
-function gavias_content_builder_render_element($id = '', //  = [], $content = '') {
+function gavias_content_builder_render_element($id = '', $settings = [], $content = '') {
   $_class = 'element_' . $id;
   if (class_exists($_class)) {
     $s = new $_class();

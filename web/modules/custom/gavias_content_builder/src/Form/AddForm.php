@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
- *
+ * Add Form.
  */
 class AddForm implements FormInterface {
 
@@ -35,7 +35,12 @@ class AddForm implements FormInterface {
         ->fetchAssoc();
     }
     else {
-      $builder = ['id' => 0, 'title' => '', 'machine_name' => '', 'use_field' => 1];
+      $builder = [
+        'id' => 0,
+        'title' => '',
+        'machine_name' => '',
+        'use_field' => 1,
+      ];
     }
     $form['id'] = [
       '#type' => 'hidden',
@@ -80,7 +85,7 @@ class AddForm implements FormInterface {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     if (is_numeric($form['id']['#value']) && $form['id']['#value'] > 0) {
 
-      $pid = $builder = \Drupal::database()->update("gavias_content_builder")
+      // $pid = $builder = \Drupal::database()->update("gavias_content_builder")
         ->fields([
           'title'         => $form['title']['#value'],
           'machine_name'  => $form['machine_name']['#value'],
@@ -95,7 +100,7 @@ class AddForm implements FormInterface {
       $response->send();
     }
     else {
-      $pid = $builder = \Drupal::database()->insert("gavias_content_builder")
+      // $pid = $builder = \Drupal::database()->insert("gavias_content_builder")
         ->fields([
           'title'         => $form['title']['#value'],
           'machine_name'  => $form['machine_name']['#value'],

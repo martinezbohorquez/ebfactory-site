@@ -113,7 +113,7 @@ function gavias_content_builder_theme($existing, $type, $theme, $path) {
  * Gavias content builder preprocess html.
  */
 function gavias_content_builder_preprocess_html(&$vars) {
-  if (isset($this->getCurrentRequest()->query->get('gva_iframe')) && $this->getCurrentRequest()->query->get('gva_iframe') == 'on') {
+  if (isset($_GET['gva_iframe']) && $_GET['gva_iframe'] == 'on') {
     $vars['attributes']['class'][] = "gva_iframe_on";
   }
   $vars['attributes']['class'][] = "gavias-content-builder";

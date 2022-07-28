@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\gavias_content_builder\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
@@ -8,82 +9,87 @@ use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
-use Drupal\Core\Url;
-class ImportFormPopup extends FormBase{
+
+/**
+ * Import Form Popup.
+ */
+class ImportFormPopup extends FormBase {
 
   /**
-   * {@inheritdoc}.
+   * Get Form Id.
    */
-  public function getFormId(){
+  public function getFormId() {
     return 'duplicate_form_import';
   }
 
   /**
-   * {@inheritdoc}.
-  */
-  public function buildForm(array $form, FormStateInterface $form_state){
+   * Build Form.
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
     $bid = 0;
-    if(\Drupal::request()->attributes->get('bid')) $bid = \Drupal::request()->attributes->get('bid');
+    if (\Drupal::request()->attributes->get('bid')) {
+      $bid = \Drupal::request()->attributes->get('bid');
+    }
 
     if (is_numeric($bid)) {
       $bblock = \Drupal::database()->select('{gavias_content_builder}', 'd')
-         ->fields('d')
-         ->condition('id', $bid, '=')
-         ->execute()
-         ->fetchAssoc();
-    } else {
-      $bblock = array('id' => 0, 'title' => '');
+        ->fields('d')
+        ->condition('id', $bid, '=')
+        ->execute()
+        ->fetchAssoc();
     }
-    if($bblock['id']==0){
+    else {
+      $bblock = ['id' => 0, 'title' => ''];
+    }
+    if ($bblock['id'] == 0) {
       \Drupal::messenger()->addMessage('Not found gavias block builder !');
-      return false;
+      return FALSE;
     }
 
-    $form['builder-dialog-messages'] = array(
+    $form['builder-dialog-messages'] = [
       '#markup' => '<div id="builder-dialog-messages"></div>',
-    );
-    $form['id'] = array(
-        '#type' => 'hidden',
-        '#default_value' => $bblock['id']
-    );
-    $form['title'] = array(
-        '#type' => 'hidden',
-        '#default_value' => $bblock['title']
-    );
-    $form['file'] = array(
+    ];
+    $form['id'] = [
+      '#type' => 'hidden',
+      '#default_value' => $bblock['id'],
+    ];
+    $form['title'] = [
+      '#type' => 'hidden',
+      '#default_value' => $bblock['title'],
+    ];
+    $form['file'] = [
       '#type' => 'managed_file',
-      '#title' => t('Upload File Content'),
-      '#description' => t('Upload your builder that exported before. Allowed extensions: .txt'),
+      '#title' => $this->t('Upload File Content'),
+      '#description' => $this->t('Upload your builder that exported before. Allowed extensions: .txt'),
       '#upload_location' => 'public://',
-      '#upload_validators' => array(
-          'file_validate_extensions' => array('txt'),
-          // Pass the maximum file size in bytes
-          'file_validate_size' => array(1024 * 1280 * 800),
-      ),
+      '#upload_validators' => [
+        'file_validate_extensions' => ['txt'],
+          // Pass the maximum file size in bytes.
+        'file_validate_size' => [1024 * 1280 * 800],
+      ],
       '#required' => TRUE,
-    );
-    $form['actions']['submit'] = array(
+    ];
+    $form['actions']['submit'] = [
       '#value' => t('Submit'),
       '#type' => 'submit',
-      '#ajax' => array(
+      '#ajax' => [
         'callback' => '::modal',
-      ),
-    );
-  return $form;
+      ],
+    ];
+    return $form;
   }
 
   /**
-   * {@inheritdoc}
+   * Validate Form.
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
 
   }
 
   /**
-   * {@inheritdoc}
-   * Submit handle for adding Element
+   * Submit handle for adding Element.
    */
-  public function submitForm(array &$form, FormStateInterface $form_state){
+  public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
     if ($form['id']['#value']) {
       $params = '';
@@ -96,21 +102,24 @@ class ImportFormPopup extends FormBase{
       }
 
       $id = $form['id']['#value'];
-      $builder = \Drupal::database()->update("gavias_content_builder")
-      ->fields(array(
-        'params' => $params,
-      ))
-      ->condition('id', $id)
-      ->execute();
+      // $builder = \Drupal::database()->update("gavias_content_builder")
+        ->fields([
+          'params' => $params,
+        ])
+        ->condition('id', $id)
+        ->execute();
       \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
-    }  
+    }
   }
 
-  public function getFormArgs($form_state){
-    $args = array();
+  /**
+   * Get Form Args.
+   */
+  public function getFormArgs($form_state) {
+    $args = [];
     $build_info = $form_state->getBuildInfo();
     if (!empty($build_info['args'])) {
-        $args = array_shift($build_info['args']);
+      $args = array_shift($build_info['args']);
     }
     return $args;
   }
@@ -118,22 +127,23 @@ class ImportFormPopup extends FormBase{
   /**
    * AJAX callback handler for Add Element Form.
    */
-  public function modal(&$form, FormStateInterface $form_state){
+  public function modal(&$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
-    $errors = array();
+    $errors = [];
 
     if (!empty($errors)) {
       $form_state->clearErrors();
-      \Drupal::messenger()->deleteByType('error'); // clear next message session;
+      // Clear next message session;.
+      \Drupal::messenger()->deleteByType('error');
       $content = '<div class="messages messages--error" aria-label="Error message" role="contentinfo"><div role="alert"><ul>';
       foreach ($errors as $name => $error) {
-          $response = new AjaxResponse();
-          $content .= "<li>$error</li>";
+        $response = new AjaxResponse();
+        $content .= "<li>$error</li>";
       }
       $content .= '</ul></div></div>';
-      $data = array(
-          '#markup' => $content,
-      );
+      $data = [
+        '#markup' => $content,
+      ];
       $data['#attached']['library'][] = 'core/drupal.dialog.ajax';
       $data['#attached']['library'][] = 'core/drupal.dialog';
       $response->addCommand(new HtmlCommand('#builder-dialog-messages', $content));
@@ -142,21 +152,27 @@ class ImportFormPopup extends FormBase{
     return $this->dialog($values);
   }
 
-  protected function dialog($values = array()){
-    $element = isset($values['element']) ? $values['element'] : array();
+  /**
+   * Dialog.
+   */
+  protected function dialog($values = []) {
+    // $element = $values['element'] ?? [];
     $response = new AjaxResponse();
 
     $content['#attached']['library'][] = 'core/drupal.dialog.ajax';
-    
+
     $content['#attached']['library'][] = 'core/drupal.dialog';
-    
+
     $response->addCommand(new CloseDialogCommand('.ui-dialog-content'));
 
-    // quick edit compatible.
-    $response->addCommand(new InvokeCommand('.quickedit-toolbar .action-save', 'attr', array('aria-hidden', false)));
+    // Quick edit compatible.
+    $response->addCommand(new InvokeCommand('
+    .quickedit-toolbar .action-save', 'attr', [
+      'aria-hidden', FALSE,
+    ]));
 
     return $response;
-    
-    }
+
+  }
 
 }
