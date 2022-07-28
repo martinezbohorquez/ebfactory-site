@@ -3,7 +3,7 @@
 namespace Drupal\gavias_sliderlayer\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\CurrentRequest;
 
 /**
  * File Controller.
@@ -18,9 +18,9 @@ class FileController extends ControllerBase {
     global $base_url;
     $allowed = ['png', 'jpg', 'gif', 'zip'];
     $_id = gavias_sliderlayer_makeid(6);
-    if (isset($_FILES['upl']) && $_FILES['upl']['error'] == 0) {
+    if (isset($this->getCurrentRequest()->files->get('upl')) && $this->getCurrentRequest()->files->get('upl')('error') == 0) {
 
-      $extension = pathinfo($_FILES['upl']['name'], PATHINFO_EXTENSION);
+      $extension = pathinfo($stack->getCurrentRequest()->files->get('upl')('name'), PATHINFO_EXTENSION);
 
       if (!in_array(strtolower($extension), $allowed)) {
         echo '{"status":"error extension"}';
@@ -29,8 +29,8 @@ class FileController extends ControllerBase {
       $path_folder = \Drupal::service('file_system')->realpath(gva_file_default_scheme() . "://gva-sliderlayer-upload");
 
       // $file_path = $path_folder . '/' . $_id . '-' . $_FILES['upl']['name'];
-      $ext = end(explode('.', $_FILES['upl']['name']));
-      $image_name = basename($_FILES['upl']['name'], ".{$ext}");
+      $ext = end(explode('.', $stack->getCurrentRequest()->files->get('upl')('name')));
+      $image_name = basename($stack->getCurrentRequest()->files->get('upl')('name'), ".{$ext}");
 
       $file_path = $path_folder . '/' . $image_name . "-{$_id}" . ".{$ext}";
       $file_url = str_replace($base_url, '', file_create_url(gva_file_default_scheme() . "://gva-sliderlayer-upload") . '/' . $image_name . "-{$_id}" . ".{$ext}");
@@ -38,7 +38,7 @@ class FileController extends ControllerBase {
       if (!is_dir($path_folder)) {
         @mkdir($path_folder);
       }
-      if (move_uploaded_file($_FILES['upl']['tmp_name'], $file_path)) {
+      if (move_uploaded_file($stack->getCurrentRequest()->files->get('upl')('tmp_name'), $file_path)) {
         $result = [
           'file_url' => $file_url,
           'file_url_full' => $base_url . $file_url,
@@ -56,7 +56,7 @@ class FileController extends ControllerBase {
   /**
    * Get images upload.
    */
-  public function get_images_upload() {
+  public function getImagesUpload() {
     header('Content-type: application/json');
     global $base_url;
 
@@ -66,7 +66,6 @@ class FileController extends ControllerBase {
     $list_file = glob($file_path . '/*.{jpg,png,gif}', GLOB_BRACE);
 
     $files = [];
-    $data = '';
     foreach ($list_file as $key => $file) {
       if (basename($file)) {
         $file_url = str_replace($base_url, '', file_create_url(gva_file_default_scheme() . "://gva-sliderlayer-upload") . '/' . basename($file));

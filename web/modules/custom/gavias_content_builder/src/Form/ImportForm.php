@@ -9,8 +9,7 @@ use Drupal\file\Entity\File;
 use Drupal\Core\Url;
 
 /**
- *
- *
+ * Import Form.
  */
 class ImportForm implements FormInterface {
 
@@ -55,8 +54,8 @@ class ImportForm implements FormInterface {
     ];
     $form['file'] = [
       '#type' => 'managed_file',
-      '#title' => t('Upload File Content'),
-      '#description' => t('Upload your builder that exported before. Allowed extensions: .txt'),
+      '#title' => $this->t('Upload File Content'),
+      '#description' => $this->t('Upload your builder that exported before. Allowed extensions: .txt'),
       '#upload_location' => 'public://',
       '#upload_validators' => [
         'file_validate_extensions' => ['txt'],
@@ -97,7 +96,7 @@ class ImportForm implements FormInterface {
       }
 
       $id = $form['id']['#value'];
-      $builder = \Drupal::database()->update("gavias_content_builder")
+      \Drupal::database()->update("gavias_content_builder")
         ->fields([
           'params' => $params,
         ])

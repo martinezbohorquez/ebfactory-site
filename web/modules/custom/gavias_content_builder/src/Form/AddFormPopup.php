@@ -1,4 +1,5 @@
 <?php
+
 namespace Drupal\gavias_content_builder\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
@@ -7,89 +8,83 @@ use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\file\Entity\File;
 use Drupal\Core\Url;
-class AddFormPopup extends FormBase{
+
+/**
+ * Add Form Popup.
+ */
+class AddFormPopup extends FormBase {
 
   /**
-   * {@inheritdoc}.
+   * Get Form Id.
    */
-  public function getFormId(){
+  public function getFormId() {
     return 'add_form_popup';
   }
 
   /**
-   * {@inheritdoc}.
+   * Build Form.
    */
-  public function buildForm(array $form, FormStateInterface $form_state){
-    if(\Drupal::request()->attributes->get('random')) $random = \Drupal::request()->attributes->get('random');
-    $args = $this->getFormArgs($form_state);
-    $form['builder-dialog-messages'] = array(
-      '#markup' => '<div id="builder-dialog-messages"></div>',
-    );
-    $form['random'] = array(
-      '#type' => 'hidden',
-      '#default_value' => $random
-    );
-    $form['title'] = array(
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    if (\Drupal::request()->attributes->get('random')) {
+      $random = \Drupal::request()->attributes->get('random');
+    }
+    $this->getFormArgs($form_state);
+    $form['builder-dialog-messages'] = ['#markup' => '<div id="builder-dialog-messages"></div>'];
+    $form['random'] = ['#type' => 'hidden', '#default_value' => $random];
+    $form['title'] = [
       '#type' => 'textfield',
       '#title' => 'Title',
-      '#default_value' => $bblock['title']
-    );
-    $form['machine_name'] = array(
+      '#default_value' => $bblock['title'],
+    ];
+    $form['machine_name'] = [
       '#type' => 'textfield',
       '#title' => 'Machine name',
       '#description' => 'A unique machine-readable name containing letters, numbers, and underscores<br>Sample home_page_1',
-      '#default_value' => $bblock['machine_name']
-    );
-    $form['use_field'] = array(
+      '#default_value' => $bblock['machine_name'],
+    ];
+    $form['use_field'] = [
       '#type' => 'checkbox',
       '#title' => 'Use this Builder for Field',
-      '#default_value' => 1
-    );
-    $form['actions'] = array(
-      '#type' => 'action',
-    );
-    $form['actions']['submit'] = array(
-      '#value' => t('Submit'),
+      '#default_value' => 1,
+    ];
+    $form['actions'] = ['#type' => 'action'];
+    $form['actions']['submit'] = [
+      '#value' => $this->t('Submit'),
       '#type' => 'submit',
-      '#ajax' => array(
-        'callback' => '::modal',
-      ),
-    );
+      '#ajax' => ['callback' => '::modal'],
+    ];
     return $form;
   }
 
   /**
-   * {@inheritdoc}
+   * Validate Form.
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    if (!$form_state->getValue('title')  ) {
+    if (!$form_state->getValue('title')) {
       $form_state->setErrorByName('title', 'Please enter title for buider block.');
     }
   }
 
   /**
-   * {@inheritdoc}
-   * Submit handle for adding Element
+   * Submit handle for adding Element.
    */
-  public function submitForm(array &$form, FormStateInterface $form_state){
-    $errors = array();
-    if (!$form_state->getValue('title')  ) {
-      $errors[] ='Please enter title for buider block.';
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $errors = [];
+    if (!$form_state->getValue('title')) {
+      $errors[] = 'Please enter title for buider block.';
     }
-    if($errors){
-
-    }else{
-      $values = $form_state->getValues();
-      $pid = $builder = \Drupal::database()->insert("gavias_content_builder")
-        ->fields(array(
-          'title'         => $form['title']['#value'],
-          'machine_name'  => $form['machine_name']['#value'],
-          'use_field'     => $form['use_field']['#value'],
-          'params'        => '',
-        ))
-        ->execute();
+    if ($errors) {
+    }
+    else {
+      // $values = $form_state->getValues();
+      $pid = $builder = \Drupal::database()->insert(
+        "gavias_content_builder")->fields([
+          'title' => $form['title']['#value'],
+          'machine_name' => $form['machine_name']['#value'],
+          'use_field' => $form['use_field']['#value'],
+          'params' => '',
+        ])->execute();
     }
 
     $form_state->setValue('pid', $pid);
@@ -98,8 +93,11 @@ class AddFormPopup extends FormBase{
     $form_state->setValue('errors', $errors);
   }
 
-  public function getFormArgs($form_state){
-    $args = array();
+  /**
+   * GetFormArgs.
+   */
+  public function getFormArgs($form_state) {
+    $args = [];
     $build_info = $form_state->getBuildInfo();
     if (!empty($build_info['args'])) {
       $args = array_shift($build_info['args']);
@@ -110,26 +108,24 @@ class AddFormPopup extends FormBase{
   /**
    * AJAX callback handler for Add Element Form.
    */
-  public function modal(&$form, FormStateInterface $form_state){
+  public function modal(&$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
-    $errors = array();
-
-    if (!$form_state->getValue('title')  ) {
-      $errors[] ='Please enter title for buider block.';
+    $errors = [];
+    if (!$form_state->getValue('title')) {
+      $errors[] = 'Please enter title for buider block.';
     }
 
     if (!empty($errors)) {
       $form_state->clearErrors();
-      \Drupal::messenger()->deleteByType('error'); // clear next message session;
+      \Drupal::messenger()->deleteByType('error');
+      // Clear next message session;.
       $content = '<div class="messages messages--error" aria-label="Error message" role="contentinfo"><div role="alert"><ul>';
       foreach ($errors as $name => $error) {
         $response = new AjaxResponse();
         $content .= "<li>$error</li>";
       }
       $content .= '</ul></div></div>';
-      $data = array(
-        '#markup' => $content,
-      );
+      $data = ['#markup' => $content];
       $data['#attached']['library'][] = 'core/drupal.dialog.ajax';
       $data['#attached']['library'][] = 'core/drupal.dialog';
       $response->addCommand(new HtmlCommand('#builder-dialog-messages', $content));
@@ -138,48 +134,45 @@ class AddFormPopup extends FormBase{
     return $this->dialog($values);
   }
 
-  protected function dialog($values = array()){
-
+  /**
+   * Dialog.
+   */
+  protected function dialog($values = []) {
     $pid = $values['pid'];
     $title = $values['title'];
     $machine_name = $values['machine_name'];
     $random = $values['random'];
-    $element = isset($values['element']) ? $values['element'] : array();
+    // $element = $values['element'] ?? [];
     $response = new AjaxResponse();
-
     $content['#attached']['library'][] = 'core/drupal.dialog.ajax';
-
     $content['#attached']['library'][] = 'core/drupal.dialog';
-
     $response->addCommand(new CloseDialogCommand('.ui-dialog-content'));
-
-    $response->addCommand(new InvokeCommand('.field--type-gavias-content-builder .gva-choose-gbb.gva-id-'.$random . ' span', 'removeClass', ['active']));
-
+    $response->addCommand(new InvokeCommand(
+      '.field--type-gavias-content-builder 
+      .gva-choose-gbb.gva-id-' . $random . ' span', 'removeClass',
+       ['active']
+      ));
     $html = '';
-    $html .= '<span class="gbb-item active id-'.$pid.'">';
-    $html .= '<a class="select" data-id="'.$pid.'" title="'. $machine_name .'">' . $title  . '</a>';
-    $html .= ' <span class="action">( <a class="edit gva-popup-iframe" href="' . Url::fromRoute('gavias_content_builder.admin.edit', ['bid'=>$pid, 'gva_iframe'=>'on'])->toString() . '" title="' . $machine_name . '">Edit</a>';
+    $html .= '<span class="gbb-item active id-' . $pid . '">';
+    $html .= '<a class="select" data-id="' . $pid . '" title="' . $machine_name . '">' . $title . '</a>';
+    $html .= ' <span class="action">( 
+      <a class="edit gva-popup-iframe" href="'
+      . Url::fromRoute('gavias_content_builder.admin.edit', [
+        'bid' => $pid,
+        'gva_iframe' => 'on',
+      ]
+        )->toString() . '" title="' .
+        $machine_name . '">Edit</a>';
     $html .= ' | <a>Please save and refesh if you want duplicate</a>) </span>';
     $html .= '</span>';
-
-    $response->addCommand(new InvokeCommand(
-      '.field--type-gavias-content-builder .gva-choose-gbb',
-      'append',
-      [$html]));
-
-    $response->addCommand(new InvokeCommand(
-      '.field_gavias_content_builder.gva-id-' . $random,
-      'val',
-      [$pid]));
-
+    $response->addCommand(new InvokeCommand('.field--type-gavias-content-builder .gva-choose-gbb', 'append', [$html]));
+    $response->addCommand(new InvokeCommand('.field_gavias_content_builder.gva-id-' . $random, 'val', [$pid]));
     // Quick edit compatible.
     $response->addCommand(new InvokeCommand(
-      '.quickedit-toolbar .action-save',
-      'attr',
-      ['aria-hidden', FALSE]));
-
+      '.quickedit-toolbar .action-save', 'attr',
+      ['aria-hidden', FALSE]
+    ));
     $response->setAttachments($content['#attached']);
-
     return $response;
   }
 

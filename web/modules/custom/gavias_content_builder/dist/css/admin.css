@@ -49,7 +49,8 @@
 #gavias-blockbuilder-setting input[type="number"],
 #gavias-blockbuilder-setting input[type="file"],
 #gavias-blockbuilder-setting .input-file-upload,
-#gavias-blockbuilder-setting textarea, #gavias-blockbuilder-setting select {
+#gavias-blockbuilder-setting textarea,
+#gavias-blockbuilder-setting select {
   background-color: #fff !important;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.02) inset;
   border: 1px solid #ccc !important;
@@ -68,7 +69,7 @@
 
 #gavias-blockbuilder-setting .gavias-add-quick-shortcode {
   margin: 5px 0;
-  background: #72A3CE;
+  background: #72a3ce;
   color: #fff;
   padding: 8px 10px;
 }
@@ -86,8 +87,9 @@
   display: none;
 }
 
-#gavias-blockbuilder-setting .btn-add, #gavias-blockbuilder-setting .btn-delete {
-  background: #72A3CE;
+#gavias-blockbuilder-setting .btn-add,
+#gavias-blockbuilder-setting .btn-delete {
+  background: #72a3ce;
   padding: 5px 10px;
   color: #fff;
   text-transform: uppercase;
@@ -96,7 +98,7 @@
 }
 
 #gavias-blockbuilder-setting .btn-delete {
-  background: #F45754;
+  background: #f45754;
 }
 
 #gavias-blockbuilder-setting body.gavias-overflow-hidden {
@@ -192,7 +194,8 @@
   font-size: 10px;
 }
 
-#gavias-blockbuilder-setting .wb-1 .item-bb-title, #gavias-blockbuilder-setting .wb-1 .item-w-label {
+#gavias-blockbuilder-setting .wb-1 .item-bb-title,
+#gavias-blockbuilder-setting .wb-1 .item-w-label {
   display: none !important;
 }
 
@@ -256,7 +259,7 @@
 
 #gavias-blockbuilder-setting .gbb-element .gavias-blockbuilder-content .gbb-droppable {
   margin: 0;
-  background: #F8F8F8;
+  background: #f8f8f8;
   border: 1px dashed #e1e1e1;
   width: 100%;
   min-height: 80px;
@@ -265,7 +268,7 @@
 #gavias-blockbuilder-setting .gbb-element.gbb-columns .gbb-droppable-column {
   border: 1px dashed #e1e1e1;
   border-top: 0;
-  background: #F8F8F8 !important;
+  background: #f8f8f8 !important;
   border: 1px dashed #e1e1e1;
   border-top: none;
 }
@@ -277,11 +280,11 @@
 #gavias-blockbuilder-setting .gbb-element.gbb-columns > .gavias-blockbuilder-content > .gbb-el-header > .gbb-el-action {
   width: 30px;
   left: 100%;
-  background: #1093E4;
+  background: #1093e4;
   z-index: 99;
   display: none;
   top: -1px;
-  border: 1px solid #C8C8C8;
+  border: 1px solid #c8c8c8;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
   -o-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
   -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
@@ -301,7 +304,7 @@
 #gavias-blockbuilder-setting .gva-upload-image .loading {
   margin-top: 5px;
   padding: 5px 10px;
-  background: #3A799D;
+  background: #3a799d;
   color: #fff;
   text-transform: uppercase;
   display: none;
@@ -313,33 +316,33 @@
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
-  background: #3A799D;
-  border: 1px solid #3A799D;
+  background: #3a799d;
+  border: 1px solid #3a799d;
 }
 
 #gavias-blockbuilder-setting input.form-submit:hover {
   background: none;
-  color: #3A799D;
+  color: #3a799d;
 }
 
 #gavias-blockbuilder-setting .gbb-el-header {
   background: #f1f1f1;
   height: 30px;
-  border-bottom: 1px solid #C8C8C8;
+  border-bottom: 1px solid #c8c8c8;
   position: relative;
 }
 
 #gavias-blockbuilder-setting .gbb-el-header.header-row {
-  border-bottom: 1px solid #C8C8C8;
+  border-bottom: 1px solid #c8c8c8;
   border-top: 0;
 }
 
 #gavias-blockbuilder-setting .gbb-el-header.header-row a.action {
-  background: #F1F1F1;
+  background: #f1f1f1;
 }
 
 #gavias-blockbuilder-setting .gbb-el-header.header-column {
-  border: 1px solid #C8C8C8;
+  border: 1px solid #c8c8c8;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
@@ -360,10 +363,10 @@
   font-size: 16px;
   text-decoration: none;
   font-weight: 700;
-  background: #EEEEEE;
+  background: #eeeeee;
   color: #222222;
-  border-left: 1px solid #E5E5E5;
-  border-right: 1px solid #E5E5E5;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
 }
 
 #gavias-blockbuilder-setting .gbb-el-header .bb-btn {
@@ -374,7 +377,7 @@
   text-align: center;
   display: block;
   float: left;
-  border-left: 1px solid #C8C8C8;
+  border-left: 1px solid #c8c8c8;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -389,7 +392,9 @@
   font-size: 16px;
 }
 
-#gavias-blockbuilder-setting .gbb-el-header .bb-btn:hover, #gavias-blockbuilder-setting .gbb-el-header .bb-btn:active, #gavias-blockbuilder-setting .gbb-el-header .bb-btn:focus {
+#gavias-blockbuilder-setting .gbb-el-header .bb-btn:hover,
+#gavias-blockbuilder-setting .gbb-el-header .bb-btn:active,
+#gavias-blockbuilder-setting .gbb-el-header .bb-btn:focus {
   background-color: #000;
   color: #fff;
 }
@@ -434,7 +439,8 @@
   padding: 0;
 }
 
-#gavias-blockbuilder-setting .gbb-add-element .bb-drap, #gavias-blockbuilder-setting .gbb-add-element .gbb-add {
+#gavias-blockbuilder-setting .gbb-add-element .bb-drap,
+#gavias-blockbuilder-setting .gbb-add-element .gbb-add {
   width: 25px;
   height: 30px;
   line-height: 30px;
@@ -448,7 +454,12 @@
   float: left;
 }
 
-#gavias-blockbuilder-setting .gbb-add-element .bb-drap:hover, #gavias-blockbuilder-setting .gbb-add-element .bb-drap:active, #gavias-blockbuilder-setting .gbb-add-element .bb-drap:focus, #gavias-blockbuilder-setting .gbb-add-element .gbb-add:hover, #gavias-blockbuilder-setting .gbb-add-element .gbb-add:active, #gavias-blockbuilder-setting .gbb-add-element .gbb-add:focus {
+#gavias-blockbuilder-setting .gbb-add-element .bb-drap:hover,
+#gavias-blockbuilder-setting .gbb-add-element .bb-drap:active,
+#gavias-blockbuilder-setting .gbb-add-element .bb-drap:focus,
+#gavias-blockbuilder-setting .gbb-add-element .gbb-add:hover,
+#gavias-blockbuilder-setting .gbb-add-element .gbb-add:active,
+#gavias-blockbuilder-setting .gbb-add-element .gbb-add:focus {
   background: #000;
   color: #fff !important;
 }
@@ -499,7 +510,7 @@
   color: #000 !important;
   text-decoration: none !important;
   text-align: center;
-  background: #F5F5F5;
+  background: #f5f5f5;
   display: block;
   height: 40px;
   line-height: 40px;
@@ -508,7 +519,7 @@
 
 #gavias-blockbuilder-setting .gbb-add-element .gbb-items ul li a:hover {
   color: #fff !important;
-  background: #2B4B80;
+  background: #2b4b80;
 }
 
 #gavias-blockbuilder-setting .gbb-add-element .gbb-items ul li:nth-child(4n+4) a {
@@ -519,7 +530,7 @@
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 700;
-  background: #2B4B80;
+  background: #2b4b80;
   padding: 20px;
   color: #fff;
 }
@@ -545,7 +556,7 @@
 }
 
 #gavias-blockbuilder-setting .gbb-columns .item-w-label {
-  color: #9999A5;
+  color: #9999a5;
   display: block;
   width: 24px;
   float: left;
@@ -562,7 +573,7 @@
 }
 
 #gavias-blockbuilder-setting .gbb-item .gbb-el-header {
-  background: #FAFAFA;
+  background: #fafafa;
   height: 24px;
   border: 1px solid #e5e5e5;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
@@ -580,7 +591,7 @@
   text-align: center;
   overflow: hidden;
   padding: 15px 10px 0;
-  background: #FCFCFC;
+  background: #fcfcfc;
   border: 1px solid #e1e1e1;
   border-top: 0;
 }
@@ -671,7 +682,7 @@
 
 #gavias-blockbuilder-setting #gbb-form-setting .action {
   padding: 10px 0;
-  border-top: 2px solid #72A3CE;
+  border-top: 2px solid #72a3ce;
   background: #fff;
   position: absolute;
   z-index: 99;
@@ -680,9 +691,10 @@
   width: 100%;
 }
 
-#gavias-blockbuilder-setting #gbb-form-setting .action a.gbb-form-setting-save, #gavias-blockbuilder-setting #gbb-form-setting .action a.gbb-form-setting-cancel {
+#gavias-blockbuilder-setting #gbb-form-setting .action a.gbb-form-setting-save,
+#gavias-blockbuilder-setting #gbb-form-setting .action a.gbb-form-setting-cancel {
   display: inline-block;
-  background: #72A3CE;
+  background: #72a3ce;
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
@@ -753,7 +765,7 @@
 }
 
 #gavias-blockbuilder-setting .gbb-item-icon {
-  color: #C1C1C1;
+  color: #c1c1c1;
   font-size: 32px;
 }
 
@@ -766,7 +778,7 @@
 }
 
 #gavias-blockbuilder-setting .tabs-ul.ui-sortable > li {
-  border: 1px solid #72A3CE;
+  border: 1px solid #72a3ce;
   padding: 20px;
   background: #f5f5f5;
   margin-bottom: 20px;
@@ -791,15 +803,15 @@
   font-weight: 700;
   width: 100%;
   display: block;
-  border-bottom: 1px solid #72A3CE;
+  border-bottom: 1px solid #72a3ce;
   margin: 5px 0;
-  color: #72A3CE;
+  color: #72a3ce;
 }
 
 .column-clear {
   width: 100%;
   height: 20px !important;
-  background: #9B2020;
+  background: #9b2020;
   margin-bottom: 30px;
 }
 
@@ -856,10 +868,13 @@
 }
 
 .type-column-clearfix .header-column {
-  background: #008AA7 !important;
+  background: #008aa7 !important;
 }
 
-.type-column-clearfix .gbb-add-element .gbb-add, .type-column-clearfix .gbb-add-element .gbb-items, .type-column-clearfix .element-size, .type-column-clearfix .gbb-droppable-column {
+.type-column-clearfix .gbb-add-element .gbb-add,
+.type-column-clearfix .gbb-add-element .gbb-items,
+.type-column-clearfix .element-size,
+.type-column-clearfix .gbb-droppable-column {
   display: none !important;
 }
 
@@ -874,7 +889,7 @@
 .btn-get-images-upload {
   margin-top: 5px;
   float: left;
-  background: #72A3CE !important;
+  background: #72a3ce !important;
 }
 
 .gavias-box-images {
@@ -905,7 +920,7 @@
 }
 
 .gavias-box-images .header {
-  background: #6293BE;
+  background: #6293be;
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
@@ -1105,7 +1120,8 @@ ul.swith-language > li > a.active {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
 }
-.modal-header:before, .modal-header:after {
+.modal-header:before,
+.modal-header:after {
   content: " ";
   display: table;
 }
@@ -1132,7 +1148,8 @@ ul.swith-language > li > a.active {
   text-align: right;
   border-top: 1px solid #e5e5e5;
 }
-.modal-footer:before, .modal-footer:after {
+.modal-footer:before,
+.modal-footer:after {
   content: " ";
   display: table;
 }
@@ -1300,7 +1317,7 @@ ul.swith-language > li > a.active {
   background: #333;
 }
 .gpb_action-button a.gpb-action_delete {
-  color: #BA0000;
+  color: #ba0000;
 }
 
 .ui-state-highlight {
@@ -1310,7 +1327,7 @@ ul.swith-language > li > a.active {
   min-height: 50px;
   min-width: 100px;
   border: 1px dashed #000;
-  background: #00A2E8;
+  background: #00a2e8;
   margin: 0 0 10px;
 }
 
@@ -1391,11 +1408,12 @@ ul.swith-language > li > a.active {
 .gpb_row-content .action-add-column .hover-content > a:hover {
   color: #000;
 }
-.gpb_row-content .action-add-column:hover .hover-content, .gpb_row-content .action-add-column:focus .hover-content {
+.gpb_row-content .action-add-column:hover .hover-content,
+.gpb_row-content .action-add-column:focus .hover-content {
   display: block;
 }
 .gpb_row-content .row-action-button {
-  background: #F1F1F1;
+  background: #f1f1f1;
   border: 1px solid #ccc;
   border-bottom: 0;
   height: 30px;
@@ -1422,9 +1440,10 @@ ul.swith-language > li > a.active {
   background: rgba(0, 0, 0, 0.12);
 }
 .gpb_row-content .row-action-button a.gpb-action_delete {
-  color: #BA0000 !important;
+  color: #ba0000 !important;
 }
-.gpb_row-content:hover, .gpb_row-content:focus {
+.gpb_row-content:hover,
+.gpb_row-content:focus {
   z-index: 99;
 }
 
@@ -1438,7 +1457,7 @@ ul.swith-language > li > a.active {
   position: relative;
   text-align: left;
   width: auto;
-  background: #F0F0F0;
+  background: #f0f0f0;
   border: 1px solid #ccc;
   height: 27px;
   overflow: hidden;
@@ -1447,24 +1466,26 @@ ul.swith-language > li > a.active {
   font-size: 14px;
   width: 26px;
   height: 25px;
-  background: #F0F0F0;
+  background: #f0f0f0;
   color: #000;
   font-weight: 700;
 }
 .gpb_col > .gpb_action-button a.gpb_add-element {
-  background: #0075BE;
+  background: #0075be;
   color: #fff;
 }
-.gpb_col > .gpb_action-button a.gpb_add-element:hover, .gpb_col > .gpb_action-button a.gpb_add-element:focus {
+.gpb_col > .gpb_action-button a.gpb_add-element:hover,
+.gpb_col > .gpb_action-button a.gpb_add-element:focus {
   background: #333;
 }
 .gpb_col > .gpb_action-button a.gpb-action_delete {
-  color: #BA0000 !important;
+  color: #ba0000 !important;
 }
 .gpb_col > .gpb_action-button a.gpb-action_delete:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.gpb_col > .gpb_action-button a:hover, .gpb_col > .gpb_action-button a:focus {
+.gpb_col > .gpb_action-button a:hover,
+.gpb_col > .gpb_action-button a:focus {
   background: rgba(0, 0, 0, 0.1);
 }
 .gpb_col > .gpb_action-button .gpb-w-label {
@@ -1602,10 +1623,10 @@ ul.swith-language > li > a.active {
   color: #fff;
 }
 .gpb_el-content-inner > .gpb_action-button a.gpb-action_delete {
-  color: #BA0000 !important;
+  color: #ba0000 !important;
 }
 .gpb_el-content-inner > .gpb_action-button a.gpb-action_delete:hover {
-  background-color: #BA0000;
+  background-color: #ba0000;
   color: #fff !important;
 }
 .gpb_el-content-inner:hover > .gpb_action-button {
@@ -1638,7 +1659,8 @@ ul.swith-language > li > a.active {
 #gpb_form-edit-configs input[type="password"],
 #gpb_form-edit-configs input[type="email"],
 #gpb_form-edit-configs input[type="number"],
-#gpb_form-edit-configs textarea, #gpb_form-edit-configs select {
+#gpb_form-edit-configs textarea,
+#gpb_form-edit-configs select {
   background-color: #fff;
   -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.02) inset;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.02) inset;
@@ -1727,7 +1749,7 @@ ul.swith-language > li > a.active {
   padding: 2px 10px;
   color: #fff;
   font-weight: 700;
-  background: #BA0000;
+  background: #ba0000;
 }
 .gva-upload-input .gavias-field-upload-remove:hover {
   cursor: pointer;
@@ -1736,7 +1758,7 @@ ul.swith-language > li > a.active {
 .field-info {
   width: 100%;
   float: left;
-  border-bottom: 1px solid #BA0000;
+  border-bottom: 1px solid #ba0000;
   margin: 20px 0 0;
   font-weight: 700;
   text-transform: uppercase;
@@ -1782,7 +1804,8 @@ ul.swith-language > li > a.active {
   z-index: 9999 !important;
 }
 
-.gva_iframe_on #toolbar-administration, .gva_iframe_on .region-breadcrumb {
+.gva_iframe_on #toolbar-administration,
+.gva_iframe_on .region-breadcrumb {
   display: none !important;
 }
 .gva_iframe_on #gavias-pagebuider-wrap-settings {
@@ -1795,7 +1818,7 @@ ul.swith-language > li > a.active {
   font-size: 12px !important;
   font-weight: 700;
   background: none !important;
-  color: #50A204 !important;
+  color: #50a204 !important;
 }
 .row-name:hover {
   text-decoration: none;

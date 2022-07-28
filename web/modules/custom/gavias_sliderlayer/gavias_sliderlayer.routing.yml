@@ -114,10 +114,10 @@ gavias_sliderlayer.admin.upload:
   requirements:
     _permission: 'administer gaviassliderlayer'
 
-gavias_sliderlayer.admin.get_images_upload:
-  path: '/admin/structure/gavias_sliderlayer/get_images_upload'
+gavias_sliderlayer.admin.getImagesUpload:
+  path: '/admin/structure/gavias_sliderlayer/getImagesUpload'
   defaults:
     _title: 'Save configuration of Gavias SliderLayer'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\FileController::get_images_upload'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\FileController::getImagesUpload'
   requirements:
     _permission: 'administer gaviassliderlayer'

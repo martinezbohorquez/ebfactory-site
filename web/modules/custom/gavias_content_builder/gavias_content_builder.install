@@ -1,55 +1,64 @@
 <?php
+
+/**
+ * @file
+ * This is builder - install.
+ */
+
+/**
+ * Gavias content builder schema.
+ */
 function gavias_content_builder_schema() {
-  if(!\Drupal::database()->schema()->tableExists('gavias_content_builder')){
-    $schema['gavias_content_builder'] = array(
-      'fields' => array(
-        'id' => array(
+  if (!\Drupal::database()->schema()->tableExists('gavias_content_builder')) {
+    $schema['gavias_content_builder'] = [
+      'fields' => [
+        'id' => [
           'type' => 'serial',
           'not null' => TRUE,
-        ),
-        'title' => array(
+        ],
+        'title' => [
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
-        ),
-        'machine_name' => array(
+        ],
+        'machine_name' => [
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
-        ),
-        'use_field' => array(
+        ],
+        'use_field' => [
           'type' => 'int',
           'not null' => FALSE,
           'default' => 1,
-        ),
-        'type' => array(
-          'type' => 'varchar',
-          'length' => 255,
-          'not null' => FALSE
-        ),
-        'params' => array(
-          'type' => 'text',
-          'size' => 'big',
-          'not null' => FALSE
-        ),
-        'params_1' => array(
+        ],
+        'type' => [
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
-        ),
-        'params_2' => array(
+        ],
+        'params' => [
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => FALSE,
+        ],
+        'params_1' => [
           'type' => 'varchar',
           'length' => 255,
-          'not null' => FALSE
-        ),
-        'params_3' => array(
+          'not null' => FALSE,
+        ],
+        'params_2' => [
           'type' => 'varchar',
           'length' => 255,
-          'not null' => FALSE
-        ),
-      ),
-      'primary key' => array('id')
-    );
+          'not null' => FALSE,
+        ],
+        'params_3' => [
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
+        ],
+      ],
+      'primary key' => ['id'],
+    ];
     return $schema;
   }
 }

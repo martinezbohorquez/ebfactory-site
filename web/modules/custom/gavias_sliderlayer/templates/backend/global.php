@@ -1,3 +1,10 @@
+<?php
+
+/**
+ * @file
+ * This is global.
+ */
+?>
 <div class="gavias-sliderlayer-groupsetting">
   <fieldset class="form-wrapper g-wrapper">
     <div class="gavias-heading">Global Settings</div>

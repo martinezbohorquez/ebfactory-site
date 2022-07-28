@@ -101,7 +101,7 @@ class SliderController extends ControllerBase {
         ['absolute' => FALSE,
         ])->toString();
 
-    $abs_url_config = Url::fromRoute('gavias_sliderlayer.admin.get_images_upload', [], ['absolute' => FALSE])->toString();
+    $abs_url_config = Url::fromRoute('gavias_sliderlayer.admin.getImagesUpload', [], ['absolute' => FALSE])->toString();
     $page['#attached']['drupalSettings']['gavias_sliderlayer']['get_images_upload_url'] = $abs_url_config;
     $page['#attached']['drupalSettings']['gavias_sliderlayer']['base_path'] = base_path();
     $page['#attached']['drupalSettings']['gavias_sliderlayer']['base_url'] = $base_url;
