@@ -16,7 +16,7 @@ class GroupSliderController extends ControllerBase {
   /**
    * Gavias sl group list.
    */
-  public function gavias_sl_group_list() {
+  public function gaviasSlGroupList() {
 
     if (!\Drupal::database()->schema()->tableExists('gavias_sliderlayergroups')) {
       return "";
@@ -84,7 +84,7 @@ class GroupSliderController extends ControllerBase {
   /**
    * Gavias sl group config.
    */
-  public function gavias_sl_group_config($gid) {
+  public function gaviasSlGroupConfig($gid) {
     global $base_url;
     $page['#attached']['library'][] = 'gavias_sliderlayer/gavias_sliderlayer.assets.config_global';
     $slideshow = get_slider_group($gid);
@@ -108,7 +108,7 @@ class GroupSliderController extends ControllerBase {
   /**
    * Gavias sl group config save.
    */
-  public function gavias_sl_group_config_save() {
+  public function gaviasSlGroupConfigSave() {
     header('Content-type: application/json');
     $gid = requestStack->getCurrentRequest()->query->get('gid');
     $settings = requestStack->getCurrentRequest()->request->get('settings')];
@@ -133,7 +133,7 @@ class GroupSliderController extends ControllerBase {
   /**
    * Gavias sl group export.
    */
-  public function gavias_sl_group_export($gid) {
+  public function gaviasSlGroupExport($gid) {
     $data = gavias_sliderlayer_export($gid);
     // print"<pre>"; print_r(json_decode(base64_decode($data)));die();
     $title = 'sliderlayer_' . date('Y_m_d_h_i_s');

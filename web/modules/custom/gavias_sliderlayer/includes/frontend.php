@@ -132,7 +132,7 @@ function gavias_sliderlayer_slides($vars) {
 
   extract($vars);
   ob_start();
-  include GAV_SLIDERLAYER_PATH . '/templates/frontend/slides.php';
+  include GAVIAS_SLIDERLAYER_PATH . '/templates/frontend/slides.php';
   $output = ob_get_clean();
   return $output;
 }
@@ -258,7 +258,7 @@ function gavias_sliderlayer_slide($vars, $index) {
 
   extract($vars);
   ob_start();
-  include GAV_SLIDERLAYER_PATH . '/templates/frontend/slide.php';
+  include GAVIAS_SLIDERLAYER_PATH . '/templates/frontend/slide.php';
   $output = ob_get_clean();
   return $output;
 }
@@ -424,7 +424,7 @@ function gavias_sliderlayer_layer($vars) {
 
   extract($vars);
   ob_start();
-  include GAV_SLIDERLAYER_PATH . '/templates/frontend/layer.php';
+  include GAVIAS_SLIDERLAYER_PATH . '/templates/frontend/layer.php';
   $output = ob_get_clean();
   return $output;
 }

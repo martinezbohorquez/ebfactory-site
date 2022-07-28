@@ -2,7 +2,7 @@ gavias_sl_group.admin:
   path: '/admin/structure/gavias_sliderlayer'
   defaults:
     _title: 'Gavias Group SliderLayer'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\GroupSliderController::gavias_sl_group_list'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\GroupSliderController::gaviasSlGroupList'
   requirements:
     _permission: 'administer gaviassliderlayer'
 
@@ -77,7 +77,7 @@ gavias_sl_sliders.admin.list:
   path: '/admin/structure/gavias_sliderlayer/{gid}/sliders'
   defaults:
     _title: 'Gavias SliderLayer'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\SliderController::gavias_sl_sliders_list'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\SliderController::gaviasSlSlidersList'
   requirements:
     _permission: 'administer gaviassliderlayer'
 
@@ -85,7 +85,7 @@ gavias_sl_sliders.admin.form:
   path: '/admin/structure/gavias_sliderlayer/{gid}/sliders/{sid}/edit'
   defaults:
     _title: 'Edit Slider'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\SliderController::gavias_sl_sliders_edit'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\SliderController::gaviasSlSlidersEdit'
   requirements: 
     _permission: 'administer gaviassliderlayer'
 
@@ -93,7 +93,7 @@ gavias_sl_sliders.admin.save:
   path: '/admin/structure/gavias_sliderlayer/sliders/save'
   defaults:
     _title: 'Edit Slider'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\SliderController::gavias_sliderlayer_save'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\SliderController::gaviasSliderlayerSave'
   requirements: 
     _permission: 'administer gaviassliderlayer'
 

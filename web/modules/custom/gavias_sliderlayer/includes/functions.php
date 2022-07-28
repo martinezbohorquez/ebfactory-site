@@ -2,10 +2,11 @@
 
 /**
  * @file
+ * This is functions.
  */
 
 /**
- *
+ * Gavias sliderlayer makeid.
  */
 function gavias_sliderlayer_makeid($length = 5) {
   $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
@@ -17,7 +18,7 @@ function gavias_sliderlayer_makeid($length = 5) {
 }
 
 /**
- *
+ * Gavias sliderlayer writecache.
  */
 function gavias_sliderlayer_writecache($folder, $file, $value, $e = 'css') {
   $file   = $folder . preg_replace('/[^A-Z0-9\._-]/i', '', $file) . '.' . $e;
@@ -29,7 +30,7 @@ function gavias_sliderlayer_writecache($folder, $file, $value, $e = 'css') {
 if (!function_exists('file_default_scheme')) {
 
   /**
-   *
+   * File default scheme.
    */
   function file_default_scheme() {
     return \Drupal::config('system.file')->get('default_scheme');
@@ -40,7 +41,7 @@ if (!function_exists('file_default_scheme')) {
 if (!function_exists('gva_file_default_scheme')) {
 
   /**
-   *
+   * Gva file default scheme.
    */
   function gva_file_default_scheme() {
     return \Drupal::config('system.file')->get('default_scheme');

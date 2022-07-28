@@ -5,8 +5,8 @@
  * This is module sliderlayer.
  */
 
-define('gavias_sliderlayer_VERSION', '1.0');
-define('GAV_SLIDERLAYER_PATH', drupal_get_path('module', 'gavias_sliderlayer'));
+define('GAVIAS_SLIDERLAYER_GAVIAS_SLIDERLAYER_VERSION', '1.0');
+define('GAVIAS_SLIDERLAYER_PATH', drupal_get_path('module', 'gavias_sliderlayer'));
 module_load_include('php', 'gavias_sliderlayer', '/includes/functions');
 module_load_include('php', 'gavias_sliderlayer', '/includes/model');
 module_load_include('php', 'gavias_sliderlayer', '/includes/utilities');
@@ -47,7 +47,7 @@ function gavias_sliderlayer_preprocess_page(&$variables) {
 }
 
 /**
- * Gavias sliderlayer styles
+ * Gavias sliderlayer styles.
  */
 function gavias_sliderlayer_styles() {
   $variables = [
