@@ -9,7 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
- *
+ * Gavias Content Builder Widget.
  */
 class GaviasContentBuilderWidget extends WidgetBase {
 
@@ -54,7 +54,6 @@ class GaviasContentBuilderWidget extends WidgetBase {
 
     }
     $parent_entity = $items->getEntity();
-    $entity = $parent_entity;
 
     $user = \Drupal::currentUser();
     // Show field via roles.
@@ -80,10 +79,10 @@ class GaviasContentBuilderWidget extends WidgetBase {
       return;
     }
 
-    $langcode = $items->getLangcode();
+    // $langcode = $items->getLangcode();
 
-    $field_name = $items->getName();
-    $input = $form_state->getUserInput();
+    // $field_name = $items->getName();
+    // $input = $form_state->getUserInput();
 
     $results = \Drupal::database()->select('{gavias_content_builder}', 'd')
       ->fields('d', ['id', 'title'])
@@ -101,23 +100,24 @@ class GaviasContentBuilderWidget extends WidgetBase {
     $random = gavias_content_builder_makeid(10);
 
     // if($flag_use_role){
-    //   $element['addform'] = array(
-    //     '#type' => 'linkfield',
-    //     '#title' => t('<strong>Add New Builder</strong>'),
-    //     '#url' => Url::fromRoute('gavias_content_builder.admin.add_popup', array('random'=>$random))->toString(),
-    //     '#attributes' => array(
-    //       'class' => array('use-ajax'),
-    //       'data-dialog-type' => 'modal',
-    //       'data-dialog-options' =>  json_encode(array(
-    //           'resizable' => TRUE,
-    //           'width' => '80%',
-    //           'height' => 'auto',
-    //           'max-width' => '1100px',
-    //           'modal' => TRUE,
-    //         )),
-    //       'title' => t('Add new builder'),
-    //     ),
-    //   );
+    // $element['addform'] = array(
+    // '#type' => 'linkfield',
+    // '#title' => t('<strong>Add New Builder</strong>'),
+    // '#url' => Url::fromRoute('gavias_content_builder.admin.add_popup',
+    // array('random'=>$random))->toString(),
+    // '#attributes' => array(
+    // 'class' => array('use-ajax'),
+    // 'data-dialog-type' => 'modal',
+    // 'data-dialog-options' =>  json_encode(array(
+    // 'resizable' => TRUE,
+    // 'width' => '80%',
+    // 'height' => 'auto',
+    // 'max-width' => '1100px',
+    // 'modal' => TRUE,
+    // )),
+    // 'title' => t('Add new builder'),
+    // ),
+    // );
     // }.
     if ($flag_use_role) {
 
@@ -137,7 +137,14 @@ class GaviasContentBuilderWidget extends WidgetBase {
       '#title' => $items->getFieldDefinition()->getLabel() . (' <a class="gva-popup-iframe" href="' . Url::fromRoute('gavias_content_builder.admin', ['gva_iframe' => 'on'])->toString() . '">Manage All Blockbuilders</a>'),
       '#type' => 'textfield',
       '#default_value' => $bid,
-      '#attributes' => ['class' => ['field_gavias_content_builder', 'gva-id-' . $random], 'data-random' => $random, 'readonly' => 'readonly'],
+      '#attributes' => [
+        'class' => [
+          'field_gavias_content_builder',
+          'gva-id-' . $random,
+        ],
+        'data-random' => $random,
+        'readonly' => 'readonly',
+      ],
     ];
     if ($flag_use_role) {
       $element['bid']['#title'] = $items->getFieldDefinition()->getLabel() . (' <a class="gva-popup-iframe" href="' . Url::fromRoute('gavias_content_builder.admin', ['gva_iframe' => 'on'])->toString() . '">Manage All Blockbuilders</a>');
@@ -149,7 +156,7 @@ class GaviasContentBuilderWidget extends WidgetBase {
     if ($flag_use_role) {
       $element['choose_gbb'] = [
         '#type' => 'markup',
-        '#markup' => $this->_get_list_blockbuilder($random),
+        '#markup' => $this->getListBlockBuilder($random),
         '#allowed_tags' => ['a', 'div', 'span'],
       ];
     }
@@ -157,9 +164,9 @@ class GaviasContentBuilderWidget extends WidgetBase {
   }
 
   /**
-   *
+   * Get list blockbuilder.
    */
-  public function _get_list_blockbuilder($random) {
+  public function getListBlockBuilder($random) {
     $results = \Drupal::database()->select('{gavias_content_builder}', 'd')
       ->fields('d', ['id', 'title', 'machine_name'])
       ->orderBy('title', 'ASC')
@@ -170,10 +177,42 @@ class GaviasContentBuilderWidget extends WidgetBase {
       $html .= '<span class="gbb-item id-' . $result->id . '">';
       $html .= '<a class="select" data-id="' . $result->id . '" title="' . $result->machine_name . '">' . $list_builder[$result->id] = $result->title . '</a>';
       $html .= ' <span class="action">( <a class="edit gva-popup-iframe" href="' . Url::fromRoute('gavias_content_builder.admin.edit', ['bid' => $result->id])->toString() . '?gva_iframe=on" data-id="' . $result->id . '" title="' . $result->machine_name . '">Edit</a>';
-      $html .= ' | <a class="duplicate use-ajax" data-dialog-type="modal" data-dialog-options="{"resizable":true,"width":"80%","height":"auto","max-width":"1100px","modal":true}" href="' . Url::fromRoute('gavias_content_builder.admin.duplicate_popup', ['bid' => $result->id, 'random' => $random])->toString() . '" data-id="' . $result->id . '" title="' . $result->machine_name . '">Duplicate</a>';
-      $html .= ' | <a class="import use-ajax" data-dialog-type="modal" data-dialog-options="{"resizable":true,"width":"80%","height":"auto","max-width":"1100px","modal":true}" href="' . Url::fromRoute('gavias_content_builder.admin.import_popup', ['bid' => $result->id])->toString() . '" data-id="' . $result->id . '" title="' . $result->machine_name . '">Import</a> ';
+      $html .= ' | <a class="duplicate use-ajax"
+      data-dialog-type="modal"
+      data-dialog-options="{
+        "resizable":true,
+        "width":"80%",
+        "height":"auto",
+        "max-width":"1100px",
+        "modal":true}"
+        href="' . Url::fromRoute(
+          'gavias_content_builder.admin.duplicate_popup',
+        [
+          'bid' => $result->id,
+          'random' => $random,
+        ]
+        )->toString() . '" data-id="' . $result->id . '" 
+        title="' . $result->machine_name . '
+        ">Duplicate</a>';
+      $html .= ' | <a class="import use-ajax" data-dialog-type="modal" data-dialog-options="{"resizable":true,
+        "width":"80%",
+        "height":"auto",
+        "max-width":"1100px",
+        "modal":true}" href="' . Url::fromRoute('gavias_content_builder.admin.import_popup', ['bid' => $result->id])->toString() . '" data-id="' . $result->id . '" title="' . $result->machine_name . '">Import</a> ';
       $html .= ' | <a class="export" href="' . Url::fromRoute('gavias_content_builder.admin.export', ['bid' => $result->id])->toString() . '" data-id="' . $result->id . '" title="' . $result->machine_name . '">Export</a>';
-      $html .= ' | <a class="delete use-ajax" data-dialog-type="modal" data-dialog-options="{"resizable":true,"width":"80%","height":"auto","max-width":"1100px","modal":true}" href="' . Url::fromRoute('gavias_content_builder.admin.delete_popup', ['bid' => $result->id, 'random' => $random])->toString() . '" data-id="' . $result->id . '" title="' . $result->machine_name . '">Delete</a> )</span>';
+      $html .= ' | <a class="delete use-ajax" data-dialog-type="modal" data-dialog-options="{"resizable":true,
+        "width":"80%",
+        "height":"auto",
+        "max-width":"1100px",
+        "modal":true}" href="' .
+        Url::fromRoute('gavias_content_builder.admin.delete_popup',
+        [
+          'bid' => $result->id,
+          'random' => $random,
+        ]
+        )->toString() . '" data-id="' . $result->id . '" 
+        title="' . $result->machine_name . '">Delete</a> )
+        </span>';
       $html .= '</span>';
     }
     $html .= '</div>';

@@ -27,7 +27,6 @@ class DuplicateFormPopup extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     // $args = $this->getFormArgs($form_state);
-
     $bid = 0;
     $random = '';
     if (\Drupal::request()->attributes->get('bid')) {

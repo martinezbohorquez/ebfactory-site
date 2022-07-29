@@ -8,7 +8,7 @@ use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- *
+ * Del Form.
  */
 class DelForm extends ConfirmFormBase {
   /**
@@ -29,7 +29,7 @@ class DelForm extends ConfirmFormBase {
    * {@inheritdoc}
    */
   public function getQuestion() {
-    return t('Do you want to delete %bid?', ['%bid' => $this->bid]);
+    return $this->t('Do you want to delete %bid?', ['%bid' => $this->bid]);
   }
 
   /**
@@ -43,28 +43,25 @@ class DelForm extends ConfirmFormBase {
    * {@inheritdoc}
    */
   public function getDescription() {
-    return t('Only do this if you are sure!');
+    return $this->t('Only do this if you are sure!');
   }
 
   /**
    * {@inheritdoc}
    */
   public function getConfirmText() {
-    return t('Delete it!');
+    return $this->t('Delete it!');
   }
 
   /**
    * {@inheritdoc}
    */
   public function getCancelText() {
-    return t('Cancel');
+    return $this->t('Cancel');
   }
 
   /**
-   * {@inheritdoc}
-   *
-   * @param int $id
-   *   (optional) The ID of the item to be deleted.
+   * The ID of the item to be deleted.
    */
   public function buildForm(array $form, FormStateInterface $form_state, $bid = NULL) {
     $this->bid = $bid;

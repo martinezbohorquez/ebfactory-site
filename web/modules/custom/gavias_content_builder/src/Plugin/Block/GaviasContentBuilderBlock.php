@@ -17,7 +17,9 @@ use Drupal\Core\Url;
  * )
  */
 class GaviasContentBuilderBlock extends BlockBase {
-
+  /**
+   * {@inheritdoc}
+   */
   protected $bid;
 
   /**
@@ -38,7 +40,13 @@ class GaviasContentBuilderBlock extends BlockBase {
       $url = \Drupal::request()->getRequestUri();
       $edit_url = '';
       if ($user->hasPermission('administer gavias_content_builder')) {
-        $edit_url = Url::fromRoute('gavias_content_builder.admin.edit', ['bid' => $bid, 'destination' => $url])->toString();
+        $edit_url = Url::fromRoute(
+          'gavias_content_builder.admin.edit',
+          [
+            'bid' => $bid,
+            'destination' => $url,
+          ]
+          )->toString();
       }
       $block = [
         '#theme' => 'builder',
@@ -53,11 +61,6 @@ class GaviasContentBuilderBlock extends BlockBase {
 
   /**
    * Default cache is disabled.
-   *
-   * @param array $form
-   * @param \Drupal\gavias_content_builder\Plugin\Block\FormStateInterface $form_state
-   *
-   * @return
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $rebuild_form = parent::buildConfigurationForm($form, $form_state);

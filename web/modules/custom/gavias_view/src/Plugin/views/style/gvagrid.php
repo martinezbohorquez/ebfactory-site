@@ -6,8 +6,9 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\style\StylePluginBase;
 
 /**
+ * Gvagrid.
  *
- * @ingroup views_style_plugins
+ * @ingroup views_style_plugins.
  *
  * @ViewsStyle(
  *   id = "gvagrid",

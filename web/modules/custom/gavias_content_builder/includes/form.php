@@ -39,11 +39,11 @@ function gavias_content_builder_delete_confirm_form_submit($form, &$form_state) 
 /**
  * Gavias content builder export.
  */
-function gavias_content_builder_export($gid) {
+function gaviasContentBuilderExport($gid) {
   $pbd_single = gavias_content_builder_load($gid);
   $data = $pbd_single->params;
   header("Content-Type: text/txt");
-  header("Content-Disposition: attachment; filename=gavias_content_builder_export.txt");
+  header("Content-Disposition: attachment; filename=gaviasContentBuilderExport.txt");
   print $data;
   exit;
 }

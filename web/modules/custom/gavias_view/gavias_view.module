@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * This is gavias - module.
  */
 
 use Drupal\taxonomy\Entity\Vocabulary;
@@ -177,7 +178,7 @@ function template_preprocess_views_view_gvaportfolio(&$variables) {
  * Default template: views_view_gvaportfolio.html.twig.
  */
 function template_preprocess_views_view_gvaonefour(&$variables) {
-  $_id = gavias_view_random_id();
+  // $_id = gavias_view_random_id();
   $handler = $variables['view']->style_plugin;
 
   $settings = $handler->options;
@@ -194,7 +195,7 @@ function template_preprocess_views_view_gvaonefour(&$variables) {
 }
 
 /**
- *
+ * Template preprocess views view gvaportfolio fields.
  */
 function template_preprocess_views_view_gvaportfolio_fields(&$variables) {
   $variables['output'] = $variables['fields'];
@@ -263,7 +264,7 @@ function owl_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- *
+ * Gavias view get all taxonomy.
  */
 function gavias_view_get_all_taxonomy() {
   $list = [];
@@ -279,7 +280,7 @@ function gavias_view_get_all_taxonomy() {
 }
 
 /**
- *
+ * Gavias view random id.
  */
 function gavias_view_random_id($length = 5) {
   $characters = '0123456789abcdefghijklmnopqrstuvwxyz';

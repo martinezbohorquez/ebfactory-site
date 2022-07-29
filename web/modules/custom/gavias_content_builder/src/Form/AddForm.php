@@ -86,14 +86,13 @@ class AddForm implements FormInterface {
     if (is_numeric($form['id']['#value']) && $form['id']['#value'] > 0) {
 
       // $pid = $builder = \Drupal::database()->update("gavias_content_builder")
-        ->fields([
-          'title'         => $form['title']['#value'],
-          'machine_name'  => $form['machine_name']['#value'],
-          'use_field'     => $form['use_field']['#value'],
-        ])
-        ->condition('id', $form['id']['#value'])
-        ->execute();
-
+      // ->fields([
+      // 'title'         => $form['title']['#value'],
+      // 'machine_name'  => $form['machine_name']['#value'],
+      // 'use_field'     => $form['use_field']['#value'],
+      // ])
+      // ->condition('id', $form['id']['#value'])
+      // ->execute();
       \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
       \Drupal::messenger()->addMessage("Builder '{$form['title']['#value']}' has been update");
       $response = new RedirectResponse(Url::fromRoute('gavias_content_builder.admin')->toString());
@@ -101,13 +100,13 @@ class AddForm implements FormInterface {
     }
     else {
       // $pid = $builder = \Drupal::database()->insert("gavias_content_builder")
-        ->fields([
-          'title'         => $form['title']['#value'],
-          'machine_name'  => $form['machine_name']['#value'],
-          'use_field'     => $form['use_field']['#value'],
-          'params'        => '',
-        ])
-        ->execute();
+      // ->fields([
+      // 'title'         => $form['title']['#value'],
+      // 'machine_name'  => $form['machine_name']['#value'],
+      // 'use_field'     => $form['use_field']['#value'],
+      // 'params'        => '',
+      // ])
+      // ->execute();
       \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
       \Drupal::messenger()->addMessage("Builder '{$form['title']['#value']}' has been created");
       $response = new RedirectResponse(Url::fromRoute('gavias_content_builder.admin')->toString());

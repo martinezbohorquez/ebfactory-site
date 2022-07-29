@@ -9,12 +9,12 @@ use Drupal\Core\TypedData\DataDefinition;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- *
+ * Gavias Content Builder.
  */
 class GaviasContentBuilder extends FieldItemBase {
 
   /**
-   *
+   * Default Field Settings.
    */
   public static function defaultFieldSettings() {
     return [
@@ -23,7 +23,7 @@ class GaviasContentBuilder extends FieldItemBase {
   }
 
   /**
-   *
+   * Field Settings Form.
    */
   public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
     $element = [];
@@ -44,7 +44,7 @@ class GaviasContentBuilder extends FieldItemBase {
   }
 
   /**
-   * {Inheritdoc}
+   * Property Definitions.
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties['bid'] = DataDefinition::create('integer')
@@ -54,7 +54,7 @@ class GaviasContentBuilder extends FieldItemBase {
   }
 
   /**
-   * {Inheritdoc}
+   * Schema.
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
     $columns = [
@@ -76,7 +76,7 @@ class GaviasContentBuilder extends FieldItemBase {
   }
 
   /**
-   *
+   * Is Empty.
    */
   public function isEmpty() {
     $value = $this->get('bid')->getValue();

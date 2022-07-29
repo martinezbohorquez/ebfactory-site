@@ -7,7 +7,7 @@ use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Url;
 
 /**
- *
+ * Gavias Content Builder Formatter.
  */
 class GaviasContentBuilderFormatter extends FormatterBase {
 
@@ -22,14 +22,18 @@ class GaviasContentBuilderFormatter extends FormatterBase {
       if ($bid) {
         $results = gavias_content_builder_load($bid);
         if (!$results) {
-          $content = t('No block builder selected');
+          $content = $this->t('No block builder selected');
         }
         else {
           $user = \Drupal::currentUser();
           $url = \Drupal::request()->getRequestUri();
           $edit_url = '';
           if ($user->hasPermission('administer gavias_content_builder')) {
-            $edit_url = Url::fromRoute('gavias_content_builder.admin.edit', ['bid' => $bid, 'destination' => $url])->toString();
+            $edit_url = Url::fromRoute(
+              'gavias_content_builder.admin.edit', [
+                'bid' => $bid,
+                'destination' => $url,
+              ])->toString();
           }
 
           $content .= '<div class="gavias-builder--content">';

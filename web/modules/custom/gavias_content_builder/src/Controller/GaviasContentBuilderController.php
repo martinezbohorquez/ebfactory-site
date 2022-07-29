@@ -7,14 +7,14 @@ use Drupal\Core\Url;
 use Drupal\Core\Controller\ControllerBase;
 
 /**
- *
+ * Gavias Content Builder Controller.
  */
 class GaviasContentBuilderController extends ControllerBase {
 
   /**
-   *
+   * Gavias content builder list.
    */
-  public function gavias_content_builder_list() {
+  public function gaviasContentBuilderList() {
 
     $page['#attached']['library'][] = 'gavias_content_builder/gavias_content_builder.assets.admin';
     $header = ['ID', 'Title', 'Action'];
@@ -50,9 +50,9 @@ class GaviasContentBuilderController extends ControllerBase {
   }
 
   /**
-   *
+   * Gavias content builder edit.
    */
-  public function gavias_content_builder_edit($bid) {
+  public function gaviasContentBuilderEdit($bid) {
 
     require_once GAVIAS_CONTENT_BUILDER_PATH . '/includes/utilities.php';
 
@@ -100,9 +100,9 @@ class GaviasContentBuilderController extends ControllerBase {
   }
 
   /**
-   *
+   * Gavias content builder save.
    */
-  public function gavias_content_builder_save() {
+  public function gaviasContentBuilderSave() {
 
     header('Content-type: application/json');
     $data = $_REQUEST['data'];
@@ -131,9 +131,9 @@ class GaviasContentBuilderController extends ControllerBase {
   }
 
   /**
-   *
+   * Gavias content builder export.
    */
-  public function gavias_content_builder_export($bid) {
+  public function gaviasContentBuilderExport($bid) {
 
     $pbd_single = gavias_content_builder_load($bid);
     $data = $pbd_single->params;
