@@ -3,7 +3,6 @@
 namespace Drupal\gavias_sliderlayer\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpFoundation\CurrentRequest;
 
 /**
  * File Controller.

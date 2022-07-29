@@ -7,16 +7,16 @@ use Drupal\views\Views;
 use Drupal\views\Element\View;
 
 /**
- *
+ * Gva Ajax Controller.
  */
 class GvaAjaxController extends ControllerBase {
 
   /**
-   *
+   * Gavias ajax view.
    */
-  public function gavias_ajax_view() {
+  public function gaviasAjaxView() {
 
-    $view = $_REQUEST['view'];
+    $view = $stack->getCurrentRequest()->request->get('view');
     if ($view) {
 
       $_view = preg_split("/-----/", $view);

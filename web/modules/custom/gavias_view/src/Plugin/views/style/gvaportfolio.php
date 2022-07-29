@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\style\StylePluginBase;
 
 /**
+ * Gvaportfolio.
  *
  * @ingroup views_style_plugins
  *
@@ -94,7 +95,7 @@ class gvaportfolio extends StylePluginBase {
       '#type' => 'textfield',
       '#title' => $this->t('Custom taxonomy term tabs filter'),
       '#default_value' => $this->options['tids'],
-      '#description' => t('List id for term show in tabs filter, eg: 1, 2, 3, 4, 5. Show all term if empty'),
+      '#description' => $this->t('List id for term show in tabs filter, eg: 1, 2, 3, 4, 5. Show all term if empty'),
     ];
 
     $form['el_class'] = [

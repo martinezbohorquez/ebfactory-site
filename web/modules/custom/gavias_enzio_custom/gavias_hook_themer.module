@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * This is hook themer - module.
  */
 
 use Drupal\node\Entity\Node;
@@ -10,7 +11,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
- *
+ * Gavias hook themer makeid.
  */
 function gavias_hook_themer_makeid($length = 5) {
   $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
@@ -39,11 +40,11 @@ function gavias_hook_themer_form_node_form_alter(&$form, FormStateInterface &$fo
 
   $path = \Drupal::service('path.current')->getPath();
   $path_args = explode('/', $path);
-  $node_id = 0;
+  // $node_id = 0;
   if (isset($path_args[1]) && isset($path_args[2]) && ($path_args[1] == 'node') && (is_numeric($path_args[2]))) {
     $node = Node::load($path_args[2]);
     if ($node->id()) {
-      $node_id = $node->id();
+      // $node_id = $node->id();
     }
   }
 
@@ -150,11 +151,11 @@ function gavias_hook_themer_preprocess_html(&$variables) {
 }
 
 /**
- *
+ * Gavias hook themer preprocess page.
  */
 function gavias_hook_themer_preprocess_page(&$variables) {
   $path = \Drupal::service('path.current')->getPath();
-  $path_args = explode('/', $path);
+  explode('/', $path);
   if ($node = \Drupal::request()->attributes->get('node')) {
     if (is_object($node)) {
       $variables['gva_header'] = '';
@@ -181,7 +182,7 @@ function gavias_hook_themer_preprocess_page(&$variables) {
 }
 
 /**
- *
+ * Gavias hook themer sliderlayer styles alter.
  */
 function gavias_hook_themer_sliderlayer_styles_alter(&$variables) {
   $variables['data'] = [
@@ -195,12 +196,13 @@ function gavias_hook_themer_sliderlayer_styles_alter(&$variables) {
 }
 
 /**
- *
+ * Gavias hook themer update projects alter.
  */
 function gavias_hook_themer_update_projects_alter(&$projects) {
   unset($projects['gavias_hook_themer']);
 }
 
-// Function gavias_hook_themer_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets){
-//    $javascript['core/assets/vendor/jquery/jquery.min.js']['data'] = drupal_get_path('module', 'gavias_hook_themer') . '/vendor/jquery.min.js';
-// }.
+// Function gavias_hook_themer_js_alter(&$javascript,
+// \Drupal\Core\Asset\AttachedAssetsInterface $assets){
+// $javascript['core/assets/vendor/jquery/jquery.min.js']['data'] =
+// drupal_get_path('module', 'gavias_hook_themer') . '/vendor/jquery.min.js';}.

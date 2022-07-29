@@ -80,10 +80,8 @@ class GaviasContentBuilderWidget extends WidgetBase {
     }
 
     // $langcode = $items->getLangcode();
-
     // $field_name = $items->getName();
     // $input = $form_state->getUserInput();
-
     $results = \Drupal::database()->select('{gavias_content_builder}', 'd')
       ->fields('d', ['id', 'title'])
       ->condition('use_field', 1)
