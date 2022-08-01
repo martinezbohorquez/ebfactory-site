@@ -1,4 +1,10 @@
-<?php 
-require('fonts.php');
+<?php
+
+/**
+ * @file
+ * This is Preview.
+ */
+
+require 'fonts.php';
 print gavias_enzio_links_typography_font($json);
-require('dynamic_style.php');
+require 'dynamic_style.php';

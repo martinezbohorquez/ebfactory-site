@@ -1,4 +1,7 @@
-.nav-tabs, .topbar ul, ul.contact-info, ul.menu {
+@charset "UTF-8"; .nav-tabs,
+.topbar ul,
+ul.contact-info,
+ul.menu {
   list-style: none !important;
   padding-left: 0;
 }

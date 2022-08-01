@@ -6220,7 +6220,6 @@ ul[data-drupal-views-infinite-scroll-pager].pager a:focus {
   padding-bottom: 0 !important;
 }
 
-.widget {
   /******************** Block for drupal ***********************/
   /********************* Custom heading *************************/
   /********************** Call to action **************************/
@@ -6230,7 +6229,7 @@ ul[data-drupal-views-infinite-scroll-pager].pager a:focus {
   /******************** Video Box **************************/
   /*************** Milestone ***************/
   /***********************************************/
-}
+
 .widget.gsc-block-drupal {
   margin-bottom: 35px;
 }
