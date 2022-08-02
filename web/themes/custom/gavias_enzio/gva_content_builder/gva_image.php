@@ -1,15 +1,20 @@
 <?php
 
-if (!class_exists('element_gva_image')) :
+/**
+ * @file
+ * This is gva - image.
+ */
+
+if (!class_exists('GaviasEnzioElementGvaImage')) :
   /**
-   *
+   * Gavias Enzio Element Gva Image.
    */
-  class element_gva_image {
+  class GaviasEnzioElementGvaImage {
 
     /**
-     *
+     * Render form.
      */
-    public function render_form() {
+    public function renderForm() {
       $fields = [
         'type' => 'gsc_image',
         'title' => ('Image'),
@@ -82,9 +87,9 @@ if (!class_exists('element_gva_image')) :
     }
 
     /**
-     *
+     * Render content.
      */
-    public static function render_content($attr, $content = NULL) {
+    public static function renderContent($attr, $content = NULL) {
       global $base_url;
       extract(gavias_merge_atts([
         'image'           => '',
@@ -127,21 +132,23 @@ if (!class_exists('element_gva_image')) :
       }
       ob_start();
       ?>
-            <div class="widget gsc-image<?php if (count($class_array) > 0) {
-              print (' ' . implode(' ', $class_array));
-                                        } ?>" <?php print $margin ?> <?php print gavias_content_builder_print_animate_wow('', $animate_delay) ?>>
-               <div class="widget-content">
-                  <?php if ($link) { ?>
-                     <a href="<?php print $link ?>" <?php print $target ?>>
-                  <?php } ?> 
-                    <img src="<?php print $image ?>" alt="<?php print $alt ?>" />
-                  <?php if ($link) {
-                    print '</a>';
-                  } ?>
-               </div>
-            </div>    
-         <?php return ob_get_clean() ?>  
-         <?php
+    <div class="widget gsc-image
+      <?php if (count($class_array) > 0) {
+        print (' ' . implode(' ', $class_array));
+      } ?>" 
+      <?php print $margin ?> <?php print gavias_content_builder_print_animate_wow('', $animate_delay) ?>>
+    <div class="widget-content">
+      <?php if ($link) { ?>
+    <a href="<?php print $link ?>" <?php print $target ?>>
+      <?php } ?>
+    <img src="<?php print $image ?>" alt="<?php print $alt ?>" />
+      <?php if ($link) {
+        print '</a>';
+      } ?>
+    </div>
+    </div>
+      <?php return ob_get_clean() ?>
+      <?php
     }
 
   }

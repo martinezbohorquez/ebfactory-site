@@ -1,16 +1,21 @@
 <?php
 
 /**
- *
+ * @file
+ * This is gva - row.
  */
-class element_gva_row {
+
+/**
+ * Gavias Enzio Element Gva Row.
+ */
+class GaviasEnzioElementGvaRow {
 
   /**
-   *
+   * Render form.
    */
-  public function render_form() {
+  public function renderForm() {
     return [
-      'title'    => t('Row'),
+      'title'    => $this->t('Row'),
       'fields'    => [
                 [
                   'id'        => 'row_name',
@@ -38,7 +43,7 @@ class element_gva_row {
                 [
                   'id'         => 'bg_particles',
                   'type'       => 'select',
-                  'title'      => t('Background Particles'),
+                  'title'      => $this->t('Background Particles'),
                   'class'       => 'width-1-2',
                   'options'    => [
                     'off' => 'Disable',
@@ -48,7 +53,7 @@ class element_gva_row {
                 [
                   'id'         => 'bg_position',
                   'type'       => 'select',
-                  'title'      => t('Background Position'),
+                  'title'      => $this->t('Background Position'),
                   'class'       => 'width-1-4 clear-both',
                   'options'    => [
                     'center top' => 'center top',
@@ -66,7 +71,7 @@ class element_gva_row {
                 [
                   'id'         => 'bg_repeat',
                   'type'       => 'select',
-                  'title'      => t('Background Position'),
+                  'title'      => $this->t('Background Position'),
                   'class'       => 'width-1-4',
                   'options'    => [
                     'no-repeat' => 'no-repeat',
@@ -78,7 +83,7 @@ class element_gva_row {
                 [
                   'id'         => 'bg_attachment',
                   'type'       => 'select',
-                  'title'      => t('Background Attachment'),
+                  'title'      => $this->t('Background Attachment'),
                   'class'       => 'width-1-4',
                   'options'    => [
                     'scroll' => 'Scroll',
@@ -90,7 +95,7 @@ class element_gva_row {
                 [
                   'id'         => 'bg_size',
                   'type'       => 'select',
-                  'title'      => t('Background Size'),
+                  'title'      => $this->t('Background Size'),
                   'class'       => 'width-1-4',
                   'options'    => [
                     'cover'      => 'cover',
@@ -209,14 +214,21 @@ class element_gva_row {
                   'id'            => 'layout',
                   'type'          => 'select',
                   'title'         => 'Layout',
-                  'options'       => ['container' => 'Box', 'container-fw' => 'Full Width', 'full-screen' => 'Full Screen'],
+                  'options'       => [
+                    'container' => 'Box',
+                    'container-fw' => 'Full Width',
+                    'full-screen' => 'Full Screen',
+                  ],
                 ],
 
                 [
                   'id'            => 'equal_height',
                   'type'          => 'select',
                   'title'         => 'Columns Equal Height',
-                  'options'       => ['' => 'Disable', 'gsc-equal-height' => 'Enable'],
+                  'options'       => [
+                    '' => 'Disable',
+                    'gsc-equal-height' => 'Enable',
+                  ],
                 ],
 
                 [
@@ -229,7 +241,7 @@ class element_gva_row {
                   'id'    => 'icon',
                   'type'    => 'text',
                   'title'   => ('Icon for row'),
-                  'desc'     => t('Use class icon font <a target="_blank" href="https://fontawesome.com/v4.7.0/icons/">Icon Awesome</a>'),
+                  'desc'     => $this->t('Use class icon font <a target="_blank" href="https://fontawesome.com/v4.7.0/icons/">Icon Awesome</a>'),
                 ],
 
                 [
@@ -251,10 +263,10 @@ class element_gva_row {
   }
 
   /**
-   *
+   * Render content.
    */
-  public function render_content($settings = [], $content = '') {
-    global $base_url, $base_path;
+  public function renderContent($settings = [], $content = '') {
+    global $base_path;
     extract(gavias_merge_atts([
       'bg_image'               => '',
       'bg_color'               => '',
@@ -350,29 +362,48 @@ class element_gva_row {
     ?>
         <div class="gbb-row-wrapper">
               <?php if ($icon) {
-                ?><span class="icon-row <?php print $icon ?>"></span><?php
+                ?>
+                <span class="icon-row 
+                <?php print $icon ?>"></span>
+                <?php
               } ?>
-              <div class="<?php print $row_class ?> <?php print ($bg_particles == 'on') ? ' row-background-particles-js' : ''; ?>" <?php if ($row_id) {
+              <div class="
+              <?php print $row_class ?> 
+              <?php print ($bg_particles == 'on') ? ' row-background-particles-js' : ''; ?>" 
+              <?php if ($row_id) {
                 print 'id="' . $row_id . '"';
-} ?> style="<?php print $row_style ?>" <?php if ($data_bg_video) {
-  print $data_bg_video;
-                          } ?>>
-                <div class="bb-inner <?php if ($style_space) {
+              } ?> 
+style="
+    <?php print $row_style ?>" 
+    <?php if ($data_bg_video) {
+      print $data_bg_video;
+    } ?>>
+                <div class="bb-inner 
+                <?php if ($style_space) {
                   print $style_space;
-} ?>">  
-                  <div class="bb-container <?php print $layout ?>">
+                } ?>">  
+                  <div class="bb-container 
+                  <?php print $layout ?>">
                         <div class="row">
                           <div class="row-wrapper clearfix">
-                                <?php print $content ?>
+                                
+                          <?php print $content ?>
                             </div>
                           </div>
                     </div>
                   </div>  
-              <?php if ($bg_attachment == 'fixed') { ?>
-                <div style="background-repeat: <?php print $bg_repeat; ?>;background-position:<?php print $bg_position ?>;<?php print ($bg_size == 'width-100' ? 'background-size: 100%;' : '')?>" class="gva-parallax-inner skrollable skrollable-between <?php print $row_bg_size ?>" data-bottom-top="top: -60%;" data-top-bottom="top: 0%;"></div>
-              <?php } ?>
+              
+                  <?php if ($bg_attachment == 'fixed') { ?>
+                <div style="background-repeat: 
+                    <?php print $bg_repeat; ?>;background-position:
+                    <?php print $bg_position ?>;
+                    <?php print ($bg_size == 'width-100' ? 'background-size: 100%;' : '')?>" class="gva-parallax-inner skrollable skrollable-between 
+                    <?php print $row_bg_size ?>" data-bottom-top="top: -60%;" data-top-bottom="top: 0%;"></div>
+              
+                  <?php } ?>
             </div>  
         </div>
+    
     <?php return ob_get_clean();
   }
 

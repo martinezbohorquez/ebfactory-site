@@ -72,7 +72,7 @@ if (!class_exists('GaviasEnzioElementGvaVideoBox')) :
         'animate_delay' => '',
         'el_class' => '',
       ], $attr));
-      //$_id = gavias_content_builder_makeid();
+      // $_id = gavias_content_builder_makeid();
       if ($image) {
         $image = $base_url . $image;
       }

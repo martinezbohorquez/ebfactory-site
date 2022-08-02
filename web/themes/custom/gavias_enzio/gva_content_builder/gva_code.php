@@ -1,36 +1,62 @@
-<?php 
-if(!class_exists('element_gva_code')):
-   class element_gva_code{
-      public function render_form(){
-         $fields = array(
-            'type'      => 'gsc_code',
-            'title'  => t('Code'), 
-            'fields' => array(
-               array(
-                  'id'     => 'content',
-                  'type'      => 'textarea',
-                  'title'  => t('Content'),
-               ),
-            ),                                       
-         );
-         return $fields;
-      } 
-      
-      public function render_content( $item ) {
-         if( ! key_exists('content', $item['fields']) ) $item['fields']['content'] = '';
-         print self::sc_code( $item['fields'], $item['fields']['content'] );
-      }
+<?php
 
-      public static function sc_code( $attr, $content = null ){
-         $output  = '<pre>';
-            $output .= do_shortcode($content);
-         $output .= '</pre>'."\n";
-         print $output;
-      }
+/**
+ * @file
+ * This is gva - code.
+ */
 
-      public function load_shortcode(){
-         add_shortcode( 'code',array($this, 'sc_code') );
+if (!class_exists('GaviasEnzioElementGvaCode')) :
+  /**
+   * Gavias Enzio Element Gva Code.
+   */
+  class GaviasEnzioElementGvaCode {
+
+    /**
+     * Render form.
+     */
+    public function renderForm() {
+      $fields = [
+        'type' => 'gsc_code',
+        'title' => t('Code'),
+        'fields' => [[
+          'id' => 'content',
+          'type' => 'textarea',
+          'title' => t('Content'),
+        ],
+        ],
+      ];
+      return $fields;
+    }
+
+    /**
+     * Render content.
+     */
+    public function renderContent($item) {
+      if (!array_key_exists('content', $item['fields'])) {
+        $item['fields']['content'] = '';
       }
-   }
+      print self::scCode($item['fields'], $item['fields']['content']);
+    }
+
+    /**
+     * Sc code.
+     */
+    public static function scCode($attr, $content = NULL) {
+      $output = '<pre>';
+      $output .= do_shortcode($content);
+      $output .= '</pre>' . "\n";
+      print $output;
+    }
+
+    /**
+     * Load shortcode.
+     */
+    public function loadShortcode() {
+      add_shortcode('code', [$this,
+        'sc_code',
+      ]);
+    }
+
+  }
+
 endif;
-

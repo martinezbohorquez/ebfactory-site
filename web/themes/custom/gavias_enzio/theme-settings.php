@@ -147,7 +147,8 @@ function gavias_enzio_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Footer First Size'),
     '#default_value' => theme_get_setting('footer_first_size') ? theme_get_setting('footer_first_size') : 3,
-    '#options' => [0 => $this->t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12],
+    '#options' =>
+    [0 => $this->t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12],
     '#description' => 'Setting width for grid boostrap / 12',
   ];
 
@@ -155,7 +156,8 @@ function gavias_enzio_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Footer Second Size'),
     '#default_value' => theme_get_setting('footer_second_size') ? theme_get_setting('footer_second_size') : 3,
-    '#options' => [0 => $this->t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12],
+    '#options' =>
+    [0 => $this->t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12],
     '#description' => 'Setting width for grid boostrap / 12',
   ];
 
@@ -163,7 +165,8 @@ function gavias_enzio_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Footer Third Size'),
     '#default_value' => theme_get_setting('footer_third_size') ? theme_get_setting('footer_third_size') : 3,
-    '#options' => [0 => $this->t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12],
+    '#options' =>
+    [0 => $this->t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12],
     '#description' => 'Setting width for grid boostrap / 12',
   ];
 
@@ -171,7 +174,8 @@ function gavias_enzio_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'select',
     '#title' => t('Footer Four Size'),
     '#default_value' => theme_get_setting('footer_four_size') ? theme_get_setting('footer_four_size') : 3,
-    '#options' => [0 => $this->t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12],
+    '#options' =>
+    [0 => $this->t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12],
     '#description' => 'Setting width for grid boostrap / 12',
   ];
 

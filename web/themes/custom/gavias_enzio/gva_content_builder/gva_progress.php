@@ -7,8 +7,7 @@
 
 if (!class_exists('GaviasEnzioElementGvaProgress')) :
   /**
-   *
-   *
+   * Gavias Enzio Element Gva Progress.
    */
   class GaviasEnzioElementGvaProgress {
 
@@ -38,7 +37,10 @@ if (!class_exists('GaviasEnzioElementGvaProgress')) :
           'id' => 'skin_text',
           'type' => 'select',
           'title' => 'Skin Text for box',
-          'options' => ['text-light' => t('Text Light'), 'text-dark' => t('Text Dark')],
+          'options' => [
+            'text-light' => t('Text Light'),
+            'text-dark' => t('Text Dark'),
+          ],
         ], [
           'id' => 'animate',
           'type' => 'select',
@@ -89,9 +91,11 @@ if (!class_exists('GaviasEnzioElementGvaProgress')) :
       }
       ob_start();
       ?>
-         <div class="widget gsc-progress<?php if (count($class_array)) {
+         <div class="widget gsc-progress
+         <?php if (count($class_array)) {
             print (' ' . implode(' ', $class_array));
-                                        } ?>"
+         }
+          ?>"
                                          <?php print gavias_content_builder_print_animate_wow('', $animate_delay) ?>>
             <div class="progress-label">
                <?php print $title ?>

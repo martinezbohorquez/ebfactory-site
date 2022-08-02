@@ -1,106 +1,123 @@
-<?php 
+<?php
 
-if(!class_exists('element_gva_gallery')):
-   class element_gva_gallery{
+/**
+ * @file
+ * This is gva - gallery.
+ */
 
-      public function render_form(){
-         $fields = array(
-            'type' => 'gsc_gallery',
-            'title' => t('Gallery'),
-            'size' => 3,
-            'fields' => array(
-               array(
-                  'id'        => 'title',
-                  'type'      => 'text',
-                  'title'     => t('Title For Admin'),
-                  'admin'     => true
-               ),
-               array(
-                  'id'        => 'animate',
-                  'type'      => 'select',
-                  'title'     => t('Animation'),
-                  'desc'      => t('Entrance animation for element'),
-                  'options'   => gavias_content_builder_animate(),
-                  'class'     => 'width-1-2'
-               ), 
-               array(
-                  'id'        => 'animate_delay',
-                  'type'      => 'select',
-                  'title'     => t('Animation Delay'),
-                  'options'   => gavias_content_builder_delay_aos(),
-                  'desc'      => '0 = default',
-                  'class'     => 'width-1-2'
-               ), 
-               array(
-                  'id'        => 'el_class',
-                  'type'      => 'text',
-                  'title'     => t('Extra class name'),
-                  'desc'      => t('Style particular content element differently - add a class name and refer to it in custom CSS.'),
-               ),   
-            ),                                     
-         );
+if (!class_exists('GaviasEnzioElementGvaGallery')) :
+  /**
+   * Gavias Enzio Element Gva Gallery.
+   */
+  class GaviasEnzioElementGvaGallery {
 
-         for($i=1; $i<=10; $i++){
-            $fields['fields'][] = array(
-               'id'     => "info_${i}",
-               'type'   => 'info',
-               'desc'   => "Information for item {$i}"
-            );
-            $fields['fields'][] = array(
-               'id'        => "title_{$i}",
-               'type'      => 'text',
-               'title'     => t("Title {$i}")
-            );
-            $fields['fields'][] = array(
-               'id'        => "image_{$i}",
-               'type'      => 'upload',
-               'title'     => t("Image {$i}")
-            );
-         }
-         return $fields;
+    /**
+     * Render form.
+     */
+    public function renderForm() {
+      $fields = [
+        'type' => 'gsc_gallery',
+        'title' => t('Gallery'),
+        'size' => 3,
+        'fields' => [[
+          'id' => 'title',
+          'type' => 'text',
+          'title' => t('Title For Admin'),
+          'admin' => TRUE,
+        ], [
+          'id' => 'animate',
+          'type' => 'select',
+          'title' => t('Animation'),
+          'desc' => t('Entrance animation for element'),
+          'options' => gavias_content_builder_animate(),
+          'class' => 'width-1-2',
+        ], [
+          'id' => 'animate_delay',
+          'type' => 'select',
+          'title' => t('Animation Delay'),
+          'options' => gavias_content_builder_delay_aos(),
+          'desc' => '0 = default',
+          'class' => 'width-1-2',
+        ], [
+          'id' => 'el_class',
+          'type' => 'text',
+          'title' => t('Extra class name'),
+          'desc' => t('Style particular content element differently - add a class name and refer to it in custom CSS.'),
+        ],
+        ],
+      ];
+
+      for ($i = 1; $i <= 10; $i++) {
+        $fields['fields'][] = [
+          'id' => "info_${i}",
+          'type' => 'info',
+          'desc' => "Information for item {$i}",
+        ];
+        $fields['fields'][] = [
+          'id' => "title_{$i}",
+          'type' => 'text',
+          'title' => t("Title {$i}"),
+        ];
+        $fields['fields'][] = [
+          'id' => "image_{$i}",
+          'type' => 'upload',
+          'title' => t("Image {$i}"),
+        ];
+      }
+      return $fields;
+    }
+
+    /**
+     * Render content.
+     */
+    public static function renderContent($attr = [], $content = NULL) {
+      global $base_url;
+      $default = [
+        'title' => '',
+        'el_class' => '',
+        'animate' => '',
+        'animate_delay' => '',
+      ];
+
+      for ($i = 1; $i <= 10; $i++) {
+        $default["title_{$i}"] = '';
+        $default["image_{$i}"] = '';
       }
 
-      public static function render_content( $attr = array(), $content = null ){
-         global $base_url;
-         $default = array(
-            'title'           => '',
-            'el_class'        => '',
-            'animate'         => '',
-            'animate_delay'   => ''
-         );
-
-         for($i=1; $i<=10; $i++){
-            $default["title_{$i}"] = '';
-            $default["image_{$i}"] = '';
-         }
-
-         extract(gavias_merge_atts($default, $attr));
-
-         $_id = gavias_content_builder_makeid();
-         
-         if($animate) $el_class .= ' wow ' . $animate; 
-          ob_start();
-         ?>
+      extract(gavias_merge_atts($default, $attr));
+      // $_id = gavias_content_builder_makeid();
+      if ($animate) {
+        $el_class .= ' wow ' . $animate;
+      }
+      ob_start();
+      ?>
          <div class="gsc-our-gallery <?php echo $el_class ?>" <?php print gavias_content_builder_print_animate_wow('', $animate_delay) ?>> 
             <div class="owl-carousel init-carousel-owl owl-loaded owl-drag" data-items="1" data-items_lg="1" data-items_md="1" data-items_sm="2" data-items_xs="1" data-loop="1" data-speed="500" data-auto_play="1" data-auto_play_speed="2000" data-auto_play_timeout="5000" data-auto_play_hover="1" data-navigation="1" data-rewind_nav="0" data-pagination="0" data-mouse_drag="1" data-touch_drag="1">
-               <?php for($i=1; $i<=10; $i++){ ?>
-                  <?php 
-                     $title = "title_{$i}";
-                     $image = "image_{$i}";
+               <?php for ($i = 1; $i <= 10; $i++) {
                   ?>
-                  <?php if($$title){ ?>
+                  <?php
+                  $title = "title_{$i}";
+                  $image = "image_{$i}";
+                  ?>
+                  <?php if ($$title) {
+                    ?>
                      <div class="item"><div class="content-inner">
-                        <?php if($$title){ ?><div class="title"><?php print $$title ?></div><?php } ?>         
-                        <?php if($$image){ ?><div class="image"><img src="<?php echo ($base_url . $$image) ?>" /></div><?php } ?>
+                        <?php if ($$title) {
+                          ?><div class="title"><?php print $$title ?></div><?php
+                        } ?>         
+                        <?php if ($$image) {
+                          ?><div class="image"><img src="<?php echo ($base_url . $$image) ?>" /></div><?php
+                        } ?>
                      </div></div>
-                  <?php } ?>    
-               <?php } ?>
+                    <?php
+                  } ?>    
+                  <?php
+               } ?>
             </div> 
          </div>   
          <?php return ob_get_clean();
-      }
-   }
- endif;  
+    }
 
+  }
 
-
+endif;

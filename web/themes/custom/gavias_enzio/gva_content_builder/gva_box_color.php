@@ -1,15 +1,20 @@
 <?php
 
-if (!class_exists('element_gva_box_color')) :
+/**
+ * @file
+ * This is gva - box color.
+ */
+
+if (!class_exists('GaviasEnzioElemenGvaBoxColor')) :
   /**
-   *
+   * Gavias Enzio Element Gva Box Color.
    */
-  class element_gva_box_color {
+  class GaviasEnzioElementGvaBoxColor {
 
     /**
-     *
+     * Render form.
      */
-    public function render_form() {
+    public function renderForm() {
       $fields = [
         'type'            => 'gsc_box_color',
         'title'           => t('Box color'),
@@ -93,16 +98,16 @@ if (!class_exists('element_gva_box_color')) :
     }
 
     /**
-     *
+     * Render content.
      */
-    public function render_content($item) {
-      print self::sc_box_color($item['fields']);
+    public function renderContent($item) {
+      print self::scBoxColor($item['fields']);
     }
 
     /**
-     *
+     * Sc BoxColor.
      */
-    public static function sc_box_color($attr, $content = NULL) {
+    public static function scBoxColor($attr, $content = NULL) {
       global $base_url;
       extract(gavias_merge_atts([
         'icon'                  => '',
@@ -145,27 +150,30 @@ if (!class_exists('element_gva_box_color')) :
 
       ob_start();
       ?>
-         <div class="widget gsc-box-color clearfix <?php print $el_class; ?>" <?php print $css ?> <?php print gavias_content_builder_print_animate_wow('', $animate_delay) ?>>
-            <div class="box-content">
-               <?php if ($image) {
-                  ?><div class="image"><img src="<?php print $image ?>"/></div> <?php
-               } ?>
-               <div class="content-inner">
-                  <div class="box-title"><?php print $title ?></div>
-                  <div class="action"><a class="link" <?php if ($link) {
-                    print 'href="' . $link . '"';
-                                                      } ?> <?php print $target ?>><span class="text"><?php print $text_link ?></span></a></div>
-               </div>
-            </div>   
-         </div>
-         <?php return ob_get_clean() ?>
-         <?php
+    <div class="widget gsc-box-color clearfix <?php print $el_class; ?>" <?php print $css ?> <?php print gavias_content_builder_print_animate_wow('', $animate_delay) ?>>
+    <div class="box-content">
+      <?php if ($image) {
+        ?><div class="image"><img src="<?php print $image ?>"/></div> <?php
+      } ?>
+    <div class="content-inner">
+    <div class="box-title"><?php print $title ?></div>
+    <div class="action"><a class="link"
+      <?php if ($link) {
+        print 'href="' . $link . '"';
+      }
+      ?> 
+      <?php print $target ?>><span class="text"><?php print $text_link ?></span></a></div>
+    </div>
+    </div>
+    </div>
+      <?php return ob_get_clean() ?>
+      <?php
     }
 
     /**
-     *
+     * Load Short code.
      */
-    public function load_shortcode() {
+    public function loadShortcode() {
       add_shortcode('box_color', ['gsc_box_color', 'sc_box_color']);
     }
 
