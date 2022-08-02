@@ -1,7 +1,11 @@
-<?php 
+<?php
+/**
+ * @file
+ * This is gva - call to action.
+ */
 
-if(!class_exists('element_gva_call_to_action')):
-   class element_gva_call_to_action{
+if(!class_exists('GaviasEnzioElementGvaCallToAction')):
+   class GaviasEnzioElementGvaCallToAction{
       public function render_form(){
          $fields = array(
             'type' => 'gsc_call_to_action',

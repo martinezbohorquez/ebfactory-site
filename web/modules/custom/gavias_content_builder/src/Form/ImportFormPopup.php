@@ -102,13 +102,6 @@ class ImportFormPopup extends FormBase {
       }
 
       $id = $form['id']['#value'];
-      // $builder = \Drupal::database()->update("gavias_content_builder")
-        ->fields([
-          'params' => $params,
-        ])
-        ->condition('id', $id)
-        ->execute();
-      \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
     }
   }
 

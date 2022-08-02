@@ -1,31 +1,107 @@
 <?php
 
-if (!class_exists('element_gva_pricing_item')) :
+/**
+ * @file
+ * This is gva - pricing item.
+ */
+
+if (!class_exists('GaviasEnzioElementGvaPricingItem')) :
   /**
-   *
+   * Gavias Enzio Element Gva Pricing Item.
    */
-  class element_gva_pricing_item {
-    /**
-     *
-     */
+  class GaviasEnzioElementGvaPricingItem {
 
     /**
-     *
+     * Render form.
      */
-    public function render_form() {
-      $fields = ['type' => 'gsc_pricing_item', 'title' => ('Pricing Item'), 'fields' => [['id' => 'title', 'type' => 'text', 'title' => t('Title'), 'desc' => t('Pricing item title'), 'admin' => TRUE], ['id' => 'price', 'type' => 'text', 'title' => t('Price')], ['id' => 'currency', 'type' => 'text', 'title' => t('Currency')], ['id' => 'period', 'type' => 'text', 'title' => t('Period')], ['id' => 'content', 'type' => 'textarea', 'title' => t('Content'), 'desc' => t('HTML tags allowed.'), 'std' => '<ul><li><strong>List</strong> item</li></ul>'], ['id' => 'link_title', 'type' => 'text', 'title' => t('Link title'), 'desc' => t('Link will appear only if this field will be filled.')], ['id' => 'link', 'type' => 'text', 'title' => t('Link'), 'desc' => t('Link will appear only if this field will be filled.')], ['id' => 'featured', 'type' => 'select', 'title' => t('Featured'), 'options' => ['off' => 'No', 'on' => 'Yes']], ['id' => 'el_class', 'type' => 'text', 'title' => t('Extra class name'), 'desc' => t('Style particular content element differently - add a class name and refer to it in custom CSS.')], ['id' => 'animate', 'type' => 'select', 'title' => t('Animation'), 'desc' => t('Entrance animation for element'), 'options' => gavias_content_builder_animate(), 'class' => 'width-1-2'], ['id' => 'animate_delay', 'type' => 'select', 'title' => t('Animation Delay'), 'options' => gavias_content_builder_delay_aos(), 'desc' => '0 = default', 'class' => 'width-1-2']]];
+    public function renderForm() {
+      $fields = [
+        'type' => 'gsc_pricing_item',
+        'title' => ('Pricing Item'),
+        'fields' => [[
+          'id' => 'title',
+          'type' => 'text',
+          'title' => t('Title'),
+          'desc' => t('Pricing item title'),
+          'admin' => TRUE,
+        ], [
+          'id' => 'price',
+          'type' => 'text',
+          'title' => t('Price'),
+        ], [
+          'id' => 'currency',
+          'type' => 'text',
+          'title' => t('Currency'),
+        ], [
+          'id' => 'period',
+          'type' => 'text',
+          'title' => t('Period'),
+        ], [
+          'id' => 'content',
+          'type' => 'textarea',
+          'title' => t('Content'),
+          'desc' => t('HTML tags allowed.'),
+          'std' => '<ul><li><strong>List</strong> item</li></ul>',
+        ], [
+          'id' => 'link_title',
+          'type' => 'text',
+          'title' => t('Link title'),
+          'desc' => t('Link will appear only if this field will be filled.'),
+        ], [
+          'id' => 'link',
+          'type' => 'text',
+          'title' => t('Link'),
+          'desc' => t('Link will appear only if this field will be filled.'),
+        ], [
+          'id' => 'featured',
+          'type' => 'select',
+          'title' => t('Featured'),
+          'options' => [
+            'off' => 'No',
+            'on' => 'Yes',
+          ],
+        ], [
+          'id' => 'el_class',
+          'type' => 'text',
+          'title' => t('Extra class name'),
+          'desc' => t('Style particular content element differently - add a class name and refer to it in custom CSS.'),
+        ], [
+          'id' => 'animate',
+          'type' => 'select',
+          'title' => t('Animation'),
+          'desc' => t('Entrance animation for element'),
+          'options' => gavias_content_builder_animate(),
+          'class' => 'width-1-2',
+        ], [
+          'id' => 'animate_delay',
+          'type' => 'select',
+          'title' => t('Animation Delay'),
+          'options' => gavias_content_builder_delay_aos(),
+          'desc' => '0 = default',
+          'class' => 'width-1-2',
+        ],
+        ],
+      ];
       return $fields;
     }
 
     /**
-     *
+     * Render content.
      */
-
-    /**
-     *
-     */
-    public static function render_content($attr = [], $content = '') {
-      extract(gavias_merge_atts(['title' => '', 'currency' => '', 'price' => '', 'period' => '', 'content' => '', 'link_title' => 'Sign Up Now', 'link' => '', 'featured' => 'off', 'el_class' => '', 'animate' => '', 'animate_delay' => ''], $attr));
+    public static function renderContent($attr = [], $content = '') {
+      extract(gavias_merge_atts([
+        'title' => '',
+        'currency' => '',
+        'price' => '',
+        'period' => '',
+        'content' => '',
+        'link_title' => 'Sign Up Now',
+        'link' => '',
+        'featured' => 'off',
+        'el_class' => '',
+        'animate' => '',
+        'animate_delay' => '',
+      ], $attr));
       if ($featured == 'on') {
         $el_class .= ' highlight-plan';
       }

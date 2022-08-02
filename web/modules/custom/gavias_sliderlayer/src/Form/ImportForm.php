@@ -175,7 +175,7 @@ class ImportForm implements FormInterface {
             "Slider Layer '{$form['title']['#value']}' has been import"
         );
       $response = new RedirectResponse(
-            Url::fromRoute('gavias_sl_group.admin', [
+            Url::fromRoute('gaviasSlGroup.admin', [
               'gid' => $gid,
             ])->toString()
         );
@@ -185,6 +185,6 @@ class ImportForm implements FormInterface {
 
 }
 irectResponse(
-    Url::fromRoute('gavias_sl_group.admin', ['gid' => $gid])->toString()
+    Url::fromRoute('gaviasSlGroup.admin', ['gid' => $gid])->toString()
 );
 $response->send();

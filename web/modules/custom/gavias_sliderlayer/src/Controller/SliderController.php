@@ -47,7 +47,7 @@ class SliderController extends ControllerBase {
           ]
         )->toString(),
         '@link_3' => Url::fromRoute(
-          'gavias_sl_group.admin.delete', [
+          'gaviasSlGroup.admin.delete', [
             'sid' => $row->id,
             'gid' => $gid,
             'action' => 'slider',

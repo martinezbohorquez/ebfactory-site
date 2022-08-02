@@ -1,4 +1,4 @@
-gavias_sl_group.admin:
+gaviasSlGroup.admin:
   path: '/admin/structure/gavias_sliderlayer'
   defaults:
     _title: 'Gavias Group SliderLayer'
@@ -6,7 +6,7 @@ gavias_sl_group.admin:
   requirements:
     _permission: 'administer gaviassliderlayer'
 
-gavias_sl_group.admin.add:
+gaviasSlGroup.admin.add:
   path: '/admin/structure/gavias_sliderlayer/group-form/{sid}'
   defaults:
     _title: 'Add Group Slider'
@@ -14,7 +14,7 @@ gavias_sl_group.admin.add:
   requirements: 
     _permission: 'administer gaviassliderlayer'
 
-gavias_sl_group.admin.clone:
+gaviasSlGroup.admin.clone:
   path: '/admin/structure/gavias_sliderlayer/group-clone/{sid}'
   defaults:
     _title: 'Add Group Slider'
@@ -22,31 +22,31 @@ gavias_sl_group.admin.clone:
   requirements: 
     _permission: 'administer gaviassliderlayer'
 
-gavias_sl_group.admin.config:
+gaviasSlGroup.admin.config:
   path: '/admin/structure/gavias_sliderlayer/config-global/{gid}'
   defaults:
     _title: 'Configuration of Gavias Slider Group'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\GroupSliderController::gavias_sl_group_config'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\GroupSliderController::gaviasSlGroupConfig'
   requirements:
     _permission: 'administer gaviassliderlayer'
 
-gavias_sl_group.admin.config_save:
+gaviasSlGroup.admin.config_save:
   path: '/admin/structure/gavias_sliderlayer/config-global/save'
   defaults:
     _title: 'Save configuration of Gavias Slider Group'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\GroupSliderController::gavias_sl_group_config_save'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\GroupSliderController::gaviasSlGroupConfigSave'
   requirements:
     _permission: 'administer gaviassliderlayer'
 
-gavias_sl_group.admin.export:
+gaviasSlGroup.admin.export:
   path: '/admin/structure/gavias_sliderlayer/group/export/{gid}'
   defaults:
     _title: 'Export'
-    _controller: '\Drupal\gavias_sliderlayer\Controller\GroupSliderController::gavias_sl_group_export'
+    _controller: '\Drupal\gavias_sliderlayer\Controller\GroupSliderController::gaviasSlGroupExport'
   requirements:
     _permission: 'administer gaviassliderlayer'
 
-gavias_sl_group.admin.import:
+gaviasSlGroup.admin.import:
   path: '/admin/structure/gavias_sliderlayer/group/import/{gid}'
   defaults:
     _title: 'Import'
@@ -54,7 +54,7 @@ gavias_sl_group.admin.import:
   requirements:
     _permission: 'administer gaviassliderlayer'
 
-gavias_sl_group.admin.delete:
+gaviasSlGroup.admin.delete:
   path: '/admin/structure/gavias_sliderlayer/group/delete/{gid}/{sid}/{action}'
   defaults:
     _title: 'Delete item of Gavias Slider'
@@ -63,7 +63,7 @@ gavias_sl_group.admin.delete:
     _permission: 'administer gaviassliderlayer'
 
 
-# gavias_sl_group.admin.edit:
+# gaviasSlGroup.admin.edit:
 #   path: '/admin/structure/gavias_sliderlayer/edit/{sid}'
 #   defaults:
 #     _title: 'Edit Slider'

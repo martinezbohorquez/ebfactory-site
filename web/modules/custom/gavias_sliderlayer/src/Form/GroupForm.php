@@ -90,7 +90,7 @@ class GroupForm implements FormInterface {
       \Drupal::messenger()->addMessage("Slide '{$form['title']['#value']}' has been created");
       \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
     }
-    $response = new RedirectResponse(Url::fromRoute('gavias_sl_group.admin')->toString());
+    $response = new RedirectResponse(Url::fromRoute('gaviasSlGroup.admin')->toString());
     $response->send();
   }
 

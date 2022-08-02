@@ -61,7 +61,7 @@ class DelForm extends ConfirmFormBase {
       return new Url('gavias_sl_sliders.admin.list', ['gid' => $this->gid]);
     }
     else {
-      return new Url('gavias_sl_group.admin');
+      return new Url('gaviasSlGroup.admin');
     }
   }
 
@@ -115,7 +115,7 @@ class DelForm extends ConfirmFormBase {
 
       \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
       \Drupal::messenger()->addMessage("SliderLayer Group '#{$gid}' has been deleted");
-      $response = new RedirectResponse(Url::fromRoute('gavias_sl_group.admin')->toString());
+      $response = new RedirectResponse(Url::fromRoute('gaviasSlGroup.admin')->toString());
       $response->send();
     }
 

@@ -1,4 +1,7 @@
-<?php 
+<?php
+/**
+ * @file
+ */
 if(!class_exists('element_gva_icon_box')):
    class element_gva_icon_box{
       public function render_form(){
