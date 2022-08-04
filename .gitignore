@@ -64,6 +64,13 @@
 /web/core/
 /web/modules/contrib/
 /web/themes/contrib/
+!/web/themes/contrib/gavias_enzio/
+!/web/modules/contrib/gaviasthemer
+!/web/modules/contrib/gavias_view/
+!/web/modules/contrib/gavias_sliderlayer
+!/web/modules/contrib/gavias_enzio_custom
+!/web/modules/contrib/gavias_content_builder
+!/web/modules/contrib/features_enzio
 /web/profiles/contrib/
 /web/libraries/
 /web/private/scripts/quicksilver
