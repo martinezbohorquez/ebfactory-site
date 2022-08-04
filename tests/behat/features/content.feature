@@ -29,13 +29,13 @@ Feature: Content
     When I visit "admin/people"
     Then I should see the link "Joe User"
 
-  @api
-  Scenario: Login as a user created during this scenario
-    Given users:
-    | name      | status | mail             |
-    | Test user |      1 | test@example.com |
-    When I am logged in as "Test user"
-    Then I should see the link "Log out"
+#  @api
+#  Scenario: Login as a user created during this scenario
+#    Given users:
+#    | name      | status | mail             |
+#    | Test user |      1 | test@example.com |
+#    When I am logged in as "Test user"
+#    Then I should see the link "Log out"
 
   @api
   Scenario: Create many terms
