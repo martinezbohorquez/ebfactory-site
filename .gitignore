@@ -116,3 +116,6 @@ web/sites/default/db/
 web/themes/package-lock.json
 web/themes/custom/iadb/package-lock.json
 .docksal/docksal-local.env
+
+# ci
+.ci/test/visual-regression/backstop_data/
