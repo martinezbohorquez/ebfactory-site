@@ -1,0 +1,24 @@
+uuid: 64a805ca-e406-4f1f-adae-f69fc1e27077
+langcode: en
+status: true
+dependencies:
+  module:
+    - gaviasthemer
+    - system
+  theme:
+    - ebfactory
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: ebfactory_messages
+theme: ebfactory
+region: help
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

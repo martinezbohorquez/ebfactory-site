@@ -1,0 +1,20 @@
+uuid: bed7dffc-478e-4bf4-9588-cfd7955a5222
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ebfactory
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: ebfactory_local_actions
+theme: ebfactory
+region: help
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

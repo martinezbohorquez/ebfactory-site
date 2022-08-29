@@ -119,3 +119,6 @@ web/themes/custom/iadb/package-lock.json
 
 # ci
 .ci/test/visual-regression/backstop_data/
+
+**/local.development.services.yml
+.docksal/example-docksal-local.env

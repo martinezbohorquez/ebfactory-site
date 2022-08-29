@@ -30,6 +30,8 @@ module:
   gavias_sliderlayer: 0
   gavias_view: 0
   gaviasthemer: 0
+  gin_lb: 0
+  gin_toolbar: 0
   help: 0
   history: 0
   image: 0
@@ -38,6 +40,8 @@ module:
   jquery_ui_datepicker: 0
   jquery_ui_tabs: 0
   jquery_ui_tooltip: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
   menu_ui: 0
   mysql: 0
@@ -68,6 +72,8 @@ module:
   views: 10
   standard: 1000
 theme:
-  seven: 0
   gavias_enzio: 0
+  ebfactory: 0
+  claro: 0
+  gin: 0
 profile: standard

@@ -1,0 +1,30 @@
+uuid: e06238bb-aa71-423c-8bf1-047229ead20d
+langcode: en
+status: true
+dependencies:
+  module:
+    - gaviasthemer
+    - simplenews
+  theme:
+    - ebfactory
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: ebfactory_simplenewssubscription
+theme: ebfactory
+region: footer_third
+weight: -13
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Subscribe our newsletter'
+  label_display: visible
+  provider: simplenews
+  newsletters: {  }
+  default_newsletters:
+    default: default
+  message: ' Subscribe to update news from us'
+  show_manage: true
+  unique_id: 763feca6-91c6-48be-a713-93d5261f5aa3
+visibility: {  }

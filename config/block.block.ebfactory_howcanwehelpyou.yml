@@ -1,0 +1,35 @@
+uuid: 818f83de-862f-4a53-9a7b-86a9a7ca69d3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+  module:
+    - block_content
+    - gaviasthemer
+    - system
+  theme:
+    - ebfactory
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: ebfactory_howcanwehelpyou
+theme: ebfactory
+region: sidebar_right
+weight: -4
+provider: null
+plugin: 'block_content:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+settings:
+  id: 'block_content:f41634fc-4c30-48a7-b5c2-c3e4709c65f1'
+  label: 'How can we help you ?'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/services\r\n/services-page\r\n/blogs-masonry\r\n/blogs-grid\r\n/portfolio\r\n/portfolio-1\r\n/portfolio-2\r\n/portfolio-3"

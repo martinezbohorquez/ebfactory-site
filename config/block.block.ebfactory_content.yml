@@ -1,0 +1,22 @@
+uuid: b77e468b-a145-41fe-9234-643d8547117c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ebfactory
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: ebfactory_content
+theme: ebfactory
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

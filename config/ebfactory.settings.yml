@@ -1,0 +1,22 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 0
+  path: 'public://eBFactory-Logo.png'
+favicon:
+  use_default: 1
+theme_skin: ''
+enable_customize: '0'
+sticky_menu: '0'
+site_layout: wide
+preloader: '0'
+default_header: header
+footer_skin: ''
+footer_first_size: '3'
+footer_second_size: '3'
+footer_third_size: '3'
+footer_four_size: '3'
+customize_css: ''

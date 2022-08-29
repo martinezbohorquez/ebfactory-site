@@ -1,0 +1,22 @@
+uuid: be1c8667-c5e6-4bb6-a5eb-149355dfde53
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ebfactory
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: ebfactory_breadcrumbs
+theme: ebfactory
+region: breadcrumbs
+weight: -8
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

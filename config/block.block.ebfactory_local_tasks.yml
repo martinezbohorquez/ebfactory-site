@@ -1,0 +1,22 @@
+uuid: cc5eea22-74f5-4b7a-a07e-59e91d78d461
+langcode: en
+status: true
+dependencies:
+  theme:
+    - ebfactory
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: ebfactory_local_tasks
+theme: ebfactory
+region: help
+weight: -9
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

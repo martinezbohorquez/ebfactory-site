@@ -1,6 +1,6 @@
 <style class="customize">
 <?php
-    $customize = (array)json_decode($json, true);
+    $customize = (array)json_decode(json_encode($json), true);
     if($customize):
 ?>
 

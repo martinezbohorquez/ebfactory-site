@@ -1,0 +1,35 @@
+uuid: 5bd95b9b-6b0e-44fe-967e-946783db1b0b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6d5ade86-9d5b-4f7d-8df0-eab5c3d27e0c'
+  module:
+    - block_content
+    - block_visibility_groups
+    - gaviasthemer
+  theme:
+    - ebfactory
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: ebfactory_about
+theme: ebfactory
+region: quick_side
+weight: -14
+provider: null
+plugin: 'block_content:6d5ade86-9d5b-4f7d-8df0-eab5c3d27e0c'
+settings:
+  id: 'block_content:6d5ade86-9d5b-4f7d-8df0-eab5c3d27e0c'
+  label: About
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''

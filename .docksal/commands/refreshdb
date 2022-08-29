@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+
+## Initialize a Docksal powered Drupal 8 site
+##
+## Usage: fin init
+
+# Abort if anything fails
+set -e
+
+#-------------------------- Settings --------------------------------
+
+SITEDIR_PATH="web/sites/default"
+DATABASE_DIR="${SITEDIR_PATH}/db/"
+SITE_ENV="$@"
+
+
+if ${SITE_ENV}; then
+    SITE_ENV="dev";
+fi
+
+
+#-------------------------- END: Settings --------------------------------
+
+#-------------------------- Helper functions --------------------------------
+
+# Console colors
+red='\033[0;31m'
+green='\033[0;32m'
+green_bg='\033[42m'
+yellow='\033[1;33m'
+NC='\033[0m'
+
+echo-red () { echo -e "${red}$1${NC}"; }
+echo-green () { echo -e "${green}$1${NC}"; }
+echo-green-bg () { echo -e "${green_bg}$1${NC}"; }
+echo-yellow () { echo -e "${yellow}$1${NC}"; }
+
+
+create_temp_database_directory() {
+    if [[ ! -d "${SITEDIR_PATH}/db" ]]; then
+		echo-green "Creating db folder in ${SITEDIR_PATH}/db..."
+		mkdir "${DATABASE_DIR}"
+	else
+		echo-yellow "${DATABASE_DIR} already in place."
+	fi
+}
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Functions --------------------------------
+
+# Fix file/folder permissions
+fix_permissions ()
+{
+	echo-green "Making site directory writable..."
+	chmod 755 "${SITEDIR_PATH}"
+}
+
+# Import database from Pantheon
+import_database ()
+{
+    echo -e "Download DB ${PANTHEON_SITE}.${SITE_ENV}"
+
+    fin terminus backup:create ${PANTHEON_SITE}.${SITE_ENV} --element=db;
+    rm -rf  ${DATABASE_DIR}/*;
+    fin terminus backup:get ${PANTHEON_SITE}.${SITE_ENV} --element=db --to="${DATABASE_DIR}${PANTHEON_SITE}_${SITE_ENV}.sql.gz";
+
+    echo-green "${DATABASE_DIR}${PANTHEON_SITE}_${SITE_ENV}.sql.gz Created...";
+    echo-green "Extracting...";
+    gunzip "${DATABASE_DIR}${PANTHEON_SITE}_${SITE_ENV}.sql.gz";
+    echo-green "Importing...";
+    fin db import "${DATABASE_DIR}${PANTHEON_SITE}_${SITE_ENV}.sql";
+    echo-green "Clearing caches...";
+    fin drush cr;
+}
+
+
+#-------------------------- END: Functions --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+if [[ "$PROJECT_ROOT" == "" ]]; then
+	echo-red "\$PROJECT_ROOT is not set"
+	exit 1
+fi
+
+
+fix_permissions
+
+echo -e "${green_bg} Step 1 ${NC}${green} Database and files...${NC}"
+
+create_temp_database_directory
+
+time import_database
+
+
+echo -en "${green_bg} DONE! ${NC} "
+echo -e "Open ${yellow}http://${VIRTUAL_HOST}${NC} in your browser to verify the setup."
+
+#-------------------------- END: Execution --------------------------------

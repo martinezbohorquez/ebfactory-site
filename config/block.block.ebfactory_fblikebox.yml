@@ -1,0 +1,45 @@
+uuid: 26a90a87-e9e1-4547-9116-143cecd2ee55
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - fb_likebox
+    - gaviasthemer
+  theme:
+    - ebfactory
+third_party_settings:
+  gaviasthemer:
+    classes: ''
+id: ebfactory_fblikebox
+theme: ebfactory
+region: other
+weight: 0
+provider: null
+plugin: fb_likebox_block
+settings:
+  id: fb_likebox_block
+  label: 'FB Likebox'
+  label_display: visible
+  provider: fb_likebox
+  url: 'https://www.facebook.com/FacebookDevelopers'
+  app_id: ''
+  hide_header: 1
+  stream: 0
+  events: null
+  messages: null
+  show_faces: '1'
+  title: Title
+  width: 500
+  height: 300
+  hide_cta: 0
+  small_header: 0
+  adapt_container_width: 1
+  language: en_EN
+  small_cta: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''
